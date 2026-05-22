@@ -85,13 +85,13 @@ export function SiteFooter() {
 
         <div className="mt-20 pt-8 border-t border-ivory/10 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-ivory/50">
           <p>© 2026 Elevate International Education. All rights reserved.</p>
-          <p className="tracking-[0.22em] uppercase">
+          <p className="text-[9px] tracking-[0.22em] uppercase text-ivory/30">
             Web Design by{" "}
             <a
               href="https://bluluma.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-ivory/75 hover:text-gold transition-colors"
+              className="text-ivory/40 hover:text-gold transition-colors"
             >
               Bluluma
             </a>
