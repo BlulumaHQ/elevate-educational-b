@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as StudyInVancouverRouteImport } from './routes/study-in-vancouver'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as CoursesRouteImport } from './routes/courses'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ConsultationRouteImport } from './routes/consultation'
 import { Route as AboutRouteImport } from './routes/about'
@@ -30,6 +31,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CoursesRoute = CoursesRouteImport.update({
+  id: '/courses',
+  path: '/courses',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -58,6 +64,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/consultation': typeof ConsultationRoute
   '/contact': typeof ContactRoute
+  '/courses': typeof CoursesRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/study-in-vancouver': typeof StudyInVancouverRoute
@@ -67,6 +74,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/consultation': typeof ConsultationRoute
   '/contact': typeof ContactRoute
+  '/courses': typeof CoursesRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/study-in-vancouver': typeof StudyInVancouverRoute
@@ -77,6 +85,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/consultation': typeof ConsultationRoute
   '/contact': typeof ContactRoute
+  '/courses': typeof CoursesRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/study-in-vancouver': typeof StudyInVancouverRoute
@@ -88,6 +97,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/consultation'
     | '/contact'
+    | '/courses'
     | '/services'
     | '/sitemap.xml'
     | '/study-in-vancouver'
@@ -97,6 +107,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/consultation'
     | '/contact'
+    | '/courses'
     | '/services'
     | '/sitemap.xml'
     | '/study-in-vancouver'
@@ -106,6 +117,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/consultation'
     | '/contact'
+    | '/courses'
     | '/services'
     | '/sitemap.xml'
     | '/study-in-vancouver'
@@ -116,6 +128,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ConsultationRoute: typeof ConsultationRoute
   ContactRoute: typeof ContactRoute
+  CoursesRoute: typeof CoursesRoute
   ServicesRoute: typeof ServicesRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   StudyInVancouverRoute: typeof StudyInVancouverRoute
@@ -142,6 +155,13 @@ declare module '@tanstack/react-router' {
       path: '/services'
       fullPath: '/services'
       preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/courses': {
+      id: '/courses'
+      path: '/courses'
+      fullPath: '/courses'
+      preLoaderRoute: typeof CoursesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -180,6 +200,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ConsultationRoute: ConsultationRoute,
   ContactRoute: ContactRoute,
+  CoursesRoute: CoursesRoute,
   ServicesRoute: ServicesRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   StudyInVancouverRoute: StudyInVancouverRoute,
