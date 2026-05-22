@@ -1,6 +1,8 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Sans+TC:wght@300;400;500;600&family=Noto+Serif+TC:wght@400;500;600&display=swap");
+
 
 @custom-variant dark (&:is(.dark *));
 
@@ -34,20 +36,31 @@
   --color-navy: var(--navy);
   --color-navy-deep: var(--navy-deep);
   --color-gold: var(--gold);
+  --color-blush: var(--blush);
+  --color-sage: var(--sage);
+  --color-terracotta: var(--terracotta);
+  --color-ink: var(--ink);
   --font-serif: "Cormorant Garamond", "Playfair Display", "Noto Serif TC", Georgia, serif;
   --font-sans: "Inter", "Noto Sans TC", system-ui, sans-serif;
+  --font-hand: "Caveat", "Kalam", "Comic Sans MS", cursive;
 }
 
 :root {
   --radius: 0.25rem;
 
-  /* Brand palette — Vancouver editorial */
-  --cream: oklch(0.975 0.012 85);          /* warm ivory */
-  --wood: oklch(0.72 0.055 60);            /* warm wood tone */
-  --wood-soft: oklch(0.92 0.025 75);       /* soft sand */
+  /* Brand palette — Vancouver editorial + warm education lifestyle */
+  --cream: oklch(0.972 0.018 78);          /* warm ivory */
+  --cream-deep: oklch(0.945 0.025 75);     /* deeper ivory */
+  --wood: oklch(0.62 0.075 55);            /* warm wood tone */
+  --wood-soft: oklch(0.91 0.03 72);        /* soft sand */
   --navy: oklch(0.27 0.07 255);            /* deep brand navy */
   --navy-deep: oklch(0.20 0.06 255);
-  --gold: oklch(0.78 0.13 80);             /* warm accent */
+  --gold: oklch(0.78 0.13 80);             /* warm gold accent */
+  --blush: oklch(0.86 0.06 30);            /* soft blush */
+  --sage: oklch(0.76 0.05 145);            /* soft sage */
+  --terracotta: oklch(0.62 0.13 40);       /* warm terracotta */
+  --ink: oklch(0.30 0.05 250);             /* handwriting ink */
+
 
   --background: var(--cream);
   --foreground: oklch(0.22 0.04 255);
@@ -131,4 +144,59 @@
     transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .link-underline:hover::after { transform: scaleX(1); transform-origin: left; }
+
+  .font-hand { font-family: var(--font-hand); font-weight: 600; }
+
+  /* Warm paper grain — SVG fractal noise, ~7% opacity */
+  .paper-grain { position: relative; isolation: isolate; }
+  .paper-grain::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+    opacity: 0.07; mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' seed='4'/><feColorMatrix values='0 0 0 0 0.4  0 0 0 0 0.3  0 0 0 0 0.2  0 0 0 0.7 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    background-size: 320px 320px;
+  }
+  .paper-grain > * { position: relative; z-index: 1; }
+
+  /* Organic blob masks */
+  .mask-blob-1 {
+    -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><path fill='black' d='M44,-58C57,-49,67,-35,71,-19C75,-3,73,15,64,29C55,43,40,53,23,61C6,69,-13,75,-29,69C-45,63,-58,45,-65,26C-72,7,-73,-14,-65,-30C-57,-46,-40,-57,-22,-64C-3,-70,17,-72,32,-67C46,-62,55,-50,44,-58Z' transform='translate(100 100)'/></svg>");
+    mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><path fill='black' d='M44,-58C57,-49,67,-35,71,-19C75,-3,73,15,64,29C55,43,40,53,23,61C6,69,-13,75,-29,69C-45,63,-58,45,-65,26C-72,7,-73,-14,-65,-30C-57,-46,-40,-57,-22,-64C-3,-70,17,-72,32,-67C46,-62,55,-50,44,-58Z' transform='translate(100 100)'/></svg>");
+    -webkit-mask-size: 100% 100%; mask-size: 100% 100%; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+  }
+  .mask-arch {
+    -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 130' preserveAspectRatio='none'><path fill='black' d='M0,50 C0,22 22,0 50,0 C78,0 100,22 100,50 L100,130 L0,130 Z'/></svg>");
+    mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 130' preserveAspectRatio='none'><path fill='black' d='M0,50 C0,22 22,0 50,0 C78,0 100,22 100,50 L100,130 L0,130 Z'/></svg>");
+    -webkit-mask-size: 100% 100%; mask-size: 100% 100%;
+  }
+
+  /* Polaroid */
+  .polaroid {
+    background: white;
+    padding: 0.75rem 0.75rem 2.25rem;
+    box-shadow: 0 18px 40px -22px rgba(40,30,20,0.35), 0 4px 12px -6px rgba(40,30,20,0.18);
+    border: 1px solid rgba(0,0,0,0.04);
+  }
+  .tape {
+    position: absolute; width: 90px; height: 22px;
+    background: color-mix(in oklab, var(--gold) 55%, white);
+    opacity: 0.75; box-shadow: 0 2px 6px -2px rgba(0,0,0,0.15);
+  }
+
+  .sticker {
+    display: inline-flex; align-items: center; justify-content: center;
+    border-radius: 999px; padding: 0.55rem 1rem;
+    font-family: var(--font-hand); font-size: 1.05rem;
+    background: var(--blush); color: var(--navy);
+    box-shadow: 0 6px 14px -6px rgba(0,0,0,0.2);
+  }
+
+  @keyframes float-y { 0%,100% { transform: translateY(0) rotate(var(--r,0deg)); } 50% { transform: translateY(-10px) rotate(var(--r,0deg)); } }
+  .float-slow { animation: float-y 7s ease-in-out infinite; }
+  .float-med { animation: float-y 5s ease-in-out infinite; }
+
+  .hand-underline {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12'><path d='M2,7 C50,2 100,11 198,4' stroke='%23c97a4a' stroke-width='3' fill='none' stroke-linecap='round'/></svg>");
+    background-repeat: no-repeat; background-position: 0 100%; background-size: 100% 0.5em;
+    padding-bottom: 0.15em;
+  }
 }
