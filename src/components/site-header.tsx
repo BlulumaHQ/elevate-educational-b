@@ -22,7 +22,7 @@ export function SiteHeader() {
           <img
             src={logo}
             alt="頤珈國際教育 Elevate International Education"
-            className="h-12 md:h-14 w-auto object-contain"
+            className="h-16 md:h-20 w-auto object-contain"
           />
         </Link>
 
