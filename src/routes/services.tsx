@@ -44,7 +44,51 @@ function ServicesPage() {
         </div>
       </section>
 
+      {/* Service Flow */}
+      <section className="py-24 md:py-32 bg-background border-y border-navy/10">
+        <div className="container-editorial">
+          <div className="text-center mb-16 md:mb-20">
+            <p className="text-[11px] tracking-[0.3em] text-wood uppercase mb-4">Our Process</p>
+            <h2 className="font-serif text-4xl md:text-5xl text-primary leading-tight">
+              六步驟，安心抵達
+            </h2>
+            <p className="mt-5 max-w-xl mx-auto text-muted-foreground">
+              從第一次諮詢到孩子順利落地，我們陪伴每一步。
+            </p>
+          </div>
+
+          <ol className="grid gap-y-12 md:grid-cols-6 md:gap-x-2 relative">
+            {[
+              { Icon: Search, n: "01", t: "免費諮詢", d: "了解孩子背景與家庭目標" },
+              { Icon: FileCheck, n: "02", t: "規劃方案", d: "量身設計學校與課程路徑" },
+              { Icon: HomeIcon, n: "03", t: "申請送件", d: "學校申請、寄宿家庭媒合" },
+              { Icon: Plane, n: "04", t: "簽證與行前", d: "簽證、保險、行前說明" },
+              { Icon: HeartHandshake, n: "05", t: "落地安頓", d: "接機、開戶、生活定向" },
+              { Icon: Sparkles, n: "06", t: "長期陪伴", d: "定期回報、緊急支援" },
+            ].map((s, i, arr) => (
+              <li key={s.n} className="relative flex md:flex-col items-start md:items-center text-center gap-5 md:gap-4">
+                <div className="shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-full border border-navy/20 bg-ivory flex items-center justify-center text-navy">
+                  <s.Icon size={26} strokeWidth={1.4} />
+                </div>
+                {i < arr.length - 1 && (
+                  <ArrowRight
+                    size={18}
+                    className="hidden md:block absolute top-9 -right-3 text-wood/60"
+                  />
+                )}
+                <div className="md:mt-2">
+                  <p className="text-[11px] tracking-[0.28em] text-wood uppercase">{s.n}</p>
+                  <p className="font-serif text-xl md:text-2xl text-primary mt-2">{s.t}</p>
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed max-w-[14rem]">{s.d}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
       <section className="bg-background">
+
         {services.map((s, i) => (
           <div key={s.num} className={`py-20 md:py-28 ${i % 2 === 1 ? "bg-secondary/30" : ""}`}>
             <div className="container-editorial grid md:grid-cols-12 gap-10 md:gap-16 items-center">
