@@ -16,13 +16,13 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 inset-x-0 z-50 bg-ivory/95 backdrop-blur-md border-b border-navy/10 py-1">
-      <div className="container-wide flex items-center justify-between gap-6">
-        <Link to="/" className="flex items-center shrink-0 text-navy">
+    <header className="fixed top-0 inset-x-0 z-50 bg-ivory/95 backdrop-blur-md border-b border-navy/10">
+      <div className="container-wide flex items-center justify-between gap-6 py-0">
+        <Link to="/" className="flex items-center shrink-0 text-navy -my-2">
           <img
             src={logo}
             alt="頤珈國際教育 Elevate International Education"
-            className="h-16 md:h-20 w-auto object-contain"
+            className="h-24 md:h-28 w-auto object-contain"
           />
         </Link>
 
