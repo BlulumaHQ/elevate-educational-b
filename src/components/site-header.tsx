@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/logo.jpeg";
+import logo from "@/assets/logo-horizontal-transparent.png";
 
 const nav = [
   { to: "/", label: "首頁", en: "Home" },
@@ -36,12 +36,12 @@ export function SiteHeader() {
       }`}
     >
       <div className="container-wide flex items-center justify-between gap-6">
-        <Link to="/" className={`flex items-center gap-3 shrink-0 ${textColor}`}>
-          <img src={logo} alt="頤珈國際教育" className={`h-10 w-auto md:h-11 object-contain ${onLight ? "" : "brightness-0 invert"}`} />
-          <div className="hidden sm:block leading-tight">
-            <div className={`font-serif text-base md:text-lg ${textColor}`}>頤珈國際教育</div>
-            <div className={`text-[9px] tracking-[0.28em] uppercase ${subColor}`}>Elevate Education</div>
-          </div>
+        <Link to="/" className={`flex items-center shrink-0 ${textColor}`}>
+          <img
+            src={logo}
+            alt="頤珈國際教育 Elevate International Education"
+            className={`h-12 md:h-14 w-auto object-contain transition-all ${onLight ? "" : "brightness-0 invert"}`}
+          />
         </Link>
 
         <nav className={`hidden lg:flex items-center gap-9 text-[12px] tracking-[0.22em] uppercase ${subColor}`}>

@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight, MapPin, Mail, Phone } from "lucide-react";
+import logoSquare from "@/assets/logo-square-transparent.png";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -17,10 +18,11 @@ export function SiteFooter() {
         <div className="grid gap-14 md:grid-cols-12">
           {/* Brand */}
           <div className="md:col-span-5 space-y-6">
-            <div>
-              <p className="font-display text-3xl md:text-4xl tracking-tight">頤珈國際教育</p>
-              <p className="eyebrow mt-3 text-gold">Elevate International Education</p>
-            </div>
+            <img
+              src={logoSquare}
+              alt="頤珈國際教育 Elevate International Education"
+              className="h-36 md:h-44 w-auto object-contain -ml-2"
+            />
             <p className="text-sm text-ivory/65 max-w-sm leading-[1.95]">
               Boutique International Education Consulting,
               proudly based in Vancouver, BC. <br />
