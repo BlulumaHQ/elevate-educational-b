@@ -46,13 +46,19 @@
 :root {
   --radius: 0.25rem;
 
-  /* Brand palette — Vancouver editorial */
-  --cream: oklch(0.975 0.012 85);          /* warm ivory */
-  --wood: oklch(0.72 0.055 60);            /* warm wood tone */
-  --wood-soft: oklch(0.92 0.025 75);       /* soft sand */
+  /* Brand palette — Vancouver editorial + warm education lifestyle */
+  --cream: oklch(0.972 0.018 78);          /* warm ivory */
+  --cream-deep: oklch(0.945 0.025 75);     /* deeper ivory */
+  --wood: oklch(0.62 0.075 55);            /* warm wood tone */
+  --wood-soft: oklch(0.91 0.03 72);        /* soft sand */
   --navy: oklch(0.27 0.07 255);            /* deep brand navy */
   --navy-deep: oklch(0.20 0.06 255);
-  --gold: oklch(0.78 0.13 80);             /* warm accent */
+  --gold: oklch(0.78 0.13 80);             /* warm gold accent */
+  --blush: oklch(0.86 0.06 30);            /* soft blush */
+  --sage: oklch(0.76 0.05 145);            /* soft sage */
+  --terracotta: oklch(0.62 0.13 40);       /* warm terracotta */
+  --ink: oklch(0.30 0.05 250);             /* handwriting ink */
+
 
   --background: var(--cream);
   --foreground: oklch(0.22 0.04 255);
