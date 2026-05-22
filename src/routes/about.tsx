@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import foundersImg from "@/assets/founders.jpg";
 import streetImg from "@/assets/vancouver-street.jpg";
+import waveBg from "@/assets/wave-bg.jpg";
 import { SectionHeading } from "@/components/section-heading";
 
 export const Route = createFileRoute("/about")({
@@ -48,7 +49,10 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="py-24 md:py-32 bg-wood-soft/40">
+      <section
+        className="py-24 md:py-32 bg-wood-soft/40"
+        style={{ backgroundImage: `url(${waveBg})`, backgroundSize: "cover", backgroundPosition: "center" }}
+      >
         <div className="container-editorial grid md:grid-cols-3 gap-12">
           {[
             { t: "30 年溫哥華在地", b: "從小留學生到創業者與母親，三十年扎根在這座城市。" },

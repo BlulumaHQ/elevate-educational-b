@@ -5,6 +5,7 @@ import campusImg from "@/assets/students-campus.jpg";
 import streetImg from "@/assets/vancouver-street.jpg";
 import schoolImg from "@/assets/school.jpg";
 import homestayImg from "@/assets/homestay.jpg";
+import waveBg from "@/assets/wave-bg.jpg";
 import { SectionHeading } from "@/components/section-heading";
 
 export const Route = createFileRoute("/study-in-vancouver")({
@@ -56,7 +57,10 @@ function StudyPage() {
         <img src={campusImg} alt="Vancouver campus" className="w-full mt-16 aspect-[21/9] object-cover" loading="lazy" />
       </section>
 
-      <section className="py-24 md:py-32 bg-background">
+      <section
+        className="py-24 md:py-32 bg-background"
+        style={{ backgroundImage: `url(${waveBg})`, backgroundSize: "cover", backgroundPosition: "center" }}
+      >
         <div className="container-editorial">
           <SectionHeading eyebrow="Overview" title="關於溫哥華留學" />
           <div className="mt-14 grid md:grid-cols-2 gap-x-16 gap-y-10">

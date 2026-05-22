@@ -6,6 +6,7 @@ import schoolImg from "@/assets/school.jpg";
 import homestayImg from "@/assets/homestay-warm.jpg";
 import campusHeritage from "@/assets/campus-heritage.jpg";
 import streetImg from "@/assets/vancouver-street.jpg";
+import waveBg from "@/assets/wave-bg.jpg";
 
 export const Route = createFileRoute("/courses")({
   head: () => ({
@@ -149,7 +150,10 @@ function CoursesPage() {
       </section>
 
       {/* Course Cards */}
-      <section className="py-24 md:py-32 bg-background">
+      <section
+        className="py-24 md:py-32 bg-background"
+        style={{ backgroundImage: `url(${waveBg})`, backgroundSize: "cover", backgroundPosition: "center" }}
+      >
         <div className="container-editorial space-y-20 md:space-y-28">
           {courses.map((c, i) => (
             <article

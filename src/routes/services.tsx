@@ -4,6 +4,7 @@ import schoolImg from "@/assets/school.jpg";
 import homestayImg from "@/assets/homestay.jpg";
 import campusImg from "@/assets/students-campus.jpg";
 import streetImg from "@/assets/vancouver-street.jpg";
+import waveBg from "@/assets/wave-bg.jpg";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -45,7 +46,10 @@ function ServicesPage() {
       </section>
 
       {/* Service Flow */}
-      <section className="py-24 md:py-32 bg-background border-y border-navy/10">
+      <section
+        className="py-24 md:py-32 bg-background border-y border-navy/10"
+        style={{ backgroundImage: `url(${waveBg})`, backgroundSize: "cover", backgroundPosition: "center" }}
+      >
         <div className="container-editorial">
           <div className="text-center mb-16 md:mb-20">
             <p className="text-[11px] tracking-[0.3em] text-wood uppercase mb-4">Our Process</p>

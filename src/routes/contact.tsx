@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Mail, Phone, MessageCircle, MapPin } from "lucide-react";
+import waveBg from "@/assets/wave-bg.jpg";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -24,7 +25,10 @@ const items = [
 function ContactPage() {
   return (
     <>
-      <section className="pt-40 pb-20 md:pt-52 md:pb-24 bg-secondary/40">
+      <section
+        className="pt-40 pb-20 md:pt-52 md:pb-24 bg-secondary/40"
+        style={{ backgroundImage: `url(${waveBg})`, backgroundSize: "cover", backgroundPosition: "center" }}
+      >
         <div className="container-editorial">
           <p className="text-[11px] tracking-[0.3em] text-wood uppercase mb-5">Contact</p>
           <h1 className="font-serif text-5xl md:text-7xl text-primary leading-[1.1] text-balance max-w-3xl">
