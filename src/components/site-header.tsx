@@ -9,7 +9,6 @@ const nav = [
   { to: "/study-in-vancouver", label: "溫哥華留學", en: "Study in Vancouver" },
   { to: "/services", label: "服務內容", en: "Services" },
   { to: "/courses", label: "課程介紹", en: "Courses" },
-  { to: "/consultation", label: "預約諮詢", en: "Consultation" },
   { to: "/contact", label: "聯絡我們", en: "Contact" },
 ] as const;
 
@@ -17,13 +16,13 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 inset-x-0 z-50 bg-ivory/95 backdrop-blur-md border-b border-navy/10 py-3">
+    <header className="fixed top-0 inset-x-0 z-50 bg-ivory/95 backdrop-blur-md border-b border-navy/10 py-1">
       <div className="container-wide flex items-center justify-between gap-6">
         <Link to="/" className="flex items-center shrink-0 text-navy">
           <img
             src={logo}
             alt="頤珈國際教育 Elevate International Education"
-            className="h-12 md:h-14 w-auto object-contain"
+            className="h-16 md:h-20 w-auto object-contain"
           />
         </Link>
 
