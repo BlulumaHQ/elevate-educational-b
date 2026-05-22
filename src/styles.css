@@ -34,8 +34,13 @@
   --color-navy: var(--navy);
   --color-navy-deep: var(--navy-deep);
   --color-gold: var(--gold);
+  --color-blush: var(--blush);
+  --color-sage: var(--sage);
+  --color-terracotta: var(--terracotta);
+  --color-ink: var(--ink);
   --font-serif: "Cormorant Garamond", "Playfair Display", "Noto Serif TC", Georgia, serif;
   --font-sans: "Inter", "Noto Sans TC", system-ui, sans-serif;
+  --font-hand: "Caveat", "Kalam", "Comic Sans MS", cursive;
 }
 
 :root {
