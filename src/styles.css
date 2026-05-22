@@ -39,6 +39,14 @@
   --color-gold: var(--gold);
   --color-gold-soft: var(--gold-soft);
   --color-ink: var(--ink);
+  /* Backward-compat aliases for inner pages */
+  --color-cream: var(--ivory);
+  --color-cream-deep: var(--ivory-deep);
+  --color-wood: var(--gold);
+  --color-wood-soft: var(--beige);
+  --color-blush: var(--beige);
+  --color-sage: var(--slate-blue);
+  --color-terracotta: var(--gold);
   --font-serif: "Cormorant Garamond", "Playfair Display", "Noto Serif TC", Georgia, serif;
   --font-display: "Playfair Display", "Cormorant Garamond", "Noto Serif TC", Georgia, serif;
   --font-sans: "Inter", "Manrope", "Noto Sans TC", system-ui, sans-serif;
