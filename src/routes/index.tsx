@@ -94,13 +94,13 @@ function HomePage() {
               {/* polaroid 1 */}
               <div className="absolute left-0 top-16 w-44 sm:w-52 polaroid float-slow" style={{ ['--r' as never]: "-7deg", transform: "rotate(-7deg)" }}>
                 <span className="tape left-1/2 -translate-x-1/2 -top-3" />
-                <img src={studentsWalking} alt="Students walking in park" className="w-full aspect-[4/5] object-cover" loading="lazy" />
+                <img src={studentsWalking} alt="Students walking in park" className="w-full aspect-[4/5] object-cover" />
                 <p className="font-hand text-center text-[var(--navy)] text-lg mt-2">First day ✨</p>
               </div>
               {/* polaroid 2 */}
               <div className="absolute left-4 sm:left-12 bottom-0 w-48 sm:w-56 polaroid float-med" style={{ ['--r' as never]: "6deg", transform: "rotate(6deg)" }}>
                 <span className="tape left-6 -top-3" style={{ background: "color-mix(in oklab, var(--sage) 60%, white)" }} />
-                <img src={notebookDesk} alt="Student notebook with Canadian leaf" className="w-full aspect-square object-cover" loading="lazy" />
+                <img src={notebookDesk} alt="Student notebook with Canadian leaf" className="w-full aspect-square object-cover" />
                 <p className="font-hand text-center text-[var(--navy)] text-lg mt-2">Vancouver, fall</p>
               </div>
               {/* floating sticker */}
@@ -120,11 +120,11 @@ function HomePage() {
           {/* IMAGE CLUSTER */}
           <div className="md:col-span-5 relative h-[560px] md:h-[640px]">
             <div className="absolute inset-x-4 top-0 h-[78%] mask-arch overflow-hidden shadow-xl">
-              <img src={foundersImg} alt="Founders Maggie and Katrina" className="w-full h-full object-cover" loading="lazy" />
+              <img src={foundersImg} alt="Founders Maggie and Katrina" className="w-full h-full object-cover" />
             </div>
             <div className="absolute -right-2 bottom-6 w-44 polaroid" style={{ transform: "rotate(5deg)" }}>
               <span className="tape left-1/2 -translate-x-1/2 -top-3" />
-              <img src={campusImg} alt="Vancouver campus moment" className="w-full aspect-[4/5] object-cover" loading="lazy" />
+              <img src={campusImg} alt="Vancouver campus moment" className="w-full aspect-[4/5] object-cover" />
             </div>
             <div className="absolute -left-2 bottom-24 sticker" style={{ background: "var(--blush)", transform: "rotate(-10deg)" }}>
               Vancouver mamas
@@ -177,7 +177,7 @@ function HomePage() {
                 style={{ transform: `rotate(${m.rot})` }}
               >
                 <span className={`tape ${m.tape}`} style={{ background: i % 2 ? "color-mix(in oklab, var(--sage) 55%, white)" : "color-mix(in oklab, var(--gold) 55%, white)" }} />
-                <img src={m.img} alt={m.caption} className="w-full aspect-[4/5] object-cover" loading="lazy" />
+                <img src={m.img} alt={m.caption} className="w-full aspect-[4/5] object-cover" />
                 <p className="font-hand text-center text-[var(--navy)] text-lg mt-2">{m.caption}</p>
               </div>
             ))}
@@ -232,7 +232,7 @@ function HomePage() {
         <div className="container-editorial grid md:grid-cols-12 gap-10 items-center">
           <div className="md:col-span-5 relative h-[420px]">
             <div className="absolute inset-4 mask-blob-1 overflow-hidden">
-              <img src={homestayWarm} alt="Homestay dinner" className="w-full h-full object-cover" loading="lazy" />
+              <img src={homestayWarm} alt="Homestay dinner" className="w-full h-full object-cover" />
             </div>
             <div className="absolute top-4 -right-2 sticker float-slow" style={{ background: "var(--gold)", transform: "rotate(8deg)" }}>
               <HeartHandshake size={14} className="mr-1.5" /> trust
@@ -249,7 +249,7 @@ function HomePage() {
 
       {/* ========== CTA ========== */}
       <section className="relative min-h-[60vh] flex items-center overflow-hidden">
-        <img src={sunsetImg} alt="Vancouver sunset" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+        <img src={sunsetImg} alt="Vancouver sunset" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-[var(--navy-deep)]/60 via-[var(--navy-deep)]/70 to-[var(--navy-deep)]/85" />
         <div className="relative container-editorial py-24 md:py-32 text-cream text-center">
           <p className="font-hand text-2xl text-[var(--gold)] mb-4 -rotate-2 inline-block">Let’s talk</p>
