@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import foundersImg from "@/assets/founders.jpg";
+import waveBg from "@/assets/wave-bg.jpg";
 
 export const Route = createFileRoute("/consultation")({
   head: () => ({
@@ -24,7 +25,10 @@ function ConsultationPage() {
   };
 
   return (
-    <section className="pt-32 pb-24 md:pt-44 md:pb-32 bg-background">
+    <section
+      className="pt-32 pb-24 md:pt-44 md:pb-32 bg-background"
+      style={{ backgroundImage: `url(${waveBg})`, backgroundSize: "cover", backgroundPosition: "center" }}
+    >
       <div className="container-editorial grid md:grid-cols-12 gap-12 md:gap-20">
         <div className="md:col-span-7">
           <p className="text-[11px] tracking-[0.3em] text-wood uppercase mb-5">Consultation</p>

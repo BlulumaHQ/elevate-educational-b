@@ -11,6 +11,7 @@ import foundersImg from "@/assets/founders-pro.jpg";
 import campusHeritage from "@/assets/campus-heritage.jpg";
 import homestayWarm from "@/assets/homestay-warm.jpg";
 import classroomMentor from "@/assets/classroom-mentor.jpg";
+import waveBg from "@/assets/wave-bg.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -399,7 +400,10 @@ function HomePage() {
       </section>
 
       {/* ════════════ TESTIMONIAL — QUIET EDITORIAL ════════════ */}
-      <section className="relative py-28 md:py-36 bg-beige/40 overflow-hidden">
+      <section
+        className="relative py-28 md:py-36 bg-beige/40 overflow-hidden"
+        style={{ backgroundImage: `url(${waveBg})`, backgroundSize: "cover", backgroundPosition: "center" }}
+      >
         <div className="container-editorial max-w-4xl text-center">
           <p className="eyebrow mb-8 flex items-center justify-center gap-4">
             <span className="gold-bar" /> Family Voices <span className="gold-bar" />
