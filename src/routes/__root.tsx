@@ -70,7 +70,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "頤珈國際教育提供加拿大溫哥華留學、遊學、寄宿家庭、學生簽證與在地生活支援服務。30 年加拿大在地經驗，陪伴孩子安心成長。",
       },
       { name: "author", content: "Elevate International Education" },
-      { property: "og:title", content: "頤珈國際教育 Elevate International Education" },
+      { property: "og:title", content: "頤珈國際教育 Elevate International Education | Vancouver 留學顧問" },
       {
         property: "og:description",
         content:
@@ -79,6 +79,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Elevate International Education" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "頤珈國際教育 Elevate International Education | Vancouver 留學顧問" },
+      { name: "description", content: "Elevate Vancouver is a premium Canadian education consultancy website for Taiwanese families." },
+      { property: "og:description", content: "Elevate Vancouver is a premium Canadian education consultancy website for Taiwanese families." },
+      { name: "twitter:description", content: "Elevate Vancouver is a premium Canadian education consultancy website for Taiwanese families." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/6183ccc7-3e89-421a-9a75-e62d8017f9a1/id-preview-c676a62a--d212407f-e13d-46e8-9e91-afd43f82dc00.lovable.app-1779413004391.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/6183ccc7-3e89-421a-9a75-e62d8017f9a1/id-preview-c676a62a--d212407f-e13d-46e8-9e91-afd43f82dc00.lovable.app-1779413004391.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
