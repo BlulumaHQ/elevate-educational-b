@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { ArrowUpRight, MapPin, Mail, Phone } from "lucide-react";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -11,56 +12,74 @@ const nav = [
 
 export function SiteFooter() {
   return (
-    <footer className="bg-navy-deep text-cream mt-24">
-      <div className="container-editorial py-20 grid gap-12 md:grid-cols-4">
-        <div className="md:col-span-2 space-y-5">
-          <div>
-            <p className="font-serif text-2xl md:text-3xl tracking-wide">頤珈國際教育</p>
-            <p className="text-xs tracking-[0.25em] text-cream/70 mt-2">
-              ELEVATE INTERNATIONAL EDUCATION
+    <footer className="bg-navy-deep text-ivory">
+      <div className="container-wide pt-24 pb-12">
+        <div className="grid gap-14 md:grid-cols-12">
+          {/* Brand */}
+          <div className="md:col-span-5 space-y-6">
+            <div>
+              <p className="font-display text-3xl md:text-4xl tracking-tight">頤珈國際教育</p>
+              <p className="eyebrow mt-3 text-gold">Elevate International Education</p>
+            </div>
+            <p className="text-sm text-ivory/65 max-w-sm leading-[1.95]">
+              Boutique International Education Consulting,
+              proudly based in Vancouver, BC. <br />
+              30 年加拿大在地經驗，陪伴孩子安心成長。
             </p>
+            <Link
+              to="/consultation"
+              className="inline-flex items-center gap-3 text-sm tracking-[0.2em] uppercase text-gold border-b border-gold/40 pb-1 hover:border-gold transition-colors"
+            >
+              Book a Consultation <ArrowUpRight size={16} />
+            </Link>
           </div>
-          <p className="text-sm text-cream/70 max-w-sm leading-relaxed">
-            Your Trusted Education Partner in Vancouver. <br />
-            30 年加拿大在地經驗，陪伴孩子安心成長。
-          </p>
-        </div>
 
-        <div>
-          <p className="text-xs tracking-[0.2em] text-cream/50 mb-4">SITEMAP</p>
-          <ul className="space-y-2.5 text-sm">
-            {nav.map((n) => (
-              <li key={n.to}>
-                <Link to={n.to} className="text-cream/80 hover:text-cream transition-colors">
-                  {n.label}
-                </Link>
+          {/* Sitemap */}
+          <div className="md:col-span-3">
+            <p className="eyebrow mb-6 text-ivory/55">Navigation</p>
+            <ul className="space-y-3 text-sm">
+              {nav.map((n) => (
+                <li key={n.to}>
+                  <Link to={n.to} className="text-ivory/80 hover:text-gold transition-colors">
+                    {n.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div className="md:col-span-4">
+            <p className="eyebrow mb-6 text-ivory/55">Contact</p>
+            <ul className="space-y-4 text-sm text-ivory/80">
+              <li className="flex items-start gap-3">
+                <Mail size={16} strokeWidth={1.5} className="mt-0.5 text-gold shrink-0" />
+                hello@elevate-edu.ca
               </li>
-            ))}
-          </ul>
+              <li className="flex items-start gap-3">
+                <Phone size={16} strokeWidth={1.5} className="mt-0.5 text-gold shrink-0" />
+                +1 (604) 000-0000
+              </li>
+              <li className="flex items-start gap-3">
+                <MapPin size={16} strokeWidth={1.5} className="mt-0.5 text-gold shrink-0" />
+                Vancouver, British Columbia, Canada
+              </li>
+              <li className="pt-3 text-ivory/55 text-xs tracking-[0.22em] uppercase">
+                WeChat · ElevateEdu &nbsp;·&nbsp; WhatsApp +1 604 000 0000
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <div>
-          <p className="text-xs tracking-[0.2em] text-cream/50 mb-4">CONTACT</p>
-          <ul className="space-y-2.5 text-sm text-cream/80">
-            <li>Email: hello@elevate-edu.ca</li>
-            <li>Phone: +1 (604) 000-0000</li>
-            <li>WhatsApp: +1 (604) 000-0000</li>
-            <li>WeChat: ElevateEdu</li>
-            <li className="pt-1 text-cream/60">Vancouver, BC, Canada</li>
-          </ul>
-        </div>
-      </div>
-
-      <div className="border-t border-cream/10">
-        <div className="container-editorial py-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-cream/60">
+        <div className="mt-20 pt-8 border-t border-ivory/10 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-ivory/50">
           <p>© 2026 Elevate International Education. All rights reserved.</p>
-          <p>
+          <p className="tracking-[0.22em] uppercase">
             Web Design by{" "}
             <a
               href="https://bluluma.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-cream/80 hover:text-cream link-underline"
+              className="text-ivory/75 hover:text-gold transition-colors"
             >
               Bluluma
             </a>

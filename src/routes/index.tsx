@@ -1,25 +1,32 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import {
-  ArrowRight, GraduationCap, ShieldCheck, Home, Compass, HeartHandshake, Plane, Star, Sparkles,
+  ArrowRight, GraduationCap, ShieldCheck, Home, Compass, HeartHandshake, Plane,
+  Globe, BookOpen, MapPin, Building2, School, Briefcase, Library, Award,
 } from "lucide-react";
-import heroStudents from "@/assets/hero-students.jpg";
-import studentsWalking from "@/assets/students-walking.jpg";
-import classroomMentor from "@/assets/classroom-mentor.jpg";
+import heroSlide1 from "@/assets/hero-slide-1.jpg";
+import heroSlide2 from "@/assets/hero-slide-2.jpg";
+import skyline from "@/assets/vancouver-skyline.jpg";
+import foundersImg from "@/assets/founders-pro.jpg";
+import campusHeritage from "@/assets/campus-heritage.jpg";
 import homestayWarm from "@/assets/homestay-warm.jpg";
-import studentsHike from "@/assets/students-hike.jpg";
-import notebookDesk from "@/assets/notebook-desk.jpg";
-import graduationImg from "@/assets/graduation.jpg";
-import foundersImg from "@/assets/founders.jpg";
-import campusImg from "@/assets/students-campus.jpg";
-import sunsetImg from "@/assets/vancouver-sunset.jpg";
+import classroomMentor from "@/assets/classroom-mentor.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "頤珈國際教育 Elevate International Education | Vancouver 留學顧問" },
-      { name: "description", content: "30 年加拿大在地經驗，陪伴孩子安心融入溫哥華生活與教育環境，從留學申請到海外生活，成為孩子在異鄉最堅實的後盾。" },
+      {
+        name: "description",
+        content:
+          "頤珈國際教育｜30 年加拿大溫哥華在地經驗，提供加拿大私校申請、學生簽證、寄宿家庭與長期陪伴式留學服務，為國際家庭打造安心、信任、專業的留學旅程。",
+      },
       { property: "og:title", content: "頤珈國際教育 | Vancouver 留學顧問" },
-      { property: "og:image", content: heroStudents },
+      {
+        property: "og:description",
+        content: "30 年加拿大在地經驗，陪伴孩子安心融入溫哥華教育與生活環境。",
+      },
+      { property: "og:image", content: heroSlide1 },
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -27,241 +34,413 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
-const services = [
-  { icon: GraduationCap, label: "學業啟航", title: "學校精準申請", body: "依孩子特質與興趣，量身規劃升學路徑。" },
-  { icon: ShieldCheck, label: "通關無憂", title: "簽證全程協助", body: "專業文件準備，讓出國流程順利安心。" },
-  { icon: Home, label: "溫馨落腳", title: "寄宿家庭媒合", body: "嚴選友善家庭，孩子在加拿大有第二個家。" },
-  { icon: Compass, label: "在地安頓", title: "生活全面支援", body: "手機、銀行、交通與在地適應一次照顧。" },
-  { icon: HeartHandshake, label: "長期陪伴", title: "成長導師同行", body: "我們是家長在加拿大的眼睛與雙手。" },
-  { icon: Plane, label: "文化融入", title: "文化銜接活動", body: "幫助孩子打開世界，也擁抱自己。" },
+const slides = [
+  {
+    img: heroSlide1,
+    eyebrow: "Vancouver · British Columbia",
+    title: ["看見未來，", "從安心出發"],
+    subtitle:
+      "30 年加拿大在地經驗，陪伴孩子安心融入溫哥華教育與生活環境。",
+    primary: { label: "預約免費諮詢", to: "/consultation" },
+    secondary: { label: "了解更多", to: "/about" },
+  },
+  {
+    img: heroSlide2,
+    eyebrow: "Boutique Education Consulting",
+    title: ["不只是留學，", "更是孩子未來的起點"],
+    subtitle:
+      "從學校申請、寄宿家庭，到加拿大生活支援，提供真正長期陪伴式留學服務。",
+    primary: { label: "Explore Services", to: "/services" },
+    secondary: { label: "Book Consultation", to: "/consultation" },
+  },
 ];
 
-const lifeMoments = [
-  { img: studentsHike, caption: "週末山海探索", rot: "-3deg", tape: "left-6 -top-3" },
-  { img: classroomMentor, caption: "課堂裡的小突破", rot: "2deg", tape: "right-8 -top-3" },
-  { img: homestayWarm, caption: "家一樣的晚餐", rot: "-2deg", tape: "left-10 -top-3" },
-  { img: graduationImg, caption: "畢業那一天", rot: "3deg", tape: "right-6 -top-3" },
+const services = [
+  { icon: School, no: "01", title: "私校精準申請", body: "依孩子的學術背景、性向與家庭目標，為加拿大頂尖公立與私立學校量身規劃申請策略。" },
+  { icon: ShieldCheck, no: "02", title: "學生簽證全程協助", body: "經驗豐富的顧問團隊，從文件準備到面談模擬，確保簽證流程順利安全。" },
+  { icon: Home, no: "03", title: "寄宿家庭嚴選", body: "親自走訪、實地評估，為孩子媒合一個真正溫暖、可信賴的加拿大第二個家。" },
+  { icon: Compass, no: "04", title: "在地生活安頓", body: "從手機門號、銀行開戶、交通卡、醫療資源到生活適應，一站式安心抵達。" },
+  { icon: HeartHandshake, no: "05", title: "長期陪伴式照護", body: "我們是家長在加拿大的眼睛與雙手，定期回報、即時溝通、長期同行。" },
+  { icon: Plane, no: "06", title: "文化銜接與升學規劃", body: "中學、大學、職涯延伸 — 陪孩子走過每一個關鍵階段。" },
+];
+
+const stats = [
+  { value: "30+", label: "Years", sub: "Vancouver Local Experience" },
+  { value: "200+", label: "Families", sub: "Trusted Across Asia" },
+  { value: "40+", label: "Partner Schools", sub: "Private & Public BC" },
+];
+
+const floatingIcons = [
+  { Icon: GraduationCap, className: "top-[14%] left-[8%]", delay: "0s", size: 56 },
+  { Icon: Globe, className: "top-[22%] right-[12%]", delay: "1s", size: 48 },
+  { Icon: BookOpen, className: "bottom-[28%] left-[14%]", delay: "2s", size: 44 },
+  { Icon: MapPin, className: "bottom-[18%] right-[20%]", delay: "1.5s", size: 40 },
+  { Icon: Building2, className: "top-[40%] left-[42%]", delay: "0.5s", size: 52 },
+  { Icon: Library, className: "bottom-[10%] left-[38%]", delay: "2.5s", size: 44 },
 ];
 
 function HomePage() {
+  const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => setActive((a) => (a + 1) % slides.length), 7000);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <>
-      {/* ========== HERO — layered editorial collage ========== */}
-      <section className="relative pt-28 md:pt-36 pb-24 md:pb-32 overflow-hidden paper-grain bg-[var(--cream)]">
-        {/* decorative blobs */}
-        <div aria-hidden className="absolute -top-24 -right-20 w-[460px] h-[460px] rounded-full bg-[var(--blush)]/40 blur-3xl" />
-        <div aria-hidden className="absolute top-1/2 -left-32 w-[380px] h-[380px] rounded-full bg-[var(--sage)]/30 blur-3xl" />
+      {/* ════════════ HERO — FULL SCREEN PREMIUM SLIDER ════════════ */}
+      <section className="relative h-screen min-h-[680px] w-full overflow-hidden bg-navy-deep">
+        {/* slides */}
+        {slides.map((s, i) => (
+          <div
+            key={i}
+            className={`absolute inset-0 transition-opacity duration-[1400ms] ease-in-out ${
+              i === active ? "opacity-100" : "opacity-0 pointer-events-none"
+            }`}
+          >
+            <img
+              src={s.img}
+              alt=""
+              className={`absolute inset-0 w-full h-full object-cover ${i === active ? "kenburns" : ""}`}
+            />
+            <div className="absolute inset-0 hero-overlay" />
+          </div>
+        ))}
 
-        <div className="container-editorial relative">
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-6 items-center">
-            {/* LEFT — copy */}
-            <div className="lg:col-span-6 relative z-10">
-              <span className="sticker mb-6" style={{ transform: "rotate(-5deg)" }}>
-                <Star size={14} className="mr-1.5" /> Hello, Vancouver
-              </span>
-              <h1 className="font-serif text-[2.75rem] sm:text-6xl lg:text-7xl leading-[1.05] text-[var(--navy)] text-balance">
-                陪孩子<br />
-                走一段<span className="hand-underline">溫暖</span>的
-                <br />留學旅程。
-              </h1>
-              <p className="mt-7 max-w-lg text-[15px] md:text-base text-foreground/75 leading-[1.9]">
-                我們是 Maggie 與 Katrina，30 年生活在溫哥華的媽媽們。
-                從學校申請、寄宿家庭，到放學後的那通電話 — 我們把每一個孩子當成自己的孩子在照顧。
-              </p>
+        {/* floating line icons */}
+        <div aria-hidden className="absolute inset-0 pointer-events-none">
+          {floatingIcons.map(({ Icon, className, delay, size }, i) => (
+            <div
+              key={i}
+              className={`absolute ${className} float-slow text-ivory/15`}
+              style={{ animationDelay: delay }}
+            >
+              <Icon size={size} strokeWidth={1} />
+            </div>
+          ))}
+        </div>
 
-              <div className="mt-9 flex flex-wrap items-center gap-4">
-                <Link to="/consultation" className="inline-flex items-center gap-2 bg-[var(--navy)] text-cream px-7 py-4 rounded-full text-sm tracking-wide hover:bg-[var(--navy-deep)] transition-colors shadow-lg shadow-[var(--navy)]/15">
-                  預約一杯咖啡的時間 <ArrowRight size={16} />
-                </Link>
-                <Link to="/about" className="font-hand text-xl text-[var(--terracotta)] hover:underline underline-offset-4">
-                  認識我們的故事 →
-                </Link>
-              </div>
+        {/* blueprint overlay */}
+        <div aria-hidden className="absolute inset-0 bp-grid opacity-[0.07] pointer-events-none" />
 
-              <div className="mt-12 flex items-center gap-6 text-xs tracking-[0.25em] uppercase text-foreground/60">
-                <div><span className="font-serif text-2xl text-[var(--navy)] normal-case tracking-normal">30+</span>　年在地經驗</div>
-                <div className="h-8 w-px bg-foreground/15" />
-                <div><span className="font-serif text-2xl text-[var(--navy)] normal-case tracking-normal">200+</span>　家庭信任</div>
+        {/* TOP META BAR */}
+        <div className="absolute top-0 inset-x-0 z-10 pt-28 md:pt-32">
+          <div className="container-wide flex items-center justify-between text-ivory/70 text-[11px] tracking-[0.32em] uppercase">
+            <span className="hidden md:inline">Elevate International Education</span>
+            <span>est. 1995 · Vancouver, BC</span>
+          </div>
+        </div>
+
+        {/* CONTENT */}
+        <div className="relative z-10 h-full flex items-center">
+          <div className="container-wide w-full">
+            <div className="max-w-3xl text-ivory">
+              <div key={active} className="fade-up">
+                <p className="eyebrow text-gold mb-6 flex items-center gap-4">
+                  <span className="gold-bar" />
+                  {slides[active].eyebrow}
+                </p>
+                <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[1.04] text-balance">
+                  {slides[active].title[0]}
+                  <br />
+                  {slides[active].title[1]}
+                </h1>
+                <p className="mt-8 max-w-xl text-base md:text-lg text-ivory/80 leading-[1.9] font-light">
+                  {slides[active].subtitle}
+                </p>
+                <div className="mt-10 flex flex-wrap items-center gap-4">
+                  <Link to={slides[active].primary.to} className="btn-primary">
+                    {slides[active].primary.label} <ArrowRight size={15} />
+                  </Link>
+                  <Link to={slides[active].secondary.to} className="btn-ghost">
+                    {slides[active].secondary.label}
+                  </Link>
+                </div>
               </div>
             </div>
+          </div>
+        </div>
 
-            {/* RIGHT — image collage */}
-            <div className="lg:col-span-6 relative h-[520px] sm:h-[600px] lg:h-[640px]">
-              {/* main organic image */}
-              <div className="absolute right-0 top-0 w-[75%] h-[78%] mask-blob-1 overflow-hidden">
-                <img src={heroStudents} alt="Happy international students on campus" className="w-full h-full object-cover" />
-              </div>
-              {/* polaroid 1 */}
-              <div className="absolute left-0 top-16 w-44 sm:w-52 polaroid float-slow" style={{ ['--r' as never]: "-7deg", transform: "rotate(-7deg)" }}>
-                <span className="tape left-1/2 -translate-x-1/2 -top-3" />
-                <img src={studentsWalking} alt="Students walking in park" className="w-full aspect-[4/5] object-cover" />
-                <p className="font-hand text-center text-[var(--navy)] text-lg mt-2">First day ✨</p>
-              </div>
-              {/* polaroid 2 */}
-              <div className="absolute left-4 sm:left-12 bottom-0 w-48 sm:w-56 polaroid float-med" style={{ ['--r' as never]: "6deg", transform: "rotate(6deg)" }}>
-                <span className="tape left-6 -top-3" style={{ background: "color-mix(in oklab, var(--sage) 60%, white)" }} />
-                <img src={notebookDesk} alt="Student notebook with Canadian leaf" className="w-full aspect-square object-cover" />
-                <p className="font-hand text-center text-[var(--navy)] text-lg mt-2">Vancouver, fall</p>
-              </div>
-              {/* floating sticker */}
-              <div className="absolute right-4 bottom-6 sticker float-slow" style={{ background: "var(--gold)", color: "var(--navy)", transform: "rotate(8deg)" }}>
-                <Sparkles size={14} className="mr-1.5" /> like family
-              </div>
+        {/* BOTTOM BAR — slide dots + floating stats */}
+        <div className="absolute bottom-0 inset-x-0 z-10 pb-10 md:pb-12">
+          <div className="container-wide flex flex-col md:flex-row md:items-end justify-between gap-8">
+            <div className="flex items-center gap-3">
+              {slides.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setActive(i)}
+                  aria-label={`Go to slide ${i + 1}`}
+                  className={`slide-dot ${i === active ? "active" : ""}`}
+                />
+              ))}
+              <span className="ml-4 text-ivory/60 text-xs tracking-[0.3em] font-light">
+                0{active + 1} / 0{slides.length}
+              </span>
+            </div>
+
+            {/* floating stats card */}
+            <div className="hidden md:grid grid-cols-3 bg-ivory/[0.06] backdrop-blur-md border border-ivory/15 px-8 py-6 max-w-2xl">
+              {stats.map((s, i) => (
+                <div
+                  key={s.value}
+                  className={`text-ivory px-5 ${i !== stats.length - 1 ? "border-r border-ivory/15" : ""}`}
+                >
+                  <div className="font-display text-3xl lg:text-4xl text-gold leading-none">
+                    {s.value}
+                  </div>
+                  <div className="mt-2 text-[10px] tracking-[0.28em] uppercase text-ivory/85">{s.label}</div>
+                  <div className="mt-1 text-[11px] text-ivory/55 leading-snug">{s.sub}</div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* ========== FOUNDER STORY — editorial scrapbook ========== */}
-      <section className="relative py-24 md:py-36 paper-grain bg-[var(--cream-deep)] overflow-hidden">
-        <div aria-hidden className="absolute top-20 right-10 font-hand text-[var(--wood)]/30 text-7xl rotate-[-8deg] select-none">since 1995</div>
+      {/* ════════════ INTRO MARQUEE / TRUST BAND ════════════ */}
+      <section className="relative bg-ivory border-y border-navy/10">
+        <div className="container-wide py-8 flex flex-wrap items-center justify-between gap-6 text-navy/70 text-[11px] tracking-[0.32em] uppercase">
+          <span>Trusted by families across Taiwan · Hong Kong · Mainland China</span>
+          <div className="flex items-center gap-6">
+            <span className="flex items-center gap-2"><Award size={14} strokeWidth={1.5} /> ICEF Accredited</span>
+            <span className="hidden md:flex items-center gap-2"><Briefcase size={14} strokeWidth={1.5} /> Licensed BC Consultants</span>
+            <span className="flex items-center gap-2"><MapPin size={14} strokeWidth={1.5} /> Vancouver Office</span>
+          </div>
+        </div>
+      </section>
 
-        <div className="container-editorial grid md:grid-cols-12 gap-14 md:gap-16 items-center">
-          {/* IMAGE CLUSTER */}
-          <div className="md:col-span-5 relative h-[560px] md:h-[640px]">
-            <div className="absolute inset-x-4 top-0 h-[78%] mask-arch overflow-hidden shadow-xl">
-              <img src={foundersImg} alt="Founders Maggie and Katrina" className="w-full h-full object-cover" />
+      {/* ════════════ PHILOSOPHY / WELCOME ════════════ */}
+      <section className="relative py-28 md:py-40 bg-ivory overflow-hidden">
+        <div aria-hidden className="absolute inset-0 bp-grid-fine opacity-40" />
+        <div aria-hidden className="absolute top-1/2 -right-32 w-[420px] h-[420px] dot-field opacity-30 rounded-full" />
+
+        <div className="container-wide relative grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+          <div className="lg:col-span-4">
+            <p className="eyebrow mb-6 flex items-center gap-4"><span className="gold-bar" /> Our Philosophy</p>
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-navy leading-[1.1] text-balance">
+              Boutique<br />International<br />Education,<br />Crafted Personally.
+            </h2>
+          </div>
+          <div className="lg:col-span-7 lg:col-start-6 space-y-7 text-foreground/75 leading-[1.95] text-[15px] md:text-[16px]">
+            <p>
+              頤珈國際教育是一間扎根於溫哥華的精品國際教育顧問品牌。
+              我們不做大量代辦，而是與每一個國際家庭，深度合作、量身規劃孩子未來十年的教育藍圖。
+            </p>
+            <p>
+              從加拿大頂尖私校的申請策略、學生簽證的全程協助、嚴選寄宿家庭的長期媒合，
+              到孩子抵達後在校園、生活與文化上的每一個細節 —
+              我們以 30 年的在地經驗與真實照護，成為家長安心託付的長期夥伴。
+            </p>
+            <div className="pt-4 flex items-center gap-5">
+              <span className="hairline w-16" />
+              <Link to="/about" className="text-navy text-sm tracking-[0.2em] uppercase link-underline">
+                Read Our Story
+              </Link>
             </div>
-            <div className="absolute -right-2 bottom-6 w-44 polaroid" style={{ transform: "rotate(5deg)" }}>
-              <span className="tape left-1/2 -translate-x-1/2 -top-3" />
-              <img src={campusImg} alt="Vancouver campus moment" className="w-full aspect-[4/5] object-cover" />
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════ FOUNDER / TRUST — EDITORIAL SPLIT ════════════ */}
+      <section className="relative bg-navy text-ivory overflow-hidden">
+        <div aria-hidden className="absolute inset-0 bp-grid opacity-[0.06]" />
+        <div className="grid lg:grid-cols-2">
+          {/* IMAGE SIDE */}
+          <div className="relative min-h-[520px] lg:min-h-[760px]">
+            <img src={foundersImg} alt="Elevate founders in Vancouver" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent to-navy/40" />
+            {/* gold corner */}
+            <div className="absolute top-10 left-10 w-16 h-16 border-t border-l border-gold/70" />
+            <div className="absolute bottom-10 right-10 w-16 h-16 border-b border-r border-gold/70" />
+          </div>
+
+          {/* COPY SIDE */}
+          <div className="px-6 md:px-16 lg:px-24 py-20 lg:py-32 flex items-center">
+            <div className="max-w-xl">
+              <p className="eyebrow mb-6 flex items-center gap-4"><span className="gold-bar" /> Meet the Founders</p>
+              <h2 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.08] text-balance">
+                30 年的加拿大，<br />一生的教育承諾。
+              </h2>
+              <div className="mt-9 space-y-5 text-ivory/75 leading-[1.95] text-[15px]">
+                <p>
+                  創辦人於 1995 年移居加拿大，深耕溫哥華超過 30 年。
+                  從自身留學、定居、養育孩子完成加拿大教育的真實經驗出發，
+                  我們真正理解國際家庭在每一個階段的擔心、期待與挑戰。
+                </p>
+                <p>
+                  我們不是代辦，而是孩子在加拿大的家人；
+                  也是家長最值得信賴的在地夥伴。
+                </p>
+              </div>
+
+              {/* mini timeline */}
+              <div className="mt-12 grid grid-cols-3 gap-6 pt-8 border-t border-ivory/15">
+                {[
+                  { y: "1995", t: "移居 Vancouver" },
+                  { y: "2005", t: "創立教育顧問業務" },
+                  { y: "2025", t: "服務 200+ 國際家庭" },
+                ].map((m) => (
+                  <div key={m.y}>
+                    <div className="font-display text-2xl text-gold">{m.y}</div>
+                    <div className="mt-2 text-[12px] text-ivory/65 tracking-wide leading-snug">{m.t}</div>
+                  </div>
+                ))}
+              </div>
+
+              <Link to="/about" className="mt-12 inline-flex items-center gap-3 text-sm tracking-[0.2em] uppercase text-gold link-underline">
+                More About Us <ArrowRight size={15} />
+              </Link>
             </div>
-            <div className="absolute -left-2 bottom-24 sticker" style={{ background: "var(--blush)", transform: "rotate(-10deg)" }}>
-              Vancouver mamas
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════ SERVICES — PREMIUM LINE-ICON GRID ════════════ */}
+      <section className="relative py-28 md:py-40 bg-ivory-deep overflow-hidden">
+        <div aria-hidden className="absolute inset-0 bp-grid-fine opacity-50" />
+        <div aria-hidden className="absolute -top-32 -left-32 w-[460px] h-[460px] dot-field opacity-25 rounded-full" />
+
+        <div className="container-wide relative">
+          <div className="grid lg:grid-cols-12 gap-10 items-end mb-20">
+            <div className="lg:col-span-7">
+              <p className="eyebrow mb-6 flex items-center gap-4"><span className="gold-bar" /> What We Do</p>
+              <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-navy leading-[1.08] text-balance">
+                從第一封申請信，<br />到孩子畢業的那一天。
+              </h2>
             </div>
+            <div className="lg:col-span-4 lg:col-start-9 text-foreground/70 leading-[1.95] text-[15px]">
+              我們以精品顧問的精神，提供六大核心服務 —
+              讓國際家庭在加拿大留學的每一個關鍵階段，都有人專業同行。
+            </div>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 border-t border-l border-navy/10 bg-ivory">
+            {services.map((s) => (
+              <div
+                key={s.no}
+                className="group relative p-10 md:p-12 border-r border-b border-navy/10 transition-colors duration-500 hover:bg-navy hover:text-ivory"
+              >
+                <div className="flex items-start justify-between mb-10">
+                  <s.icon size={44} strokeWidth={1} className="text-navy group-hover:text-gold transition-colors duration-500" />
+                  <span className="font-display text-sm tracking-[0.2em] text-navy/40 group-hover:text-ivory/50 transition-colors">
+                    {s.no}
+                  </span>
+                </div>
+                <h3 className="font-display text-2xl md:text-[26px] leading-tight text-navy group-hover:text-ivory transition-colors duration-500">
+                  {s.title}
+                </h3>
+                <p className="mt-4 text-sm leading-[1.9] text-foreground/65 group-hover:text-ivory/75 transition-colors duration-500">
+                  {s.body}
+                </p>
+                <div className="mt-8 flex items-center gap-3 text-[11px] tracking-[0.28em] uppercase text-navy/50 group-hover:text-gold transition-colors">
+                  Learn More <ArrowRight size={13} />
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-16 text-center">
+            <Link to="/services" className="btn-primary !bg-navy">
+              All Services <ArrowRight size={15} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════ WHY VANCOUVER — ASYMMETRIC EDITORIAL ════════════ */}
+      <section className="relative py-28 md:py-40 bg-ivory overflow-hidden">
+        <div className="container-wide grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+          {/* IMAGE STACK */}
+          <div className="lg:col-span-7 relative h-[520px] md:h-[640px]">
+            <div className="absolute top-0 left-0 w-[68%] h-[78%] img-zoom shadow-2xl">
+              <img src={campusHeritage} alt="Heritage Canadian campus" className="w-full h-full object-cover" loading="lazy" />
+            </div>
+            <div className="absolute bottom-0 right-0 w-[52%] h-[58%] img-zoom shadow-2xl border-8 border-ivory">
+              <img src={classroomMentor} alt="Classroom mentorship in Vancouver" className="w-full h-full object-cover" loading="lazy" />
+            </div>
+            {/* gold accent */}
+            <div className="absolute top-8 right-12 w-px h-32 bg-gold/60" />
+            <div className="absolute top-8 right-12 w-32 h-px bg-gold/60" />
           </div>
 
           {/* COPY */}
-          <div className="md:col-span-7 relative">
-            <p className="font-hand text-[var(--terracotta)] text-2xl mb-3 -rotate-2">Our story</p>
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-[var(--navy)] leading-[1.1] text-balance">
-              我們也曾是<span className="hand-underline">小留學生</span>。
+          <div className="lg:col-span-5">
+            <p className="eyebrow mb-6 flex items-center gap-4"><span className="gold-bar" /> Why Vancouver</p>
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-navy leading-[1.08] text-balance">
+              全球最宜居城市，<br />全球最頂尖教育。
             </h2>
-            <div className="mt-8 space-y-5 text-[15px] md:text-base text-foreground/80 leading-[1.95] max-w-xl">
-              <p>30 年前，我們各自帶著一只行李箱來到溫哥華 — 第一次自己煮飯、第一次在大雪裡等公車、第一次想家想到睡不著。</p>
-              <p>後來我們在這裡成家、生孩子、把孩子送進加拿大的學校。我們站在「學生」和「家長」兩端，知道遠在台灣的爸媽心裡，藏著多少不敢說出口的擔心。</p>
-              <p>所以 <span className="font-serif italic text-[var(--terracotta)]">頤珈</span> 不只是一間留學顧問公司。我們是孩子下飛機時迎接的笑臉、是颱風夜會打電話確認的人、是畢業典禮上替家長拍照的阿姨。</p>
+            <div className="mt-8 space-y-5 text-foreground/75 leading-[1.95] text-[15px]">
+              <p>
+                溫哥華擁有北美最完整的國際教育生態系 —
+                世界級的公立教育局、歷史悠久的傳統私校、嚴格認證的寄宿家庭網絡，
+                以及多元、安全、自然環繞的城市生活環境。
+              </p>
             </div>
-            <div className="mt-10 flex items-center gap-5">
-              <div className="h-px flex-1 bg-[var(--wood)]/30 max-w-[80px]" />
-              <p className="font-serif text-2xl italic text-[var(--navy)]">— Maggie &amp; Katrina</p>
-            </div>
-            <Link to="/about" className="mt-8 inline-flex items-center gap-2 text-sm text-[var(--navy)] link-underline">
-              閱讀完整故事 <ArrowRight size={16} />
+
+            <ul className="mt-10 space-y-5">
+              {[
+                { Icon: School, t: "BC 省政府認證頂尖私校與公校網絡" },
+                { Icon: Globe, t: "全球前 3 名最宜居、最安全的國際城市" },
+                { Icon: GraduationCap, t: "通往北美一流大學的最佳跳板" },
+              ].map(({ Icon, t }) => (
+                <li key={t} className="flex items-start gap-5 pt-5 border-t border-navy/10">
+                  <Icon size={28} strokeWidth={1.2} className="text-navy shrink-0 mt-0.5" />
+                  <span className="text-navy text-[15px] leading-relaxed">{t}</span>
+                </li>
+              ))}
+            </ul>
+
+            <Link to="/study-in-vancouver" className="mt-10 inline-flex items-center gap-3 text-sm tracking-[0.2em] uppercase text-navy link-underline">
+              Discover Vancouver <ArrowRight size={15} />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ========== STUDENT EXPERIENCE — scrapbook gallery ========== */}
-      <section className="relative py-24 md:py-36 bg-[var(--cream)] paper-grain overflow-hidden">
-        <div className="container-editorial">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
-            <div>
-              <p className="font-hand text-[var(--terracotta)] text-2xl -rotate-2 mb-2">Student life</p>
-              <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-[var(--navy)] leading-[1.1] max-w-2xl text-balance">
-                在溫哥華長大的<br />那些<span className="hand-underline">日常風景</span>。
-              </h2>
-            </div>
-            <p className="max-w-sm text-foreground/70 leading-[1.9] text-[15px]">
-              我們記錄每一個孩子的成長 — 從第一堂英文課的緊張，到能自信地在台上 presentation 的那一刻。
-            </p>
-          </div>
-
-          {/* polaroid wall */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 mt-6">
-            {lifeMoments.map((m, i) => (
-              <div
-                key={i}
-                className="polaroid relative w-full"
-                style={{ transform: `rotate(${m.rot})` }}
-              >
-                <span className={`tape ${m.tape}`} style={{ background: i % 2 ? "color-mix(in oklab, var(--sage) 55%, white)" : "color-mix(in oklab, var(--gold) 55%, white)" }} />
-                <img src={m.img} alt={m.caption} className="w-full aspect-[4/5] object-cover" />
-                <p className="font-hand text-center text-[var(--navy)] text-lg mt-2">{m.caption}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-16 flex justify-center">
-            <Link to="/study-in-vancouver" className="font-hand text-2xl text-[var(--terracotta)] hover:underline underline-offset-4">
-              看更多溫哥華的故事 →
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ========== SERVICES — soft asymmetric cards ========== */}
-      <section className="relative py-24 md:py-36 bg-[var(--wood-soft)]/55 paper-grain overflow-hidden">
-        <div aria-hidden className="absolute -top-16 left-1/4 w-72 h-72 rounded-full bg-[var(--sage)]/25 blur-3xl" />
-        <div className="container-editorial relative">
-          <div className="max-w-2xl mb-16">
-            <p className="font-hand text-[var(--terracotta)] text-2xl -rotate-2 mb-2">What we do</p>
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-[var(--navy)] leading-[1.1] text-balance">
-              不是代辦，<br />是<span className="hand-underline">陪伴式</span>留學服務。
-            </h2>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-7">
-            {services.map((s, i) => (
-              <div
-                key={s.title}
-                className="group relative bg-[var(--cream)] rounded-[28px] p-8 md:p-9 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl shadow-[0_4px_24px_-12px_rgba(40,30,20,0.18)] border border-[var(--wood)]/10"
-                style={{ transform: `rotate(${i % 2 === 0 ? "-0.5deg" : "0.6deg"})` }}
-              >
-                <div className="w-14 h-14 rounded-full bg-[var(--blush)]/60 flex items-center justify-center mb-6 group-hover:rotate-6 transition-transform">
-                  <s.icon size={24} className="text-[var(--navy)]" strokeWidth={1.5} />
-                </div>
-                <p className="font-hand text-[var(--terracotta)] text-lg mb-1">{s.label}</p>
-                <h3 className="font-serif text-2xl text-[var(--navy)] leading-snug">{s.title}</h3>
-                <p className="mt-3 text-sm text-foreground/70 leading-[1.85]">{s.body}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-14 text-center">
-            <Link to="/services" className="inline-flex items-center gap-2 text-sm text-[var(--navy)] link-underline">
-              所有服務細節 <ArrowRight size={16} />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ========== TRUST QUOTE BAND ========== */}
-      <section className="relative py-20 md:py-28 bg-[var(--cream)] paper-grain overflow-hidden">
-        <div className="container-editorial grid md:grid-cols-12 gap-10 items-center">
-          <div className="md:col-span-5 relative h-[420px]">
-            <div className="absolute inset-4 mask-blob-1 overflow-hidden">
-              <img src={homestayWarm} alt="Homestay dinner" className="w-full h-full object-cover" />
-            </div>
-            <div className="absolute top-4 -right-2 sticker float-slow" style={{ background: "var(--gold)", transform: "rotate(8deg)" }}>
-              <HeartHandshake size={14} className="mr-1.5" /> trust
-            </div>
-          </div>
-          <div className="md:col-span-7">
-            <p className="font-serif text-3xl md:text-4xl lg:text-5xl text-[var(--navy)] leading-[1.35] italic text-balance">
-              「Maggie 半夜還會回我的訊息。我女兒生病那天，她直接開車去學校接她。我們真的把她當家人了。」
-            </p>
-            <p className="mt-6 text-sm tracking-[0.2em] uppercase text-foreground/60">— 高中生家長 · 台北</p>
-          </div>
-        </div>
-      </section>
-
-      {/* ========== CTA ========== */}
-      <section className="relative min-h-[60vh] flex items-center overflow-hidden">
-        <img src={sunsetImg} alt="Vancouver sunset" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[var(--navy-deep)]/60 via-[var(--navy-deep)]/70 to-[var(--navy-deep)]/85" />
-        <div className="relative container-editorial py-24 md:py-32 text-cream text-center">
-          <p className="font-hand text-2xl text-[var(--gold)] mb-4 -rotate-2 inline-block">Let’s talk</p>
-          <h2 className="font-serif text-4xl md:text-6xl lg:text-7xl text-balance leading-[1.05]">
-            讓孩子安心踏出<br />未來的第一步。
-          </h2>
-          <p className="mt-7 max-w-xl mx-auto text-cream/85 leading-relaxed">
-            從留學申請到海外生活，頤珈陪孩子穩穩走每一段。
+      {/* ════════════ TESTIMONIAL — QUIET EDITORIAL ════════════ */}
+      <section className="relative py-28 md:py-36 bg-beige/40 overflow-hidden">
+        <div className="container-editorial max-w-4xl text-center">
+          <p className="eyebrow mb-8 flex items-center justify-center gap-4">
+            <span className="gold-bar" /> Family Voices <span className="gold-bar" />
           </p>
-          <Link to="/consultation" className="inline-flex items-center gap-2 mt-10 bg-[var(--cream)] text-[var(--navy)] px-8 py-4 rounded-full text-sm tracking-wide hover:bg-white transition-colors shadow-xl">
-            預約免費諮詢 <ArrowRight size={16} />
-          </Link>
+          <blockquote className="font-display text-2xl md:text-3xl lg:text-[2.4rem] text-navy leading-[1.45] italic text-balance">
+            “第一次把孩子送出國，最怕的是『不知道』。
+            頤珈讓我們安心，因為他們真的把我的孩子當自己的孩子在照顧。”
+          </blockquote>
+          <div className="mt-10 flex items-center justify-center gap-5 text-sm tracking-[0.22em] uppercase text-navy/65">
+            <span className="hairline w-12" />
+            高中生家長 · 台北
+            <span className="hairline w-12" />
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════ CTA — VANCOUVER SKYLINE ════════════ */}
+      <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-navy-deep">
+        <img src={skyline} alt="Vancouver skyline at blue hour" className="absolute inset-0 w-full h-full object-cover opacity-55" loading="lazy" />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/70 via-navy-deep/75 to-navy-deep/90" />
+        <div aria-hidden className="absolute inset-0 bp-grid opacity-[0.08]" />
+
+        <div className="relative container-wide py-24 md:py-36 text-ivory">
+          <div className="max-w-3xl">
+            <p className="eyebrow mb-6 flex items-center gap-4"><span className="gold-bar" /> Begin Your Journey</p>
+            <h2 className="font-display text-4xl md:text-6xl lg:text-7xl text-balance leading-[1.05]">
+              讓孩子安心踏出<br />國際未來的第一步。
+            </h2>
+            <p className="mt-8 max-w-xl text-ivory/75 text-[15px] md:text-base leading-[1.95]">
+              預約一次免費的諮詢會議，與我們的顧問深入聊聊孩子的特質、家庭的期待，
+              以及最適合的加拿大留學路徑。
+            </p>
+            <div className="mt-12 flex flex-wrap gap-4">
+              <Link to="/consultation" className="btn-primary !bg-ivory !text-navy !border-ivory hover:!bg-gold hover:!border-gold">
+                Book Consultation <ArrowRight size={15} />
+              </Link>
+              <Link to="/contact" className="btn-ghost">
+                Contact Us
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </>
