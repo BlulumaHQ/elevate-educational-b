@@ -21,7 +21,7 @@ export function SiteFooter() {
             <img
               src={logoSquare}
               alt="頤珈國際教育 Elevate International Education"
-              className="h-36 md:h-44 w-auto object-contain -ml-2 brightness-0 invert"
+              className="h-36 md:h-44 w-auto object-contain -ml-2"
             />
             <p className="text-sm text-ivory/65 max-w-sm leading-[1.95]">
               Boutique International Education Consulting,
