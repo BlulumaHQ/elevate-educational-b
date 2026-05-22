@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo-horizontal-transparent.png";
 
@@ -8,49 +8,32 @@ const nav = [
   { to: "/about", label: "關於我們", en: "About" },
   { to: "/study-in-vancouver", label: "溫哥華留學", en: "Study in Vancouver" },
   { to: "/services", label: "服務內容", en: "Services" },
+  { to: "/courses", label: "課程介紹", en: "Courses" },
   { to: "/consultation", label: "預約諮詢", en: "Consultation" },
   { to: "/contact", label: "聯絡我們", en: "Contact" },
 ] as const;
 
 export function SiteHeader() {
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  const onLight = scrolled;
-  const textColor = onLight ? "text-navy" : "text-ivory";
-  const subColor = onLight ? "text-navy/75" : "text-ivory/85";
-
   return (
-    <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
-        onLight
-          ? "bg-ivory/85 backdrop-blur-md border-b border-navy/10 py-3"
-          : "bg-transparent py-6"
-      }`}
-    >
+    <header className="fixed top-0 inset-x-0 z-50 bg-ivory/95 backdrop-blur-md border-b border-navy/10 py-3">
       <div className="container-wide flex items-center justify-between gap-6">
-        <Link to="/" className={`flex items-center shrink-0 ${textColor}`}>
+        <Link to="/" className="flex items-center shrink-0 text-navy">
           <img
             src={logo}
             alt="頤珈國際教育 Elevate International Education"
-            className={`h-12 md:h-14 w-auto object-contain transition-all ${onLight ? "" : "brightness-0 invert"}`}
+            className="h-12 md:h-14 w-auto object-contain"
           />
         </Link>
 
-        <nav className={`hidden lg:flex items-center gap-9 text-[12px] tracking-[0.22em] uppercase ${subColor}`}>
+        <nav className="hidden lg:flex items-center gap-7 text-[12px] tracking-[0.22em] uppercase text-navy/80">
           {nav.map((item) => (
             <Link
               key={item.to}
               to={item.to}
-              className={`link-underline transition-colors hover:${onLight ? "text-navy" : "text-ivory"}`}
-              activeProps={{ className: onLight ? "text-navy" : "text-ivory" }}
+              className="link-underline transition-colors hover:text-navy"
+              activeProps={{ className: "text-navy" }}
               activeOptions={{ exact: item.to === "/" }}
             >
               {item.en}
@@ -61,11 +44,7 @@ export function SiteHeader() {
         <div className="hidden lg:block">
           <Link
             to="/consultation"
-            className={`inline-flex items-center gap-2 px-5 py-2.5 text-[11px] tracking-[0.24em] uppercase border transition-colors ${
-              onLight
-                ? "border-navy text-navy hover:bg-navy hover:text-ivory"
-                : "border-ivory text-ivory hover:bg-ivory hover:text-navy"
-            }`}
+            className="inline-flex items-center gap-2 px-5 py-2.5 text-[11px] tracking-[0.24em] uppercase border border-navy text-navy hover:bg-navy hover:text-ivory transition-colors"
           >
             Book Consultation
           </Link>
@@ -74,7 +53,7 @@ export function SiteHeader() {
         <button
           aria-label="Toggle menu"
           onClick={() => setOpen((v) => !v)}
-          className={`lg:hidden p-2 ${textColor}`}
+          className="lg:hidden p-2 text-navy"
         >
           {open ? <X size={22} /> : <Menu size={22} />}
         </button>
