@@ -14,6 +14,31 @@ const nav = [
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const [lang, setLang] = useState<"EN" | "中文">("EN");
+
+  const LangSwitcher = ({ className = "" }: { className?: string }) => (
+    <div
+      className={`inline-flex items-center text-[11px] tracking-[0.2em] uppercase text-navy/70 ${className}`}
+    >
+      <button
+        type="button"
+        onClick={() => setLang("EN")}
+        className={`px-1.5 transition-colors hover:text-navy ${lang === "EN" ? "text-navy font-medium" : ""}`}
+        aria-pressed={lang === "EN"}
+      >
+        EN
+      </button>
+      <span className="text-navy/30">|</span>
+      <button
+        type="button"
+        onClick={() => setLang("中文")}
+        className={`px-1.5 transition-colors hover:text-navy ${lang === "中文" ? "text-navy font-medium" : ""}`}
+        aria-pressed={lang === "中文"}
+      >
+        中文
+      </button>
+    </div>
+  );
 
   return (
     <header className="fixed top-0 inset-x-0 z-50 bg-ivory/95 backdrop-blur-md border-b border-navy/10">
@@ -40,7 +65,8 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div className="hidden lg:block">
+        <div className="hidden lg:flex items-center gap-5">
+          <LangSwitcher />
           <Link
             to="/consultation"
             className="inline-flex items-center gap-2 px-5 py-2.5 text-[11px] tracking-[0.24em] uppercase border border-navy text-navy hover:bg-navy hover:text-ivory transition-colors"
@@ -49,13 +75,17 @@ export function SiteHeader() {
           </Link>
         </div>
 
-        <button
-          aria-label="Toggle menu"
-          onClick={() => setOpen((v) => !v)}
-          className="lg:hidden p-2 text-navy"
-        >
-          {open ? <X size={22} /> : <Menu size={22} />}
-        </button>
+        <div className="lg:hidden flex items-center gap-3">
+          <LangSwitcher />
+          <button
+            aria-label="Toggle menu"
+            onClick={() => setOpen((v) => !v)}
+            className="p-2 text-navy"
+          >
+            {open ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
+
       </div>
 
       {open && (
