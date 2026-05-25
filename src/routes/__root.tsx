@@ -83,8 +83,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Elevate Vancouver is a premium Canadian education consultancy website for Taiwanese families." },
       { property: "og:description", content: "Elevate Vancouver is a premium Canadian education consultancy website for Taiwanese families." },
       { name: "twitter:description", content: "Elevate Vancouver is a premium Canadian education consultancy website for Taiwanese families." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/6183ccc7-3e89-421a-9a75-e62d8017f9a1/id-preview-c676a62a--d212407f-e13d-46e8-9e91-afd43f82dc00.lovable.app-1779413004391.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/6183ccc7-3e89-421a-9a75-e62d8017f9a1/id-preview-c676a62a--d212407f-e13d-46e8-9e91-afd43f82dc00.lovable.app-1779413004391.png" },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/bCCMipaZMMgU3uzBQ48gKBgft2r2/social-images/social-1779683481164-ChatGPT_Image_May_24,_2026,_09_31_11_PM.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/bCCMipaZMMgU3uzBQ48gKBgft2r2/social-images/social-1779683481164-ChatGPT_Image_May_24,_2026,_09_31_11_PM.webp" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
