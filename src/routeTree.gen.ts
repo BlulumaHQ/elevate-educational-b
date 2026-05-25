@@ -12,11 +12,19 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as StudyInVancouverRouteImport } from './routes/study-in-vancouver'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as EnRouteImport } from './routes/en'
 import { Route as CoursesRouteImport } from './routes/courses'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ConsultationRouteImport } from './routes/consultation'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as EnIndexRouteImport } from './routes/en.index'
+import { Route as EnStudyInVancouverRouteImport } from './routes/en.study-in-vancouver'
+import { Route as EnServicesRouteImport } from './routes/en.services'
+import { Route as EnCoursesRouteImport } from './routes/en.courses'
+import { Route as EnContactRouteImport } from './routes/en.contact'
+import { Route as EnConsultationRouteImport } from './routes/en.consultation'
+import { Route as EnAboutRouteImport } from './routes/en.about'
 
 const StudyInVancouverRoute = StudyInVancouverRouteImport.update({
   id: '/study-in-vancouver',
@@ -31,6 +39,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnRoute = EnRouteImport.update({
+  id: '/en',
+  path: '/en',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CoursesRoute = CoursesRouteImport.update({
@@ -58,6 +71,41 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EnIndexRoute = EnIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => EnRoute,
+} as any)
+const EnStudyInVancouverRoute = EnStudyInVancouverRouteImport.update({
+  id: '/study-in-vancouver',
+  path: '/study-in-vancouver',
+  getParentRoute: () => EnRoute,
+} as any)
+const EnServicesRoute = EnServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
+  getParentRoute: () => EnRoute,
+} as any)
+const EnCoursesRoute = EnCoursesRouteImport.update({
+  id: '/courses',
+  path: '/courses',
+  getParentRoute: () => EnRoute,
+} as any)
+const EnContactRoute = EnContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => EnRoute,
+} as any)
+const EnConsultationRoute = EnConsultationRouteImport.update({
+  id: '/consultation',
+  path: '/consultation',
+  getParentRoute: () => EnRoute,
+} as any)
+const EnAboutRoute = EnAboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => EnRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -65,9 +113,17 @@ export interface FileRoutesByFullPath {
   '/consultation': typeof ConsultationRoute
   '/contact': typeof ContactRoute
   '/courses': typeof CoursesRoute
+  '/en': typeof EnRouteWithChildren
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/study-in-vancouver': typeof StudyInVancouverRoute
+  '/en/about': typeof EnAboutRoute
+  '/en/consultation': typeof EnConsultationRoute
+  '/en/contact': typeof EnContactRoute
+  '/en/courses': typeof EnCoursesRoute
+  '/en/services': typeof EnServicesRoute
+  '/en/study-in-vancouver': typeof EnStudyInVancouverRoute
+  '/en/': typeof EnIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -78,6 +134,13 @@ export interface FileRoutesByTo {
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/study-in-vancouver': typeof StudyInVancouverRoute
+  '/en/about': typeof EnAboutRoute
+  '/en/consultation': typeof EnConsultationRoute
+  '/en/contact': typeof EnContactRoute
+  '/en/courses': typeof EnCoursesRoute
+  '/en/services': typeof EnServicesRoute
+  '/en/study-in-vancouver': typeof EnStudyInVancouverRoute
+  '/en': typeof EnIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -86,9 +149,17 @@ export interface FileRoutesById {
   '/consultation': typeof ConsultationRoute
   '/contact': typeof ContactRoute
   '/courses': typeof CoursesRoute
+  '/en': typeof EnRouteWithChildren
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/study-in-vancouver': typeof StudyInVancouverRoute
+  '/en/about': typeof EnAboutRoute
+  '/en/consultation': typeof EnConsultationRoute
+  '/en/contact': typeof EnContactRoute
+  '/en/courses': typeof EnCoursesRoute
+  '/en/services': typeof EnServicesRoute
+  '/en/study-in-vancouver': typeof EnStudyInVancouverRoute
+  '/en/': typeof EnIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -98,9 +169,17 @@ export interface FileRouteTypes {
     | '/consultation'
     | '/contact'
     | '/courses'
+    | '/en'
     | '/services'
     | '/sitemap.xml'
     | '/study-in-vancouver'
+    | '/en/about'
+    | '/en/consultation'
+    | '/en/contact'
+    | '/en/courses'
+    | '/en/services'
+    | '/en/study-in-vancouver'
+    | '/en/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -111,6 +190,13 @@ export interface FileRouteTypes {
     | '/services'
     | '/sitemap.xml'
     | '/study-in-vancouver'
+    | '/en/about'
+    | '/en/consultation'
+    | '/en/contact'
+    | '/en/courses'
+    | '/en/services'
+    | '/en/study-in-vancouver'
+    | '/en'
   id:
     | '__root__'
     | '/'
@@ -118,9 +204,17 @@ export interface FileRouteTypes {
     | '/consultation'
     | '/contact'
     | '/courses'
+    | '/en'
     | '/services'
     | '/sitemap.xml'
     | '/study-in-vancouver'
+    | '/en/about'
+    | '/en/consultation'
+    | '/en/contact'
+    | '/en/courses'
+    | '/en/services'
+    | '/en/study-in-vancouver'
+    | '/en/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -129,6 +223,7 @@ export interface RootRouteChildren {
   ConsultationRoute: typeof ConsultationRoute
   ContactRoute: typeof ContactRoute
   CoursesRoute: typeof CoursesRoute
+  EnRoute: typeof EnRouteWithChildren
   ServicesRoute: typeof ServicesRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   StudyInVancouverRoute: typeof StudyInVancouverRoute
@@ -155,6 +250,13 @@ declare module '@tanstack/react-router' {
       path: '/services'
       fullPath: '/services'
       preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/en': {
+      id: '/en'
+      path: '/en'
+      fullPath: '/en'
+      preLoaderRoute: typeof EnRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/courses': {
@@ -192,8 +294,79 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/en/': {
+      id: '/en/'
+      path: '/'
+      fullPath: '/en/'
+      preLoaderRoute: typeof EnIndexRouteImport
+      parentRoute: typeof EnRoute
+    }
+    '/en/study-in-vancouver': {
+      id: '/en/study-in-vancouver'
+      path: '/study-in-vancouver'
+      fullPath: '/en/study-in-vancouver'
+      preLoaderRoute: typeof EnStudyInVancouverRouteImport
+      parentRoute: typeof EnRoute
+    }
+    '/en/services': {
+      id: '/en/services'
+      path: '/services'
+      fullPath: '/en/services'
+      preLoaderRoute: typeof EnServicesRouteImport
+      parentRoute: typeof EnRoute
+    }
+    '/en/courses': {
+      id: '/en/courses'
+      path: '/courses'
+      fullPath: '/en/courses'
+      preLoaderRoute: typeof EnCoursesRouteImport
+      parentRoute: typeof EnRoute
+    }
+    '/en/contact': {
+      id: '/en/contact'
+      path: '/contact'
+      fullPath: '/en/contact'
+      preLoaderRoute: typeof EnContactRouteImport
+      parentRoute: typeof EnRoute
+    }
+    '/en/consultation': {
+      id: '/en/consultation'
+      path: '/consultation'
+      fullPath: '/en/consultation'
+      preLoaderRoute: typeof EnConsultationRouteImport
+      parentRoute: typeof EnRoute
+    }
+    '/en/about': {
+      id: '/en/about'
+      path: '/about'
+      fullPath: '/en/about'
+      preLoaderRoute: typeof EnAboutRouteImport
+      parentRoute: typeof EnRoute
+    }
   }
 }
+
+interface EnRouteChildren {
+  EnAboutRoute: typeof EnAboutRoute
+  EnConsultationRoute: typeof EnConsultationRoute
+  EnContactRoute: typeof EnContactRoute
+  EnCoursesRoute: typeof EnCoursesRoute
+  EnServicesRoute: typeof EnServicesRoute
+  EnStudyInVancouverRoute: typeof EnStudyInVancouverRoute
+  EnIndexRoute: typeof EnIndexRoute
+}
+
+const EnRouteChildren: EnRouteChildren = {
+  EnAboutRoute: EnAboutRoute,
+  EnConsultationRoute: EnConsultationRoute,
+  EnContactRoute: EnContactRoute,
+  EnCoursesRoute: EnCoursesRoute,
+  EnServicesRoute: EnServicesRoute,
+  EnStudyInVancouverRoute: EnStudyInVancouverRoute,
+  EnIndexRoute: EnIndexRoute,
+}
+
+const EnRouteWithChildren = EnRoute._addFileChildren(EnRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
@@ -201,6 +374,7 @@ const rootRouteChildren: RootRouteChildren = {
   ConsultationRoute: ConsultationRoute,
   ContactRoute: ContactRoute,
   CoursesRoute: CoursesRoute,
+  EnRoute: EnRouteWithChildren,
   ServicesRoute: ServicesRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   StudyInVancouverRoute: StudyInVancouverRoute,

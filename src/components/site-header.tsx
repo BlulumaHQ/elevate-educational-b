@@ -1,9 +1,9 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useRouterState } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo-horizontal-transparent.png";
 
-const nav = [
+const navZh = [
   { to: "/", label: "首頁", en: "Home" },
   { to: "/about", label: "關於我們", en: "About" },
   { to: "/study-in-vancouver", label: "溫哥華留學", en: "Study in Vancouver" },
@@ -12,38 +12,71 @@ const nav = [
   { to: "/contact", label: "聯絡我們", en: "Contact" },
 ] as const;
 
+const navEn = [
+  { to: "/en", label: "Home" },
+  { to: "/en/about", label: "About" },
+  { to: "/en/study-in-vancouver", label: "Study in Vancouver" },
+  { to: "/en/services", label: "Services" },
+  { to: "/en/courses", label: "Courses" },
+  { to: "/en/contact", label: "Contact" },
+] as const;
+
+// Map between locale equivalents for the language switcher
+const pathPairs: Array<[string, string]> = [
+  ["/", "/en"],
+  ["/about", "/en/about"],
+  ["/study-in-vancouver", "/en/study-in-vancouver"],
+  ["/services", "/en/services"],
+  ["/courses", "/en/courses"],
+  ["/contact", "/en/contact"],
+  ["/consultation", "/en/consultation"],
+];
+
+function toEn(path: string): string {
+  if (path.startsWith("/en")) return path;
+  const found = pathPairs.find(([zh]) => zh === path);
+  return found ? found[1] : "/en";
+}
+function toZh(path: string): string {
+  if (!path.startsWith("/en")) return path;
+  const found = pathPairs.find(([, en]) => en === path);
+  return found ? found[0] : "/";
+}
+
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
-  const [lang, setLang] = useState<"EN" | "中文">("EN");
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const isEn = pathname === "/en" || pathname.startsWith("/en/");
+  const nav = isEn ? navEn : navZh;
+  const consultPath = isEn ? "/en/consultation" : "/consultation";
+  const consultLabel = isEn ? "Book Consultation" : "Book Consultation";
 
   const LangSwitcher = ({ className = "" }: { className?: string }) => (
     <div
       className={`inline-flex items-center text-[11px] tracking-[0.2em] uppercase text-navy/70 ${className}`}
     >
-      <button
-        type="button"
-        onClick={() => setLang("EN")}
-        className={`px-1.5 transition-colors hover:text-navy ${lang === "EN" ? "text-navy font-medium" : ""}`}
-        aria-pressed={lang === "EN"}
+      <Link
+        to={toEn(pathname) as string}
+        className={`px-1.5 transition-colors hover:text-navy ${isEn ? "text-navy font-medium" : ""}`}
+        aria-current={isEn ? "page" : undefined}
       >
         EN
-      </button>
+      </Link>
       <span className="text-navy/30">|</span>
-      <button
-        type="button"
-        onClick={() => setLang("中文")}
-        className={`px-1.5 transition-colors hover:text-navy ${lang === "中文" ? "text-navy font-medium" : ""}`}
-        aria-pressed={lang === "中文"}
+      <Link
+        to={toZh(pathname) as string}
+        className={`px-1.5 transition-colors hover:text-navy ${!isEn ? "text-navy font-medium" : ""}`}
+        aria-current={!isEn ? "page" : undefined}
       >
         中文
-      </button>
+      </Link>
     </div>
   );
 
   return (
     <header className="fixed top-0 inset-x-0 z-50 bg-ivory/95 backdrop-blur-md border-b border-navy/10">
       <div className="container-wide flex items-center justify-between gap-6 py-0">
-        <Link to="/" className="flex items-center shrink-0 text-navy -my-2">
+        <Link to={isEn ? "/en" : "/"} className="flex items-center shrink-0 text-navy -my-2">
           <img
             src={logo}
             alt="頤珈國際教育 Elevate International Education"
@@ -58,9 +91,9 @@ export function SiteHeader() {
               to={item.to}
               className="link-underline transition-colors hover:text-navy"
               activeProps={{ className: "text-navy" }}
-              activeOptions={{ exact: item.to === "/" }}
+              activeOptions={{ exact: item.to === "/" || item.to === "/en" }}
             >
-              {item.en}
+              {isEn ? (item as { label: string }).label : (item as { en: string }).en}
             </Link>
           ))}
         </nav>
@@ -68,10 +101,10 @@ export function SiteHeader() {
         <div className="hidden lg:flex items-center gap-5">
           <LangSwitcher />
           <Link
-            to="/consultation"
+            to={consultPath}
             className="inline-flex items-center gap-2 px-5 py-2.5 text-[11px] tracking-[0.24em] uppercase border border-navy text-navy hover:bg-navy hover:text-ivory transition-colors"
           >
-            Book Consultation
+            {consultLabel}
           </Link>
         </div>
 
@@ -98,15 +131,24 @@ export function SiteHeader() {
                 onClick={() => setOpen(false)}
                 className="text-base text-navy/85 hover:text-navy"
               >
-                {item.label} <span className="text-xs text-warm-gray ml-2 tracking-wider uppercase">{item.en}</span>
+                {isEn ? (
+                  (item as { label: string }).label
+                ) : (
+                  <>
+                    {(item as { label: string }).label}{" "}
+                    <span className="text-xs text-warm-gray ml-2 tracking-wider uppercase">
+                      {(item as { en: string }).en}
+                    </span>
+                  </>
+                )}
               </Link>
             ))}
             <Link
-              to="/consultation"
+              to={consultPath}
               onClick={() => setOpen(false)}
               className="mt-2 inline-flex items-center justify-center px-5 py-3 text-xs tracking-[0.22em] uppercase bg-navy text-ivory"
             >
-              Book Consultation
+              {consultLabel}
             </Link>
           </div>
         </div>

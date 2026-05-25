@@ -3,28 +3,27 @@ import { ArrowRight, Clock, Users, MapPin, Calendar, CheckCircle2 } from "lucide
 import heroImg from "@/assets/summer-program.webp";
 import classroomImg from "@/assets/esl-course.webp";
 import schoolImg from "@/assets/school.webp";
-import homestayImg from "@/assets/homestay.webp";
 import campusHeritage from "@/assets/secondary-school.webp";
 import streetImg from "@/assets/university-pathway.webp";
 import waveBg from "@/assets/wave-bg.jpg";
 
-export const Route = createFileRoute("/courses")({
+export const Route = createFileRoute("/en/courses")({
   head: () => ({
     meta: [
-      { title: "課程介紹 Courses | 頤珈國際教育" },
+      { title: "Courses | Elevate International Education" },
       {
         name: "description",
         content:
-          "頤珈國際教育提供加拿大溫哥華短期遊學、暑期營、ESL 英語強化、長期中學留學及大學銜接課程，適合 10–18 歲華人學生。",
+          "Short-term study programs, summer camps, ESL, secondary school, and university pathway programs in Vancouver, Canada — for students aged 10–18.",
       },
-      { property: "og:title", content: "課程介紹 Courses | 頤珈國際教育" },
+      { property: "og:title", content: "Courses | Elevate International Education" },
       { property: "og:image", content: heroImg },
-      { property: "og:url", content: "/courses" },
+      { property: "og:url", content: "/en/courses" },
     ],
     links: [
-      { rel: "canonical", href: "/courses" },
-      { rel: "alternate", hrefLang: "zh-Hant", href: "/courses" },
+      { rel: "canonical", href: "/en/courses" },
       { rel: "alternate", hrefLang: "en", href: "/en/courses" },
+      { rel: "alternate", hrefLang: "zh-Hant", href: "/courses" },
     ],
   }),
   component: CoursesPage,
@@ -33,82 +32,82 @@ export const Route = createFileRoute("/courses")({
 const courses = [
   {
     tag: "Summer Program",
-    title: "溫哥華暑期遊學營",
-    age: "10 – 18 歲",
-    duration: "4 週",
-    season: "7 – 8 月",
-    location: "大溫哥華區域",
+    title: "Vancouver Summer Study Camp",
+    age: "Ages 10 – 18",
+    duration: "4 weeks",
+    season: "July – August",
+    location: "Greater Vancouver",
     img: heroImg,
-    blurb: "以英語為主軸，融入加拿大文化體驗、戶外探索與校園生活，幫助孩子在輕鬆環境中建立國際視野。",
+    blurb: "English-focused with Canadian cultural experiences, outdoor exploration, and campus life — building international perspective in a relaxed environment.",
     highlights: [
-      "每日 ESL 英語課程（小班制 8–10 人）",
-      "Stanley Park、Granville Island、Whistler 戶外探索",
-      "Homestay 寄宿家庭體驗",
-      "每週家長視訊回報",
+      "Daily ESL classes (small groups of 8–10)",
+      "Stanley Park, Granville Island, Whistler excursions",
+      "Homestay family experience",
+      "Weekly video updates for parents",
     ],
   },
   {
     tag: "ESL Intensive",
-    title: "ESL 英語強化課程",
-    age: "12 – 18 歲",
-    duration: "8 – 24 週",
-    season: "全年開課",
-    location: "大溫哥華區域",
+    title: "ESL Intensive Program",
+    age: "Ages 12 – 18",
+    duration: "8 – 24 weeks",
+    season: "Year-round",
+    location: "Greater Vancouver",
     img: classroomImg,
-    blurb: "為計畫長期就讀加拿大公私立中學的孩子設計，銜接學科英語、學術寫作與口語表達。",
+    blurb: "Designed for students planning long-term study at Canadian public or private secondary schools — academic English, writing, and speaking.",
     highlights: [
-      "依程度分班（Beginner – Advanced）",
-      "學術寫作、閱讀理解、口語簡報",
-      "加拿大中學課程預備（Math / Science 英語）",
-      "每月個別學習進度面談",
+      "Leveled classes (Beginner – Advanced)",
+      "Academic writing, reading, presentations",
+      "Math/Science English prep for Canadian secondary school",
+      "Monthly one-on-one progress reviews",
     ],
   },
   {
     tag: "Junior School",
-    title: "加拿大小學銜接課程",
-    age: "10 – 12 歲",
-    duration: "1 學年",
-    season: "9 月 / 1 月入學",
-    location: "大溫哥華區域",
+    title: "Canadian Elementary Pathway",
+    age: "Ages 10 – 12",
+    duration: "1 academic year",
+    season: "September / January intake",
+    location: "Greater Vancouver",
     img: schoolImg,
-    blurb: "為國小高年級孩子規劃 BC 省公立或私立小學銜接，包含申請、課輔、家長定期回報。",
+    blurb: "Pathway support for senior elementary students entering BC public or private schools, including applications, tutoring, and parent updates.",
     highlights: [
-      "BC 公立 / 私立小學申請輔導",
-      "課後一對一中英學習支援",
-      "嚴選寄宿家庭媒合",
-      "監護人服務（Custodianship）",
+      "BC public / private elementary application support",
+      "1-on-1 after-school bilingual tutoring",
+      "Carefully matched homestay placement",
+      "Custodianship service",
     ],
   },
   {
     tag: "Secondary School",
-    title: "中學長期留學方案",
-    age: "13 – 17 歲",
-    duration: "1 – 4 年",
-    season: "9 月 / 2 月入學",
-    location: "大溫哥華區域",
+    title: "Long-Term Secondary School Plan",
+    age: "Ages 13 – 17",
+    duration: "1 – 4 years",
+    season: "September / February intake",
+    location: "Greater Vancouver",
     img: campusHeritage,
-    blurb: "從學校評估、申請、簽證到落地照護的完整方案，協助孩子順利完成加拿大中學學業並銜接大學。",
+    blurb: "From school assessment, application, and visa to on-the-ground care — supporting students through Canadian secondary school and into university.",
     highlights: [
-      "Top BC 公私立中學申請（40+ 合作學校）",
-      "選課與學分規劃",
-      "家長月報 + 學期成績檢視",
-      "升大學規劃（UBC / SFU / U of T）",
+      "Top BC public/private secondary school applications (40+ partner schools)",
+      "Course selection and credit planning",
+      "Monthly parent reports + term grade reviews",
+      "University planning (UBC / SFU / U of T)",
     ],
   },
   {
     tag: "University Pathway",
-    title: "大學銜接與升學規劃",
-    age: "16 – 18 歲",
-    duration: "1 – 2 年",
+    title: "University Pathway & Admissions",
+    age: "Ages 16 – 18",
+    duration: "1 – 2 years",
     season: "Fall / Spring",
-    location: "大溫哥華區域",
+    location: "Greater Vancouver",
     img: streetImg,
-    blurb: "為高中後段或畢業生規劃加拿大社區學院 + 大學轉學雙軌路徑，兼顧成本與名校機會。",
+    blurb: "For late-secondary students or graduates — a community college + university transfer pathway balancing cost and prestige.",
     highlights: [
-      "College + University Transfer 規劃",
-      "IELTS / Duolingo 英語備考",
-      "個人陳述（Personal Statement）輔導",
-      "獎學金與住宿資源",
+      "College + University Transfer planning",
+      "IELTS / Duolingo English exam prep",
+      "Personal Statement coaching",
+      "Scholarships and housing resources",
     ],
   },
 ];
@@ -116,23 +115,21 @@ const courses = [
 function CoursesPage() {
   return (
     <>
-      {/* Hero */}
       <section className="relative pt-40 pb-24 md:pt-52 md:pb-32 bg-navy text-ivory overflow-hidden">
         <div className="absolute inset-0 bp-grid opacity-[0.08]" aria-hidden="true" />
         <div className="container-editorial relative">
           <p className="text-[11px] tracking-[0.3em] text-gold uppercase mb-5">Courses</p>
           <h1 className="font-serif text-5xl md:text-7xl leading-[1.1] text-balance max-w-3xl">
-            為 10 – 18 歲孩子
+            Study programs tailored
             <br />
-            量身打造的留學課程
+            for ages 10 to 18
           </h1>
           <p className="mt-8 max-w-2xl text-base md:text-lg text-ivory/75 leading-relaxed">
-            從短期暑期遊學、英語強化，到中學長期留學與大學銜接， 我們協助華人家庭找到最適合孩子當下階段的課程方案。
+            From short-term summer programs and ESL to long-term secondary and university pathways — we help international families find the right fit for each stage.
           </p>
         </div>
       </section>
 
-      {/* Course Cards */}
       <section
         className="py-24 md:py-32 bg-background"
         style={{ backgroundImage: `url(${waveBg})`, backgroundSize: "cover", backgroundPosition: "center" }}
@@ -154,10 +151,10 @@ function CoursesPage() {
                 <p className="mt-5 text-base text-foreground/80 leading-[1.95]">{c.blurb}</p>
 
                 <dl className="mt-7 grid grid-cols-2 gap-x-6 gap-y-4 text-sm">
-                  <Meta Icon={Users} label="適合年齡" value={c.age} />
-                  <Meta Icon={Clock} label="課程長度" value={c.duration} />
-                  <Meta Icon={Calendar} label="開課時間" value={c.season} />
-                  <Meta Icon={MapPin} label="上課地點" value={c.location} />
+                  <Meta Icon={Users} label="Age" value={c.age} />
+                  <Meta Icon={Clock} label="Duration" value={c.duration} />
+                  <Meta Icon={Calendar} label="Intake" value={c.season} />
+                  <Meta Icon={MapPin} label="Location" value={c.location} />
                 </dl>
 
                 <ul className="mt-7 space-y-2.5">
@@ -170,7 +167,7 @@ function CoursesPage() {
                 </ul>
 
                 <Link
-                  to="/consultation"
+                  to="/en/consultation"
                   className="mt-8 inline-flex items-center gap-2 text-sm tracking-[0.2em] uppercase text-navy border-b border-navy/40 pb-1 hover:border-navy transition-colors"
                 >
                   Enquire <ArrowRight size={14} />
@@ -181,23 +178,22 @@ function CoursesPage() {
         </div>
       </section>
 
-      {/* CTA */}
       <section className="py-24 md:py-32 bg-navy text-ivory">
         <div className="container-editorial text-center">
           <p className="text-[11px] tracking-[0.3em] text-gold uppercase mb-5">Not Sure Where to Start?</p>
           <h2 className="font-serif text-4xl md:text-5xl leading-tight">
-            讓我們一起為孩子
+            Let's find the right
             <br />
-            選擇最合適的課程
+            program for your child together
           </h2>
           <p className="mt-5 max-w-xl mx-auto text-ivory/75">
-            每個孩子都不一樣。預約一次免費諮詢，我們會根據孩子的年齡、英語程度與家庭目標，提供量身建議。
+            Every child is different. Book a free consultation — we'll recommend programs based on age, English level, and your family's goals.
           </p>
           <Link
-            to="/consultation"
+            to="/en/consultation"
             className="inline-flex items-center gap-2 mt-10 bg-ivory text-navy px-8 py-4 text-sm tracking-[0.2em] uppercase hover:bg-gold hover:text-navy transition-colors"
           >
-            預約免費諮詢 <ArrowRight size={16} />
+            Book a Free Consultation <ArrowRight size={16} />
           </Link>
         </div>
       </section>

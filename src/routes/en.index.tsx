@@ -9,31 +9,31 @@ import heroSlide2 from "@/assets/hero-students-walking.webp";
 import skyline from "@/assets/vancouver-skyline.jpg";
 import foundersImg from "@/assets/parent-consultation.webp";
 import campusHeritage from "@/assets/student-presentation.webp";
-import homestayWarm from "@/assets/homestay.webp";
 import classroomMentor from "@/assets/teacher-presenting.webp";
 import waveBg from "@/assets/wave-bg.jpg";
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/en/")({
   head: () => ({
     meta: [
-      { title: "頤珈國際教育 Elevate International Education | Vancouver 留學顧問" },
+      { title: "Elevate International Education | Vancouver Study Abroad Consultants" },
       {
         name: "description",
         content:
-          "頤珈國際教育｜30 年加拿大溫哥華在地經驗，提供加拿大私校申請、學生簽證、寄宿家庭與長期陪伴式留學服務，為國際家庭打造安心、信任、專業的留學旅程。",
+          "Boutique Vancouver-based education consultancy. 30 years of local Canadian experience guiding international families through private school applications, student visas, homestay, and long-term care.",
       },
-      { property: "og:title", content: "頤珈國際教育 | Vancouver 留學顧問" },
+      { property: "og:title", content: "Elevate International Education | Vancouver Study Abroad" },
       {
         property: "og:description",
-        content: "30 年加拿大在地經驗，陪伴孩子安心融入溫哥華教育與生活環境。",
+        content:
+          "30 years of Vancouver expertise, helping international families navigate study abroad in Canada with confidence.",
       },
       { property: "og:image", content: heroSlide1 },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: "/en" },
     ],
     links: [
-      { rel: "canonical", href: "/" },
-      { rel: "alternate", hrefLang: "zh-Hant", href: "/" },
+      { rel: "canonical", href: "/en" },
       { rel: "alternate", hrefLang: "en", href: "/en" },
+      { rel: "alternate", hrefLang: "zh-Hant", href: "/" },
       { rel: "alternate", hrefLang: "x-default", href: "/" },
     ],
   }),
@@ -44,30 +44,30 @@ const slides = [
   {
     img: heroSlide1,
     eyebrow: "Vancouver · British Columbia",
-    title: ["看見未來，", "從安心出發"],
+    title: ["See the Future,", "Start with Confidence"],
     subtitle:
-      "30 年加拿大在地經驗，陪伴孩子安心融入溫哥華教育與生活環境。",
-    primary: { label: "預約免費諮詢", to: "/consultation" },
-    secondary: { label: "了解更多", to: "/about" },
+      "30 years of local Canadian experience helping students settle securely into Vancouver's education and lifestyle.",
+    primary: { label: "Book a Free Consultation", to: "/en/consultation" },
+    secondary: { label: "Learn More", to: "/en/about" },
   },
   {
     img: heroSlide2,
     eyebrow: "Boutique Education Consulting",
-    title: ["不只是留學，更是", "孩子未來的起點"],
+    title: ["More Than Study Abroad —", "A Foundation for Life"],
     subtitle:
-      "從學校申請、寄宿家庭，到加拿大生活支援，提供真正長期陪伴式留學服務。",
-    primary: { label: "Explore Services", to: "/services" },
-    secondary: { label: "Book Consultation", to: "/consultation" },
+      "From school applications and homestay to settling into Canadian life, we provide truly long-term partnership.",
+    primary: { label: "Explore Services", to: "/en/services" },
+    secondary: { label: "Book Consultation", to: "/en/consultation" },
   },
 ];
 
 const services = [
-  { icon: School, no: "01", title: "私校精準申請", body: "依孩子的學術背景、性向與家庭目標，為加拿大頂尖公立與私立學校量身規劃申請策略。" },
-  { icon: ShieldCheck, no: "02", title: "學生簽證全程協助", body: "經驗豐富的顧問團隊，從文件準備到面談模擬，確保簽證流程順利安全。" },
-  { icon: Home, no: "03", title: "寄宿家庭嚴選", body: "親自走訪、實地評估，為孩子媒合一個真正溫暖、可信賴的加拿大第二個家。" },
-  { icon: Compass, no: "04", title: "在地生活安頓", body: "從手機門號、銀行開戶、交通卡、醫療資源到生活適應，一站式安心抵達。" },
-  { icon: HeartHandshake, no: "05", title: "長期陪伴式照護", body: "我們是家長在加拿大的眼睛與雙手，定期回報、即時溝通、長期同行。" },
-  { icon: Plane, no: "06", title: "文化銜接與升學規劃", body: "中學、大學、職涯延伸 — 陪孩子走過每一個關鍵階段。" },
+  { icon: School, no: "01", title: "Precise School Applications", body: "Tailored application strategies for Canada's top public and private schools, aligned with each child's profile and family goals." },
+  { icon: ShieldCheck, no: "02", title: "Full Student Visa Support", body: "Experienced consultants guide every step — from document prep to interview coaching — for a smooth, secure process." },
+  { icon: Home, no: "03", title: "Vetted Homestay Placements", body: "We personally visit and evaluate each home to match your child with a truly warm, trustworthy Canadian family." },
+  { icon: Compass, no: "04", title: "Settling In Locally", body: "Phone, banking, transit, healthcare, and daily life support — a one-stop landing in Vancouver." },
+  { icon: HeartHandshake, no: "05", title: "Long-Term Companionship", body: "We're your eyes and hands in Canada — regular updates, real-time communication, lasting partnership." },
+  { icon: Plane, no: "06", title: "Cultural & Academic Pathways", body: "Secondary, university, and career planning — supporting every key milestone in your child's journey." },
 ];
 
 const stats = [
@@ -95,9 +95,7 @@ function HomePage() {
 
   return (
     <>
-      {/* ════════════ HERO — FULL SCREEN PREMIUM SLIDER ════════════ */}
       <section className="relative h-screen min-h-[680px] w-full overflow-hidden bg-navy-deep">
-        {/* slides */}
         {slides.map((s, i) => (
           <div
             key={i}
@@ -114,7 +112,6 @@ function HomePage() {
           </div>
         ))}
 
-        {/* floating line icons */}
         <div aria-hidden className="absolute inset-0 pointer-events-none">
           {floatingIcons.map(({ Icon, className, delay, size }, i) => (
             <div
@@ -127,10 +124,8 @@ function HomePage() {
           ))}
         </div>
 
-        {/* blueprint overlay */}
         <div aria-hidden className="absolute inset-0 bp-grid opacity-[0.07] pointer-events-none" />
 
-        {/* TOP META BAR */}
         <div className="absolute top-0 inset-x-0 z-10 pt-28 md:pt-32">
           <div className="container-wide flex items-center justify-between text-ivory/70 text-[11px] tracking-[0.32em] uppercase">
             <span className="hidden md:inline">Elevate International Education</span>
@@ -138,7 +133,6 @@ function HomePage() {
           </div>
         </div>
 
-        {/* CONTENT */}
         <div className="relative z-10 h-full flex items-center">
           <div className="container-wide w-full">
             <div className="max-w-3xl text-ivory">
@@ -168,7 +162,6 @@ function HomePage() {
           </div>
         </div>
 
-        {/* BOTTOM BAR — slide dots + floating stats */}
         <div className="absolute bottom-0 inset-x-0 z-10 pb-10 md:pb-12">
           <div className="container-wide flex flex-col md:flex-row md:items-end justify-between gap-8">
             <div className="flex items-center gap-3">
@@ -185,7 +178,6 @@ function HomePage() {
               </span>
             </div>
 
-            {/* floating stats card */}
             <div className="hidden md:grid grid-cols-3 bg-ivory/[0.06] backdrop-blur-md border border-ivory/15 px-8 py-6 max-w-2xl">
               {stats.map((s, i) => (
                 <div
@@ -204,7 +196,6 @@ function HomePage() {
         </div>
       </section>
 
-      {/* ════════════ INTRO MARQUEE / TRUST BAND ════════════ */}
       <section className="relative bg-ivory border-y border-navy/10">
         <div className="container-wide py-8 flex flex-wrap items-center justify-between gap-6 text-navy/70 text-[11px] tracking-[0.32em] uppercase">
           <span>Trusted by families across Taiwan · Hong Kong · Mainland China</span>
@@ -216,7 +207,6 @@ function HomePage() {
         </div>
       </section>
 
-      {/* ════════════ PHILOSOPHY / WELCOME ════════════ */}
       <section className="relative py-28 md:py-40 bg-ivory overflow-hidden">
         <div aria-hidden className="absolute inset-0 bp-grid-fine opacity-40" />
         <div aria-hidden className="absolute top-1/2 -right-32 w-[420px] h-[420px] dot-field opacity-30 rounded-full" />
@@ -230,17 +220,19 @@ function HomePage() {
           </div>
           <div className="lg:col-span-7 lg:col-start-6 space-y-7 text-foreground/75 leading-[1.95] text-[15px] md:text-[16px]">
             <p>
-              頤珈國際教育是一間扎根於溫哥華的精品國際教育顧問品牌。
-              我們不做大量代辦，而是與每一個國際家庭，深度合作、量身規劃孩子未來十年的教育藍圖。
+              Elevate International Education is a boutique consulting brand rooted in Vancouver.
+              We don't process applications in bulk — we partner deeply with each international family
+              to shape a 10-year education blueprint for their child.
             </p>
             <p>
-              從加拿大頂尖私校的申請策略、學生簽證的全程協助、嚴選寄宿家庭的長期媒合，
-              到孩子抵達後在校園、生活與文化上的每一個細節 —
-              我們以 30 年的在地經驗與真實照護，成為家長安心託付的長期夥伴。
+              From strategic admissions to Canada's top private schools, full visa support, and carefully
+              matched homestay placements, to every detail of campus, life, and cultural adjustment after
+              arrival — 30 years of local experience and authentic care make us the long-term partner
+              parents trust.
             </p>
             <div className="pt-4 flex items-center gap-5">
               <span className="hairline w-16" />
-              <Link to="/about" className="text-navy text-sm tracking-[0.2em] uppercase link-underline">
+              <Link to="/en/about" className="text-navy text-sm tracking-[0.2em] uppercase link-underline">
                 Read Our Story
               </Link>
             </div>
@@ -248,44 +240,39 @@ function HomePage() {
         </div>
       </section>
 
-      {/* ════════════ FOUNDER / TRUST — EDITORIAL SPLIT ════════════ */}
       <section className="relative bg-navy text-ivory overflow-hidden">
         <div aria-hidden className="absolute inset-0 bp-grid opacity-[0.06]" />
         <div className="grid lg:grid-cols-2">
-          {/* IMAGE SIDE */}
           <div className="relative min-h-[520px] lg:min-h-[760px]">
             <img src={foundersImg} alt="Elevate founders in Vancouver" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
             <div className="absolute inset-0 bg-gradient-to-r from-transparent to-navy/40" />
-            {/* gold corner */}
             <div className="absolute top-10 left-10 w-16 h-16 border-t border-l border-gold/70" />
             <div className="absolute bottom-10 right-10 w-16 h-16 border-b border-r border-gold/70" />
           </div>
 
-          {/* COPY SIDE */}
           <div className="px-6 md:px-16 lg:px-24 py-20 lg:py-32 flex items-center">
             <div className="max-w-xl">
               <p className="eyebrow mb-6 flex items-center gap-4"><span className="gold-bar" /> Meet the Founders</p>
               <h2 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.08] text-balance">
-                30 年的加拿大，<br />一生的教育承諾。
+                30 Years in Canada,<br />A Lifetime Commitment to Education.
               </h2>
               <div className="mt-9 space-y-5 text-ivory/75 leading-[1.95] text-[15px]">
                 <p>
-                  創辦人於 1995 年移居加拿大，深耕溫哥華超過 30 年。
-                  從自身留學、定居、養育孩子完成加拿大教育的真實經驗出發，
-                  我們真正理解國際家庭在每一個階段的擔心、期待與挑戰。
+                  Our founders moved to Canada in 1995 and have called Vancouver home for over 30 years.
+                  From their own student years to raising children through the Canadian education system,
+                  they truly understand the worries, hopes, and challenges of international families at every stage.
                 </p>
                 <p>
-                  我們不是代辦，而是孩子在加拿大的家人；
-                  也是家長最值得信賴的在地夥伴。
+                  We're not just consultants — we're family for your child in Canada,
+                  and the local partner parents trust most.
                 </p>
               </div>
 
-              {/* mini timeline */}
               <div className="mt-12 grid grid-cols-3 gap-6 pt-8 border-t border-ivory/15">
                 {[
-                  { y: "1995", t: "移居 Vancouver" },
-                  { y: "2005", t: "創立教育顧問業務" },
-                  { y: "2025", t: "服務 200+ 國際家庭" },
+                  { y: "1995", t: "Moved to Vancouver" },
+                  { y: "2005", t: "Founded the consultancy" },
+                  { y: "2025", t: "200+ families served" },
                 ].map((m) => (
                   <div key={m.y}>
                     <div className="font-display text-2xl text-gold">{m.y}</div>
@@ -294,7 +281,7 @@ function HomePage() {
                 ))}
               </div>
 
-              <Link to="/about" className="mt-12 inline-flex items-center gap-3 text-sm tracking-[0.2em] uppercase text-gold link-underline">
+              <Link to="/en/about" className="mt-12 inline-flex items-center gap-3 text-sm tracking-[0.2em] uppercase text-gold link-underline">
                 More About Us <ArrowRight size={15} />
               </Link>
             </div>
@@ -302,7 +289,6 @@ function HomePage() {
         </div>
       </section>
 
-      {/* ════════════ SERVICES — PREMIUM LINE-ICON GRID ════════════ */}
       <section className="relative py-28 md:py-40 bg-ivory-deep overflow-hidden">
         <div aria-hidden className="absolute inset-0 bp-grid-fine opacity-50" />
         <div aria-hidden className="absolute -top-32 -left-32 w-[460px] h-[460px] dot-field opacity-25 rounded-full" />
@@ -312,12 +298,12 @@ function HomePage() {
             <div className="lg:col-span-7">
               <p className="eyebrow mb-6 flex items-center gap-4"><span className="gold-bar" /> What We Do</p>
               <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-navy leading-[1.08] text-balance">
-                從第一封申請信，<br />到孩子畢業的那一天。
+                From the first application,<br />to graduation day.
               </h2>
             </div>
             <div className="lg:col-span-4 lg:col-start-9 text-foreground/70 leading-[1.95] text-[15px]">
-              我們以精品顧問的精神，提供六大核心服務 —
-              讓國際家庭在加拿大留學的每一個關鍵階段，都有人專業同行。
+              With the spirit of boutique consulting, we offer six core services —
+              professional partnership at every critical stage of your child's Canadian education.
             </div>
           </div>
 
@@ -347,17 +333,15 @@ function HomePage() {
           </div>
 
           <div className="mt-16 text-center">
-            <Link to="/services" className="btn-primary !bg-navy">
+            <Link to="/en/services" className="btn-primary !bg-navy">
               All Services <ArrowRight size={15} />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ════════════ WHY VANCOUVER — ASYMMETRIC EDITORIAL ════════════ */}
       <section className="relative py-28 md:py-40 bg-ivory overflow-hidden">
         <div className="container-wide grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-          {/* IMAGE STACK */}
           <div className="lg:col-span-7 relative h-[520px] md:h-[640px]">
             <div className="absolute top-0 left-0 w-[68%] h-[78%] img-zoom shadow-2xl">
               <img src={campusHeritage} alt="Heritage Canadian campus" className="w-full h-full object-cover" loading="lazy" />
@@ -365,30 +349,28 @@ function HomePage() {
             <div className="absolute bottom-0 right-0 w-[52%] h-[58%] img-zoom shadow-2xl border-8 border-ivory">
               <img src={classroomMentor} alt="Classroom mentorship in Vancouver" className="w-full h-full object-cover" loading="lazy" />
             </div>
-            {/* gold accent */}
             <div className="absolute top-8 right-12 w-px h-32 bg-gold/60" />
             <div className="absolute top-8 right-12 w-32 h-px bg-gold/60" />
           </div>
 
-          {/* COPY */}
           <div className="lg:col-span-5">
             <p className="eyebrow mb-6 flex items-center gap-4"><span className="gold-bar" /> Why Vancouver</p>
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-navy leading-[1.08] text-balance">
-              全球最宜居城市，<br />全球最頂尖教育。
+              The World's Most Livable City,<br />World-Class Education.
             </h2>
             <div className="mt-8 space-y-5 text-foreground/75 leading-[1.95] text-[15px]">
               <p>
-                溫哥華擁有北美最完整的國際教育生態系 —
-                世界級的公立教育局、歷史悠久的傳統私校、嚴格認證的寄宿家庭網絡，
-                以及多元、安全、自然環繞的城市生活環境。
+                Vancouver is home to one of North America's most complete international education ecosystems —
+                world-class public school boards, heritage private schools, certified homestay networks,
+                and a diverse, safe, nature-rich urban environment.
               </p>
             </div>
 
             <ul className="mt-10 space-y-5">
               {[
-                { Icon: School, t: "BC 省政府認證頂尖私校與公校網絡" },
-                { Icon: Globe, t: "全球前 3 名最宜居、最安全的國際城市" },
-                { Icon: GraduationCap, t: "通往北美一流大學的最佳跳板" },
+                { Icon: School, t: "BC Government-accredited top private and public schools" },
+                { Icon: Globe, t: "Among the world's top 3 most livable and safest cities" },
+                { Icon: GraduationCap, t: "A premier gateway to leading North American universities" },
               ].map(({ Icon, t }) => (
                 <li key={t} className="flex items-start gap-5 pt-5 border-t border-navy/10">
                   <Icon size={28} strokeWidth={1.2} className="text-navy shrink-0 mt-0.5" />
@@ -397,14 +379,13 @@ function HomePage() {
               ))}
             </ul>
 
-            <Link to="/study-in-vancouver" className="mt-10 inline-flex items-center gap-3 text-sm tracking-[0.2em] uppercase text-navy link-underline">
+            <Link to="/en/study-in-vancouver" className="mt-10 inline-flex items-center gap-3 text-sm tracking-[0.2em] uppercase text-navy link-underline">
               Discover Vancouver <ArrowRight size={15} />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ════════════ TESTIMONIAL — QUIET EDITORIAL ════════════ */}
       <section
         className="relative py-28 md:py-36 bg-beige/40 overflow-hidden"
         style={{ backgroundImage: `url(${waveBg})`, backgroundSize: "cover", backgroundPosition: "center" }}
@@ -414,18 +395,17 @@ function HomePage() {
             <span className="gold-bar" /> Family Voices <span className="gold-bar" />
           </p>
           <blockquote className="font-display text-2xl md:text-3xl lg:text-[2.4rem] text-navy leading-[1.45] italic text-balance">
-            “第一次把孩子送出國，最怕的是『不知道』。
-            頤珈讓我們安心，因為他們真的把我的孩子當自己的孩子在照顧。”
+            "Sending our child abroad for the first time, our greatest fear was the unknown.
+            Elevate gave us peace of mind — they truly care for our child as their own."
           </blockquote>
           <div className="mt-10 flex items-center justify-center gap-5 text-sm tracking-[0.22em] uppercase text-navy/65">
             <span className="hairline w-12" />
-            高中生家長 · 台北
+            High School Parent · Taipei
             <span className="hairline w-12" />
           </div>
         </div>
       </section>
 
-      {/* ════════════ CTA — VANCOUVER SKYLINE ════════════ */}
       <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-navy-deep">
         <img src={skyline} alt="Vancouver skyline at blue hour" className="absolute inset-0 w-full h-full object-cover opacity-55" loading="lazy" />
         <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/70 via-navy-deep/75 to-navy-deep/90" />
@@ -435,17 +415,17 @@ function HomePage() {
           <div className="max-w-3xl">
             <p className="eyebrow mb-6 flex items-center gap-4"><span className="gold-bar" /> Begin Your Journey</p>
             <h2 className="font-display text-4xl md:text-6xl lg:text-7xl text-balance leading-[1.05]">
-              讓孩子安心踏出<br />國際未來的第一步。
+              Take the first confident step<br />into your child's international future.
             </h2>
             <p className="mt-8 max-w-xl text-ivory/75 text-[15px] md:text-base leading-[1.95]">
-              預約一次免費的諮詢會議，與我們的顧問深入聊聊孩子的特質、家庭的期待，
-              以及最適合的加拿大留學路徑。
+              Book a free consultation to speak with our advisors about your child's strengths, your family's hopes,
+              and the Canadian study pathway that fits best.
             </p>
             <div className="mt-12 flex flex-wrap gap-4">
-              <Link to="/consultation" className="btn-primary !bg-ivory !text-navy !border-ivory hover:!bg-gold hover:!border-gold">
+              <Link to="/en/consultation" className="btn-primary !bg-ivory !text-navy !border-ivory hover:!bg-gold hover:!border-gold">
                 Book Consultation <ArrowRight size={15} />
               </Link>
-              <Link to="/contact" className="btn-ghost">
+              <Link to="/en/contact" className="btn-ghost">
                 Contact Us
               </Link>
             </div>

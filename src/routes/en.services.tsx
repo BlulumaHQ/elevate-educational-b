@@ -3,29 +3,28 @@ import { ArrowRight, Search, FileCheck, Plane, Home as HomeIcon, HeartHandshake,
 import schoolImg from "@/assets/precise-school-application.webp";
 import homestayImg from "@/assets/homestay.webp";
 import campusImg from "@/assets/office-mentorship.webp";
-import streetImg from "@/assets/vancouver-street.webp";
 import medicalImg from "@/assets/medical-insurance.webp";
 import airportImg from "@/assets/airport-pickup.webp";
 import settlingImg from "@/assets/settling-in.webp";
 import consultImg from "@/assets/parent-consultation.webp";
 import waveBg from "@/assets/wave-bg.jpg";
 
-export const Route = createFileRoute("/services")({
+export const Route = createFileRoute("/en/services")({
   head: () => ({
     meta: [
-      { title: "服務內容 Services | 頤珈國際教育" },
+      { title: "Services | Elevate International Education" },
       {
         name: "description",
-        content: "頤珈國際教育提供從學校申請、學生簽證、寄宿家庭、接機、醫療保險到生活安頓的全方位留學支援服務。",
+        content: "Comprehensive Vancouver study abroad support — school applications, student visa, homestay, airport pickup, medical insurance, and settling in.",
       },
-      { property: "og:title", content: "服務內容 Services | 頤珈國際教育" },
+      { property: "og:title", content: "Services | Elevate International Education" },
       { property: "og:image", content: schoolImg },
-      { property: "og:url", content: "/services" },
+      { property: "og:url", content: "/en/services" },
     ],
     links: [
-      { rel: "canonical", href: "/services" },
-      { rel: "alternate", hrefLang: "zh-Hant", href: "/services" },
+      { rel: "canonical", href: "/en/services" },
       { rel: "alternate", hrefLang: "en", href: "/en/services" },
+      { rel: "alternate", hrefLang: "zh-Hant", href: "/services" },
     ],
   }),
   component: ServicesPage,
@@ -34,52 +33,52 @@ export const Route = createFileRoute("/services")({
 const services = [
   {
     num: "01",
-    t: "學校精準申請",
+    t: "Precise School Applications",
     img: schoolImg,
-    b: "從學校研究、申請文件、面試輔導到入學註冊，量身規劃孩子最適合的學校。",
-    steps: ["背景評估 / 學校研究", "文件與作品準備", "申請送件與面試輔導", "入學註冊與課程選擇"],
+    b: "From school research and application materials to interview coaching and enrollment — a tailored plan for the best-fit school.",
+    steps: ["Background assessment & school research", "Documents & portfolio prep", "Submission & interview coaching", "Enrollment & course selection"],
   },
   {
     num: "02",
-    t: "學生簽證辦理",
+    t: "Student Visa Support",
     img: campusImg,
-    b: "全程協助學生簽證、長期居留與相關文件，讓出國流程更安心。",
-    steps: ["資格評估", "文件清單與表單", "提交與追蹤", "落地後續支援"],
+    b: "Full assistance with student visas, long-term residency, and related documentation for a smooth, confident process.",
+    steps: ["Eligibility assessment", "Document checklist & forms", "Submission & tracking", "Post-arrival support"],
   },
   {
     num: "03",
-    t: "寄宿家庭媒合",
+    t: "Homestay Placement",
     img: homestayImg,
-    b: "親自篩選溫暖、友善、文化包容的加拿大寄宿家庭，定期回訪。",
-    steps: ["家庭背景審核", "個性與飲食匹配", "定期關懷追蹤", "問題即時處理"],
+    b: "Personally vetted Canadian homestay families — warm, friendly, and culturally welcoming, with regular check-ins.",
+    steps: ["Family background review", "Personality & dietary matching", "Regular care follow-ups", "Real-time issue resolution"],
   },
   {
     num: "04",
-    t: "機場接機與安頓",
+    t: "Airport Pickup & Settling In",
     img: airportImg,
-    b: "由顧問或合作司機親自接機，協助首日入住與初步生活定向。",
-    steps: ["航班追蹤", "專人接機", "入住協助", "城市定向導覽"],
+    b: "Personal pickup by a consultant or trusted driver, plus first-day move-in assistance and a city orientation.",
+    steps: ["Flight tracking", "Personal pickup", "Move-in assistance", "City orientation"],
   },
   {
     num: "05",
-    t: "醫療保險協助",
+    t: "Medical Insurance",
     img: medicalImg,
-    b: "協助申請 BC 省醫療保險與私人保險，提供完整海外醫療保障。",
-    steps: ["BC MSP 申請", "私人保險方案", "就醫陪同協助", "緊急聯絡支援"],
+    b: "Help with BC MSP registration and private insurance for complete overseas medical coverage.",
+    steps: ["BC MSP application", "Private insurance options", "Medical appointment support", "Emergency contact line"],
   },
   {
     num: "06",
-    t: "生活安頓服務",
+    t: "Daily Life Setup",
     img: settlingImg,
-    b: "手機、銀行、交通卡與生活用品準備，協助孩子快速融入加拿大日常。",
-    steps: ["手機門號開通", "銀行帳戶開戶", "交通卡與路線", "生活用品採買"],
+    b: "Mobile plans, banking, transit cards, and household essentials — helping students settle quickly into Canadian life.",
+    steps: ["Mobile plan activation", "Bank account opening", "Transit card & routes", "Household essentials"],
   },
   {
     num: "07",
-    t: "家長諮詢服務",
+    t: "Parent Consulting",
     img: consultImg,
-    b: "提供家長定期回報與即時溝通，讓您隨時掌握孩子的學習與生活狀況。",
-    steps: ["成績與生活回饋", "緊急聯絡窗口", "親子諮詢支援"],
+    b: "Regular updates and real-time communication, so you always know how your child is doing — academically and personally.",
+    steps: ["Academic & life updates", "Emergency contact line", "Parent–child consulting"],
   },
 ];
 
@@ -90,15 +89,14 @@ function ServicesPage() {
         <div className="container-editorial">
           <p className="text-[11px] tracking-[0.3em] text-wood uppercase mb-5">Services</p>
           <h1 className="font-serif text-5xl md:text-7xl text-primary leading-[1.1] text-balance max-w-3xl">
-            從規劃到落地，全方位的陪伴
+            End-to-end support, from planning to arrival
           </h1>
           <p className="mt-8 max-w-2xl text-base md:text-lg text-muted-foreground leading-relaxed">
-            我們提供一站式的高端留學顧問服務，從學業到生活的每一個環節都為孩子細心安排。
+            We provide one-stop premium consulting — every detail of academics and daily life, thoughtfully arranged.
           </p>
         </div>
       </section>
 
-      {/* Service Flow */}
       <section
         className="py-24 md:py-32 bg-background border-y border-navy/10"
         style={{ backgroundImage: `url(${waveBg})`, backgroundSize: "cover", backgroundPosition: "center" }}
@@ -106,18 +104,18 @@ function ServicesPage() {
         <div className="container-editorial">
           <div className="text-center mb-16 md:mb-20">
             <p className="text-[11px] tracking-[0.3em] text-wood uppercase mb-4">Our Process</p>
-            <h2 className="font-serif text-4xl md:text-5xl text-primary leading-tight">六步驟，安心抵達</h2>
-            <p className="mt-5 max-w-xl mx-auto text-muted-foreground">從第一次諮詢到孩子順利落地，我們陪伴每一步。</p>
+            <h2 className="font-serif text-4xl md:text-5xl text-primary leading-tight">Six Steps to a Confident Arrival</h2>
+            <p className="mt-5 max-w-xl mx-auto text-muted-foreground">From your first consultation to your child's smooth landing, we walk every step with you.</p>
           </div>
 
           <ol className="grid gap-y-12 md:grid-cols-6 md:gap-x-2 relative">
             {[
-              { Icon: Search, n: "01", t: "免費諮詢", d: "了解孩子背景與家庭目標" },
-              { Icon: FileCheck, n: "02", t: "規劃方案", d: "量身設計學校與課程路徑" },
-              { Icon: HomeIcon, n: "03", t: "申請送件", d: "學校申請、寄宿家庭媒合" },
-              { Icon: Plane, n: "04", t: "簽證與行前", d: "簽證、保險、行前說明" },
-              { Icon: HeartHandshake, n: "05", t: "落地安頓", d: "接機、開戶、生活定向" },
-              { Icon: Sparkles, n: "06", t: "長期陪伴", d: "定期回報、緊急支援" },
+              { Icon: Search, n: "01", t: "Free Consultation", d: "Understand the child's background and family goals" },
+              { Icon: FileCheck, n: "02", t: "Plan & Strategy", d: "Tailored school and program pathway" },
+              { Icon: HomeIcon, n: "03", t: "Applications", d: "School applications & homestay matching" },
+              { Icon: Plane, n: "04", t: "Visa & Pre-Departure", d: "Visa, insurance, and pre-departure briefing" },
+              { Icon: HeartHandshake, n: "05", t: "Arrival & Setup", d: "Pickup, banking, and city orientation" },
+              { Icon: Sparkles, n: "06", t: "Long-Term Care", d: "Regular updates and emergency support" },
             ].map((s, i, arr) => (
               <li
                 key={s.n}
@@ -167,13 +165,13 @@ function ServicesPage() {
 
       <section className="py-24 md:py-32 bg-navy text-cream">
         <div className="container-editorial text-center">
-          <h2 className="font-serif text-4xl md:text-5xl leading-tight text-balance">想了解最適合孩子的方案？</h2>
-          <p className="mt-5 max-w-xl mx-auto text-cream/80">先預約一場免費諮詢，讓我們認識您與孩子的需求。</p>
+          <h2 className="font-serif text-4xl md:text-5xl leading-tight text-balance">Want to know which plan fits your child best?</h2>
+          <p className="mt-5 max-w-xl mx-auto text-cream/80">Book a free consultation so we can learn about you and your child.</p>
           <Link
-            to="/consultation"
+            to="/en/consultation"
             className="inline-flex items-center gap-2 mt-10 bg-cream text-navy px-8 py-4 text-sm tracking-wide hover:bg-cream/90 transition-colors"
           >
-            預約免費諮詢 <ArrowRight size={16} />
+            Book a Free Consultation <ArrowRight size={16} />
           </Link>
         </div>
       </section>

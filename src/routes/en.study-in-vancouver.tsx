@@ -8,47 +8,47 @@ import homestayImg from "@/assets/students-campus-walk.webp";
 import waveBg from "@/assets/wave-bg.jpg";
 import { SectionHeading } from "@/components/section-heading";
 
-export const Route = createFileRoute("/study-in-vancouver")({
+export const Route = createFileRoute("/en/study-in-vancouver")({
   head: () => ({
     meta: [
-      { title: "溫哥華留學 Study in Vancouver | 頤珈國際教育" },
+      { title: "Study in Vancouver | Elevate International Education" },
       {
         name: "description",
-        content: "認識溫哥華教育體系、公立私立學校、國際學生生活、寄宿家庭、交通與氣候，為您的留學規劃做好準備。",
+        content: "Learn about Vancouver's education system, public and private schools, international student life, homestay, transit, and climate — and plan your study abroad with confidence.",
       },
-      { property: "og:title", content: "溫哥華留學 | 頤珈國際教育" },
+      { property: "og:title", content: "Study in Vancouver | Elevate International Education" },
       { property: "og:image", content: campusImg },
-      { property: "og:url", content: "/study-in-vancouver" },
+      { property: "og:url", content: "/en/study-in-vancouver" },
     ],
     links: [
-      { rel: "canonical", href: "/study-in-vancouver" },
-      { rel: "alternate", hrefLang: "zh-Hant", href: "/study-in-vancouver" },
+      { rel: "canonical", href: "/en/study-in-vancouver" },
       { rel: "alternate", hrefLang: "en", href: "/en/study-in-vancouver" },
+      { rel: "alternate", hrefLang: "zh-Hant", href: "/study-in-vancouver" },
     ],
   }),
   component: StudyPage,
 });
 
 const overview = [
-  { t: "教育體系", b: "BC 省教育以高品質聞名，公立、私立、國際學校選擇豐富，學術與課外活動並重。" },
-  { t: "公立 vs 私立學校", b: "公立提供完整 IB / AP 與多元社團；私立提供小班制與更全面的升學輔導。" },
-  { t: "國際學生生活", b: "多元友善的城市文化、成熟的留學生社群，協助孩子快速建立朋友圈。" },
-  { t: "安全與生活", b: "全球宜居城市之一，社區治安良好，醫療與大眾運輸完善。" },
-  { t: "寄宿家庭", b: "嚴選的加拿大家庭提供住宿、三餐與生活照顧，協助文化融入。" },
-  { t: "交通", b: "Skytrain、巴士、海上巴士交通網絡完整，學生上下學便利安全。" },
-  { t: "氣候", b: "冬季溫和多雨，夏季舒爽宜人，四季分明卻不嚴寒。" },
-  { t: "社區與文化", b: "華人社區成熟、國際文化兼容，家長與學生都能感到熟悉安心。" },
+  { t: "Education System", b: "BC is known for high-quality education with rich options across public, private, and international schools — balancing academics and activities." },
+  { t: "Public vs Private", b: "Public schools offer full IB/AP programs and clubs; private schools provide small classes and comprehensive university counseling." },
+  { t: "International Student Life", b: "A diverse, welcoming city with a mature international student community — children build friend circles quickly." },
+  { t: "Safety & Lifestyle", b: "One of the world's most livable cities, with safe neighborhoods, excellent healthcare, and strong public transit." },
+  { t: "Homestay Families", b: "Carefully selected Canadian families provide housing, meals, and daily care — supporting cultural integration." },
+  { t: "Transportation", b: "SkyTrain, buses, and SeaBus form a complete network — students get to and from school safely and easily." },
+  { t: "Climate", b: "Mild rainy winters and pleasant summers — four distinct seasons without harsh extremes." },
+  { t: "Community & Culture", b: "A mature Chinese community and inclusive international culture — families and students feel at home." },
 ];
 
 const faqs = [
   {
-    q: "幾歲可以開始到溫哥華留學？",
-    a: "我們協助 國小高年級至高中、大學階段的學生，並依年齡規劃合適的學校與住宿方案。",
+    q: "What age can my child start studying in Vancouver?",
+    a: "We support students from senior elementary through high school and university — matching age-appropriate schools and accommodations.",
   },
-  { q: "需要陪讀嗎？", a: "未成年學生若無家長陪同，需安排合格的監護人。我們提供合法監護人服務並協助寄宿家庭安排。" },
-  { q: "公立與私立學校如何選擇？", a: "我們會依孩子個性、語言程度、升學目標與預算，協助評估最適合的方案。" },
-  { q: "簽證需要多久？", a: "依季節與案件複雜度不同，一般約 4–12 週，我們會協助文件準備與追蹤。" },
-  { q: "孩子英文不夠好可以嗎？", a: "可以，溫哥華有完善的 ESL/語言課程銜接，並可安排短期語言學校先行適應。" },
+  { q: "Does a parent need to accompany the child?", a: "Minors studying without a parent need a qualified custodian. We provide legal custodianship services and arrange homestay placements." },
+  { q: "How do I choose between public and private?", a: "We evaluate the best fit based on personality, language level, university goals, and budget." },
+  { q: "How long does the visa take?", a: "Typically 4–12 weeks depending on season and complexity. We help prepare documents and track progress." },
+  { q: "What if my child's English isn't strong enough?", a: "That's okay. Vancouver has excellent ESL and language pathways, and we can arrange short-term language school as a soft landing." },
 ];
 
 function StudyPage() {
@@ -58,10 +58,10 @@ function StudyPage() {
         <div className="container-editorial">
           <p className="text-[11px] tracking-[0.3em] text-wood uppercase mb-5">Study in Vancouver</p>
           <h1 className="font-serif text-5xl md:text-7xl text-primary leading-[1.1] text-balance max-w-4xl">
-            一座，讓孩子學習生活兩相宜的城市
+            A city where learning and living go hand in hand
           </h1>
           <p className="mt-8 max-w-2xl text-base md:text-lg text-muted-foreground leading-relaxed">
-            溫哥華結合世界級的教育資源與西岸自然生活，是國際家庭最信賴的留學城市之一。
+            Vancouver combines world-class education with West Coast nature — one of the most trusted cities for international families.
           </p>
         </div>
         <img
@@ -77,7 +77,7 @@ function StudyPage() {
         style={{ backgroundImage: `url(${waveBg})`, backgroundSize: "cover", backgroundPosition: "center" }}
       >
         <div className="container-editorial">
-          <SectionHeading eyebrow="Overview" title="關於溫哥華留學" />
+          <SectionHeading eyebrow="Overview" title="About Studying in Vancouver" />
           <div className="mt-14 grid md:grid-cols-2 gap-x-16 gap-y-10">
             {overview.map((o, i) => (
               <div key={o.t} className="border-t border-border pt-6">
@@ -93,15 +93,15 @@ function StudyPage() {
       <section className="py-24 md:py-32 bg-secondary/40">
         <div className="container-editorial grid md:grid-cols-3 gap-6">
           <img src={schoolImg} alt="Vancouver school" className="w-full aspect-[4/5] object-cover" loading="lazy" />
-          <img src={streetImg} alt="Residential street" className="w-full aspect-[4/5] object-cover" loading="lazy" />
-          <img src={homestayImg} alt="Homestay" className="w-full aspect-[4/5] object-cover" loading="lazy" />
+          <img src={streetImg} alt="Classroom group" className="w-full aspect-[4/5] object-cover" loading="lazy" />
+          <img src={homestayImg} alt="Students on campus" className="w-full aspect-[4/5] object-cover" loading="lazy" />
         </div>
       </section>
 
       <section className="py-24 md:py-32 bg-background">
         <div className="container-editorial grid md:grid-cols-12 gap-12">
           <div className="md:col-span-4">
-            <SectionHeading eyebrow="FAQ" title="家長常見問題" />
+            <SectionHeading eyebrow="FAQ" title="Parent Questions" />
           </div>
           <div className="md:col-span-8">
             {faqs.map((f) => (

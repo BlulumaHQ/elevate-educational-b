@@ -4,20 +4,20 @@ import streetImg from "@/assets/vancouver-street.webp";
 import waveBg from "@/assets/wave-bg.jpg";
 import { SectionHeading } from "@/components/section-heading";
 
-export const Route = createFileRoute("/about")({
+export const Route = createFileRoute("/en/about")({
   head: () => ({
     meta: [
-      { title: "關於我們 About | 頤珈國際教育" },
-      { name: "description", content: "認識頤珈國際教育創辦人 Maggie 與 Katrina，30 年加拿大在地經驗，以家人之心陪伴每一位留學生。" },
-      { property: "og:title", content: "關於我們 About | 頤珈國際教育" },
-      { property: "og:description", content: "認識頤珈國際教育創辦人與品牌故事。" },
+      { title: "About Us | Elevate International Education" },
+      { name: "description", content: "Meet Maggie and Katrina, founders of Elevate International Education — 30 years of Vancouver expertise, caring for every student like family." },
+      { property: "og:title", content: "About Us | Elevate International Education" },
+      { property: "og:description", content: "Meet the founders and the story behind Elevate International Education." },
       { property: "og:image", content: foundersImg },
-      { property: "og:url", content: "/about" },
+      { property: "og:url", content: "/en/about" },
     ],
     links: [
-      { rel: "canonical", href: "/about" },
-      { rel: "alternate", hrefLang: "zh-Hant", href: "/about" },
+      { rel: "canonical", href: "/en/about" },
       { rel: "alternate", hrefLang: "en", href: "/en/about" },
+      { rel: "alternate", hrefLang: "zh-Hant", href: "/about" },
     ],
   }),
   component: AboutPage,
@@ -30,10 +30,10 @@ function AboutPage() {
         <div className="container-editorial">
           <p className="text-[11px] tracking-[0.3em] text-wood uppercase mb-5">About Us</p>
           <h1 className="font-serif text-5xl md:text-7xl text-primary leading-[1.1] text-balance max-w-3xl">
-            以家人之心，陪伴每一位來到加拿大的孩子
+            Caring like family for every child who comes to Canada
           </h1>
           <p className="mt-8 max-w-2xl text-base md:text-lg text-muted-foreground leading-relaxed">
-            頤珈國際教育是一間立基於溫哥華的高端國際教育顧問品牌。我們不只是代辦，而是孩子在加拿大的家人。
+            Elevate International Education is a premium Vancouver-based consultancy. We're not just agents — we're family for your child in Canada.
           </p>
         </div>
       </section>
@@ -45,10 +45,10 @@ function AboutPage() {
           </div>
           <div className="md:col-span-7 space-y-5 text-[15px] md:text-base leading-[1.9] text-foreground/80 max-w-xl">
             <SectionHeading eyebrow="Founders" title="Maggie & Katrina" />
-            <p className="mt-6">在加拿大這片土地上，我們已經深耕、生活了超過 30 個年頭。</p>
-            <p>我們經歷過獨自一人、背起行囊的「小留學生」時光，也走過在溫哥華成家立業、生兒育女的人生階段。</p>
-            <p>因為親自走過，我們比任何人都更熟悉大溫哥華的每一寸土地、當地的文化肌理與豐富的社區資源。</p>
-            <p>我們深知「環境」對孩子人格養成與潛能開發的重要性。如今，我們希望將這 30 年累積的在地經驗與教育熱忱，轉化為力量，陪伴更多來到加拿大留學、遊學的孩子。</p>
+            <p className="mt-6">We've lived and worked on Canadian soil for more than 30 years.</p>
+            <p>We've experienced life as young international students arriving alone, and later built careers, families, and raised children here in Vancouver.</p>
+            <p>Because we walked the path ourselves, we know Greater Vancouver — its neighborhoods, culture, and resources — better than almost anyone.</p>
+            <p>We deeply understand how much environment shapes a child's character and potential. Today we channel those 30 years of local experience and educational passion into supporting more children studying in Canada.</p>
           </div>
         </div>
       </section>
@@ -59,9 +59,9 @@ function AboutPage() {
       >
         <div className="container-editorial grid md:grid-cols-3 gap-12">
           {[
-            { t: "30 年溫哥華在地", b: "從小留學生到創業者與母親，三十年扎根在這座城市。" },
-            { t: "教育為本", b: "深信環境塑造孩子，挑選最適合的學校與生活圈。" },
-            { t: "陪伴式服務", b: "從申請、簽證、住宿到生活適應，全方位長期支援。" },
+            { t: "30 Years in Vancouver", b: "From international students to entrepreneurs and mothers — three decades rooted in this city." },
+            { t: "Education First", b: "We believe environment shapes the child. We choose schools and communities that fit each family." },
+            { t: "Long-Term Partnership", b: "From applications and visas to housing and daily life — comprehensive, ongoing support." },
           ].map((b) => (
             <div key={b.t}>
               <h3 className="font-serif text-2xl text-primary">{b.t}</h3>
@@ -75,12 +75,12 @@ function AboutPage() {
         <div className="container-editorial grid md:grid-cols-2 gap-12 items-center">
           <img src={streetImg} alt="Vancouver residential street" className="w-full aspect-[4/3] object-cover" loading="lazy" />
           <div>
-            <SectionHeading eyebrow="Philosophy" title="教育，不只是申請一所學校" />
+            <SectionHeading eyebrow="Philosophy" title="Education is more than getting into a school" />
             <p className="mt-6 text-base text-foreground/80 leading-[1.9] max-w-lg">
-              我們相信每一位孩子都值得被認識、被理解。從學業規劃到生活適應，我們以家庭般的溫度，協助孩子在異鄉建立自信、獨立與歸屬感。
+              Every child deserves to be truly seen and understood. From academic planning to everyday life, we bring family-like warmth — helping each student build confidence, independence, and belonging in a new country.
             </p>
             <blockquote className="mt-10 border-l-2 border-wood pl-6 font-serif text-2xl text-primary leading-snug max-w-lg">
-              「我們希望孩子不只走出去，更能安心地走得更遠。」
+              "We don't just help children leave home — we help them go further, with peace of mind."
             </blockquote>
           </div>
         </div>
