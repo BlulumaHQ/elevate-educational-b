@@ -48,7 +48,7 @@ const slides = [
   {
     img: heroSlide2,
     eyebrow: "Boutique Education Consulting",
-    title: ["不只是留學，", "更是孩子未來的起點"],
+    title: ["不只是留學，更是", "孩子未來的起點"],
     subtitle:
       "從學校申請、寄宿家庭，到加拿大生活支援，提供真正長期陪伴式留學服務。",
     primary: { label: "Explore Services", to: "/services" },
