@@ -1,8 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Search, FileCheck, Plane, Home as HomeIcon, HeartHandshake, Sparkles } from "lucide-react";
-import schoolImg from "@/assets/school.webp";
+import schoolImg from "@/assets/precise-school-application.webp";
 import homestayImg from "@/assets/homestay.webp";
-import campusImg from "@/assets/hero-students-group.webp";
+import campusImg from "@/assets/office-mentorship.webp";
 import streetImg from "@/assets/vancouver-street.webp";
 import medicalImg from "@/assets/medical-insurance.webp";
 import airportImg from "@/assets/airport-pickup.webp";
