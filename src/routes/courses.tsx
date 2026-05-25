@@ -1,11 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Clock, Users, MapPin, Calendar, CheckCircle2 } from "lucide-react";
-import heroImg from "@/assets/vancouver-street.webp";
-import classroomImg from "@/assets/classroom-mentor.webp";
+import heroImg from "@/assets/summer-program.webp";
+import classroomImg from "@/assets/esl-course.webp";
 import schoolImg from "@/assets/school.webp";
 import homestayImg from "@/assets/homestay.webp";
-import campusHeritage from "@/assets/hero-students-group.webp";
-import streetImg from "@/assets/hero-students-walking.webp";
+import campusHeritage from "@/assets/secondary-school.webp";
+import streetImg from "@/assets/university-pathway.webp";
 import waveBg from "@/assets/wave-bg.jpg";
 
 export const Route = createFileRoute("/courses")({

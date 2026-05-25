@@ -8,9 +8,9 @@ import heroSlide1 from "@/assets/hero-students-walking.webp";
 import heroSlide2 from "@/assets/hero-students-group.webp";
 import skyline from "@/assets/vancouver-skyline.jpg";
 import foundersImg from "@/assets/parent-consultation.webp";
-import campusHeritage from "@/assets/school.webp";
+import campusHeritage from "@/assets/student-presentation.webp";
 import homestayWarm from "@/assets/homestay.webp";
-import classroomMentor from "@/assets/classroom-mentor.webp";
+import classroomMentor from "@/assets/teacher-presenting.webp";
 import waveBg from "@/assets/wave-bg.jpg";
 
 export const Route = createFileRoute("/")({
