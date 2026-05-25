@@ -107,17 +107,6 @@ const courses = [
       "獎學金與住宿資源",
     ],
   },
-  {
-    tag: "Family Stay",
-    title: "親子遊學體驗",
-    age: "全家適合",
-    duration: "2 – 8 週",
-    season: "暑假 / 寒假",
-    location: "Vancouver, BC",
-    img: homestayImg,
-    blurb: "孩子白天就讀短期語言課程，家長同時規劃 Vancouver 生活體驗，為未來長期留學做準備。",
-    highlights: ["孩子日間 ESL 課程", "家長 Vancouver 學校與社區參訪", "周末家庭活動安排", "為未來長期留學預先規劃"],
-  },
 ];
 
 function CoursesPage() {
