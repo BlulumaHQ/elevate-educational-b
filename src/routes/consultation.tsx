@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
-import foundersImg from "@/assets/founders.jpg";
+import foundersImg from "@/assets/parent-consultation.webp";
 import waveBg from "@/assets/wave-bg.jpg";
 
 export const Route = createFileRoute("/consultation")({

@@ -1,9 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Search, FileCheck, Plane, Home as HomeIcon, HeartHandshake, Sparkles } from "lucide-react";
-import schoolImg from "@/assets/school.jpg";
-import homestayImg from "@/assets/homestay.jpg";
-import campusImg from "@/assets/students-campus.jpg";
-import streetImg from "@/assets/vancouver-street.jpg";
+import schoolImg from "@/assets/school.webp";
+import homestayImg from "@/assets/homestay.webp";
+import campusImg from "@/assets/hero-students-group.webp";
+import streetImg from "@/assets/vancouver-street.webp";
+import medicalImg from "@/assets/medical-insurance.webp";
+import airportImg from "@/assets/airport-pickup.webp";
+import settlingImg from "@/assets/settling-in.webp";
+import consultImg from "@/assets/parent-consultation.webp";
 import waveBg from "@/assets/wave-bg.jpg";
 
 export const Route = createFileRoute("/services")({
