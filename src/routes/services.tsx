@@ -22,7 +22,11 @@ export const Route = createFileRoute("/services")({
       { property: "og:image", content: schoolImg },
       { property: "og:url", content: "/services" },
     ],
-    links: [{ rel: "canonical", href: "/services" }],
+    links: [
+      { rel: "canonical", href: "/services" },
+      { rel: "alternate", hrefLang: "zh-Hant", href: "/services" },
+      { rel: "alternate", hrefLang: "en", href: "/en/services" },
+    ],
   }),
   component: ServicesPage,
 });

@@ -30,7 +30,12 @@ export const Route = createFileRoute("/")({
       { property: "og:image", content: heroSlide1 },
       { property: "og:url", content: "/" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [
+      { rel: "canonical", href: "/" },
+      { rel: "alternate", hrefLang: "zh-Hant", href: "/" },
+      { rel: "alternate", hrefLang: "en", href: "/en" },
+      { rel: "alternate", hrefLang: "x-default", href: "/" },
+    ],
   }),
   component: HomePage,
 });

@@ -14,7 +14,11 @@ export const Route = createFileRoute("/about")({
       { property: "og:image", content: foundersImg },
       { property: "og:url", content: "/about" },
     ],
-    links: [{ rel: "canonical", href: "/about" }],
+    links: [
+      { rel: "canonical", href: "/about" },
+      { rel: "alternate", hrefLang: "zh-Hant", href: "/about" },
+      { rel: "alternate", hrefLang: "en", href: "/en/about" },
+    ],
   }),
   component: AboutPage,
 });

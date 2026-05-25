@@ -10,7 +10,11 @@ export const Route = createFileRoute("/contact")({
       { property: "og:title", content: "聯絡我們 | 頤珈國際教育" },
       { property: "og:url", content: "/contact" },
     ],
-    links: [{ rel: "canonical", href: "/contact" }],
+    links: [
+      { rel: "canonical", href: "/contact" },
+      { rel: "alternate", hrefLang: "zh-Hant", href: "/contact" },
+      { rel: "alternate", hrefLang: "en", href: "/en/contact" },
+    ],
   }),
   component: ContactPage,
 });

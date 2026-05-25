@@ -11,7 +11,11 @@ export const Route = createFileRoute("/consultation")({
       { property: "og:title", content: "預約諮詢 | 頤珈國際教育" },
       { property: "og:url", content: "/consultation" },
     ],
-    links: [{ rel: "canonical", href: "/consultation" }],
+    links: [
+      { rel: "canonical", href: "/consultation" },
+      { rel: "alternate", hrefLang: "zh-Hant", href: "/consultation" },
+      { rel: "alternate", hrefLang: "en", href: "/en/consultation" },
+    ],
   }),
   component: ConsultationPage,
 });

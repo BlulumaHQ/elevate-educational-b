@@ -20,7 +20,11 @@ export const Route = createFileRoute("/study-in-vancouver")({
       { property: "og:image", content: campusImg },
       { property: "og:url", content: "/study-in-vancouver" },
     ],
-    links: [{ rel: "canonical", href: "/study-in-vancouver" }],
+    links: [
+      { rel: "canonical", href: "/study-in-vancouver" },
+      { rel: "alternate", hrefLang: "zh-Hant", href: "/study-in-vancouver" },
+      { rel: "alternate", hrefLang: "en", href: "/en/study-in-vancouver" },
+    ],
   }),
   component: StudyPage,
 });

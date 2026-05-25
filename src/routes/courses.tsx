@@ -21,7 +21,11 @@ export const Route = createFileRoute("/courses")({
       { property: "og:image", content: heroImg },
       { property: "og:url", content: "/courses" },
     ],
-    links: [{ rel: "canonical", href: "/courses" }],
+    links: [
+      { rel: "canonical", href: "/courses" },
+      { rel: "alternate", hrefLang: "zh-Hant", href: "/courses" },
+      { rel: "alternate", hrefLang: "en", href: "/en/courses" },
+    ],
   }),
   component: CoursesPage,
 });
