@@ -12,7 +12,10 @@ export const Route = createFileRoute("/study-in-vancouver")({
   head: () => ({
     meta: [
       { title: "溫哥華留學 Study in Vancouver | 頤珈國際教育" },
-      { name: "description", content: "認識溫哥華教育體系、公立私立學校、國際學生生活、寄宿家庭、交通與氣候，為您的留學規劃做好準備。" },
+      {
+        name: "description",
+        content: "認識溫哥華教育體系、公立私立學校、國際學生生活、寄宿家庭、交通與氣候，為您的留學規劃做好準備。",
+      },
       { property: "og:title", content: "溫哥華留學 | 頤珈國際教育" },
       { property: "og:image", content: campusImg },
       { property: "og:url", content: "/study-in-vancouver" },
@@ -34,10 +37,13 @@ const overview = [
 ];
 
 const faqs = [
-  { q: "幾歲可以開始到溫哥華留學？", a: "我們協助 國小高年級至高中、大學階段的學生，並依年齡規劃合適的學校與住宿方案。" },
+  {
+    q: "幾歲可以開始到溫哥華留學？",
+    a: "我們協助 國小高年級至高中、大學階段的學生，並依年齡規劃合適的學校與住宿方案。",
+  },
   { q: "需要陪讀嗎？", a: "未成年學生若無家長陪同，需安排合格的監護人。我們提供合法監護人服務並協助寄宿家庭安排。" },
   { q: "公立與私立學校如何選擇？", a: "我們會依孩子個性、語言程度、升學目標與預算，協助評估最適合的方案。" },
-  { q: "簽證需要多久？", a: "依季節與案件複雜度不同，一般約 4–12 週，我們會全程協助文件準備與追蹤。" },
+  { q: "簽證需要多久？", a: "依季節與案件複雜度不同，一般約 4–12 週，我們會協助文件準備與追蹤。" },
   { q: "孩子英文不夠好可以嗎？", a: "可以，溫哥華有完善的 ESL/語言課程銜接，並可安排短期語言學校先行適應。" },
 ];
 
@@ -54,7 +60,12 @@ function StudyPage() {
             溫哥華結合世界級的教育資源與西岸自然生活，是國際家庭最信賴的留學城市之一。
           </p>
         </div>
-        <img src={campusImg} alt="Vancouver campus" className="w-full mt-16 aspect-[21/9] object-cover" loading="lazy" />
+        <img
+          src={campusImg}
+          alt="Vancouver campus"
+          className="w-full mt-16 aspect-[21/9] object-cover"
+          loading="lazy"
+        />
       </section>
 
       <section
@@ -89,7 +100,9 @@ function StudyPage() {
             <SectionHeading eyebrow="FAQ" title="家長常見問題" />
           </div>
           <div className="md:col-span-8">
-            {faqs.map((f) => <Faq key={f.q} q={f.q} a={f.a} />)}
+            {faqs.map((f) => (
+              <Faq key={f.q} q={f.q} a={f.a} />
+            ))}
           </div>
         </div>
       </section>
