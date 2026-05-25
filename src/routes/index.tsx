@@ -4,8 +4,8 @@ import {
   ArrowRight, GraduationCap, ShieldCheck, Home, Compass, HeartHandshake, Plane,
   Globe, BookOpen, MapPin, Building2, School, Briefcase, Library, Award,
 } from "lucide-react";
-import heroSlide1 from "@/assets/hero-students-walking.webp";
-import heroSlide2 from "@/assets/hero-students-group.webp";
+import heroSlide1 from "@/assets/hero-students-group.webp";
+import heroSlide2 from "@/assets/hero-students-walking.webp";
 import skyline from "@/assets/vancouver-skyline.jpg";
 import foundersImg from "@/assets/parent-consultation.webp";
 import campusHeritage from "@/assets/student-presentation.webp";
