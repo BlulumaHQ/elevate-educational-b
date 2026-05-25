@@ -30,13 +30,12 @@ const courses = [
   {
     tag: "Summer Program",
     title: "溫哥華暑期遊學營",
-    age: "10 – 15 歲",
+    age: "10 – 18 歲",
     duration: "4 週",
     season: "7 – 8 月",
     location: "Vancouver, BC",
     img: heroImg,
-    blurb:
-      "以英語為主軸，融入加拿大文化體驗、戶外探索與校園生活，幫助孩子在輕鬆環境中建立國際視野。",
+    blurb: "以英語為主軸，融入加拿大文化體驗、戶外探索與校園生活，幫助孩子在輕鬆環境中建立國際視野。",
     highlights: [
       "每日 ESL 英語課程（小班制 8–10 人）",
       "Stanley Park、Granville Island、Whistler 戶外探索",
@@ -52,8 +51,7 @@ const courses = [
     season: "全年開課",
     location: "Vancouver Downtown",
     img: classroomImg,
-    blurb:
-      "為計畫長期就讀加拿大公私立中學的孩子設計，銜接學科英語、學術寫作與口語表達。",
+    blurb: "為計畫長期就讀加拿大公私立中學的孩子設計，銜接學科英語、學術寫作與口語表達。",
     highlights: [
       "依程度分班（Beginner – Advanced）",
       "學術寫作、閱讀理解、口語簡報",
@@ -69,8 +67,7 @@ const courses = [
     season: "9 月 / 1 月入學",
     location: "Greater Vancouver",
     img: schoolImg,
-    blurb:
-      "為國小高年級孩子規劃 BC 省公立或私立小學銜接，包含申請、課輔、家長定期回報。",
+    blurb: "為國小高年級孩子規劃 BC 省公立或私立小學銜接，包含申請、課輔、家長定期回報。",
     highlights: [
       "BC 公立 / 私立小學申請輔導",
       "課後一對一中英學習支援",
@@ -86,8 +83,7 @@ const courses = [
     season: "9 月 / 2 月入學",
     location: "BC Public & Private",
     img: campusHeritage,
-    blurb:
-      "從學校評估、申請、簽證到落地照護的完整方案，協助孩子順利完成加拿大中學學業並銜接大學。",
+    blurb: "從學校評估、申請、簽證到落地照護的完整方案，協助孩子順利完成加拿大中學學業並銜接大學。",
     highlights: [
       "Top BC 公私立中學申請（40+ 合作學校）",
       "選課與學分規劃",
@@ -103,8 +99,7 @@ const courses = [
     season: "Fall / Spring",
     location: "Vancouver Colleges",
     img: streetImg,
-    blurb:
-      "為高中後段或畢業生規劃加拿大社區學院 + 大學轉學雙軌路徑，兼顧成本與名校機會。",
+    blurb: "為高中後段或畢業生規劃加拿大社區學院 + 大學轉學雙軌路徑，兼顧成本與名校機會。",
     highlights: [
       "College + University Transfer 規劃",
       "IELTS / Duolingo 英語備考",
@@ -120,14 +115,8 @@ const courses = [
     season: "暑假 / 寒假",
     location: "Vancouver, BC",
     img: homestayImg,
-    blurb:
-      "孩子白天就讀短期語言課程，家長同時規劃 Vancouver 生活體驗，為未來長期留學做準備。",
-    highlights: [
-      "孩子日間 ESL 課程",
-      "家長 Vancouver 學校與社區參訪",
-      "周末家庭活動安排",
-      "為未來長期留學預先規劃",
-    ],
+    blurb: "孩子白天就讀短期語言課程，家長同時規劃 Vancouver 生活體驗，為未來長期留學做準備。",
+    highlights: ["孩子日間 ESL 課程", "家長 Vancouver 學校與社區參訪", "周末家庭活動安排", "為未來長期留學預先規劃"],
   },
 ];
 
@@ -140,11 +129,12 @@ function CoursesPage() {
         <div className="container-editorial relative">
           <p className="text-[11px] tracking-[0.3em] text-gold uppercase mb-5">Courses</p>
           <h1 className="font-serif text-5xl md:text-7xl leading-[1.1] text-balance max-w-3xl">
-            為 10 – 18 歲孩子<br />量身打造的留學課程
+            為 10 – 18 歲孩子
+            <br />
+            量身打造的留學課程
           </h1>
           <p className="mt-8 max-w-2xl text-base md:text-lg text-ivory/75 leading-relaxed">
-            從短期暑期遊學、英語強化，到中學長期留學與大學銜接，
-            我們協助華人家庭找到最適合孩子當下階段的課程方案。
+            從短期暑期遊學、英語強化，到中學長期留學與大學銜接， 我們協助華人家庭找到最適合孩子當下階段的課程方案。
           </p>
         </div>
       </section>
@@ -156,18 +146,10 @@ function CoursesPage() {
       >
         <div className="container-editorial space-y-20 md:space-y-28">
           {courses.map((c, i) => (
-            <article
-              key={c.title}
-              className="grid md:grid-cols-12 gap-10 md:gap-14 items-center"
-            >
+            <article key={c.title} className="grid md:grid-cols-12 gap-10 md:gap-14 items-center">
               <div className={`md:col-span-7 ${i % 2 === 1 ? "md:order-2" : ""}`}>
                 <div className="relative">
-                  <img
-                    src={c.img}
-                    alt={c.title}
-                    className="w-full aspect-[4/3] object-cover"
-                    loading="lazy"
-                  />
+                  <img src={c.img} alt={c.title} className="w-full aspect-[4/3] object-cover" loading="lazy" />
                   <div className="absolute top-4 left-4 bg-ivory/95 backdrop-blur px-4 py-2 text-[10px] tracking-[0.28em] uppercase text-navy">
                     {c.tag}
                   </div>
@@ -175,12 +157,8 @@ function CoursesPage() {
               </div>
 
               <div className="md:col-span-5">
-                <h2 className="font-serif text-3xl md:text-4xl text-primary leading-tight">
-                  {c.title}
-                </h2>
-                <p className="mt-5 text-base text-foreground/80 leading-[1.95]">
-                  {c.blurb}
-                </p>
+                <h2 className="font-serif text-3xl md:text-4xl text-primary leading-tight">{c.title}</h2>
+                <p className="mt-5 text-base text-foreground/80 leading-[1.95]">{c.blurb}</p>
 
                 <dl className="mt-7 grid grid-cols-2 gap-x-6 gap-y-4 text-sm">
                   <Meta Icon={Users} label="適合年齡" value={c.age} />
@@ -215,7 +193,9 @@ function CoursesPage() {
         <div className="container-editorial text-center">
           <p className="text-[11px] tracking-[0.3em] text-gold uppercase mb-5">Not Sure Where to Start?</p>
           <h2 className="font-serif text-4xl md:text-5xl leading-tight">
-            讓我們一起為孩子<br />選擇最合適的課程
+            讓我們一起為孩子
+            <br />
+            選擇最合適的課程
           </h2>
           <p className="mt-5 max-w-xl mx-auto text-ivory/75">
             每個孩子都不一樣。預約一次免費諮詢，我們會根據孩子的年齡、英語程度與家庭目標，提供量身建議。
