@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import campusImg from "@/assets/hero-students-walking.webp";
-import streetImg from "@/assets/vancouver-street.webp";
+import streetImg from "@/assets/vancouver-skyline.jpg";
 import schoolImg from "@/assets/school.webp";
 import homestayImg from "@/assets/homestay.webp";
 import waveBg from "@/assets/wave-bg.jpg";
