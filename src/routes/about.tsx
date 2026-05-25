@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import foundersImg from "@/assets/founders.jpg";
-import streetImg from "@/assets/vancouver-street.jpg";
+import foundersImg from "@/assets/parent-consultation.webp";
+import streetImg from "@/assets/vancouver-street.webp";
 import waveBg from "@/assets/wave-bg.jpg";
 import { SectionHeading } from "@/components/section-heading";
 

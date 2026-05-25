@@ -4,13 +4,13 @@ import {
   ArrowRight, GraduationCap, ShieldCheck, Home, Compass, HeartHandshake, Plane,
   Globe, BookOpen, MapPin, Building2, School, Briefcase, Library, Award,
 } from "lucide-react";
-import heroSlide1 from "@/assets/hero-slide-1.jpg";
-import heroSlide2 from "@/assets/hero-slide-2.jpg";
+import heroSlide1 from "@/assets/hero-students-walking.webp";
+import heroSlide2 from "@/assets/hero-students-group.webp";
 import skyline from "@/assets/vancouver-skyline.jpg";
-import foundersImg from "@/assets/founders-pro.jpg";
-import campusHeritage from "@/assets/campus-heritage.jpg";
-import homestayWarm from "@/assets/homestay-warm.jpg";
-import classroomMentor from "@/assets/classroom-mentor.jpg";
+import foundersImg from "@/assets/parent-consultation.webp";
+import campusHeritage from "@/assets/school.webp";
+import homestayWarm from "@/assets/homestay.webp";
+import classroomMentor from "@/assets/classroom-mentor.webp";
 import waveBg from "@/assets/wave-bg.jpg";
 
 export const Route = createFileRoute("/")({

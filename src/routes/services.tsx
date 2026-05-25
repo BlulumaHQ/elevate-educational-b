@@ -1,9 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Search, FileCheck, Plane, Home as HomeIcon, HeartHandshake, Sparkles } from "lucide-react";
-import schoolImg from "@/assets/school.jpg";
-import homestayImg from "@/assets/homestay.jpg";
-import campusImg from "@/assets/students-campus.jpg";
-import streetImg from "@/assets/vancouver-street.jpg";
+import schoolImg from "@/assets/school.webp";
+import homestayImg from "@/assets/homestay.webp";
+import campusImg from "@/assets/hero-students-group.webp";
+import streetImg from "@/assets/vancouver-street.webp";
+import medicalImg from "@/assets/medical-insurance.webp";
+import airportImg from "@/assets/airport-pickup.webp";
+import settlingImg from "@/assets/settling-in.webp";
+import consultImg from "@/assets/parent-consultation.webp";
 import waveBg from "@/assets/wave-bg.jpg";
 
 export const Route = createFileRoute("/services")({
@@ -48,28 +52,28 @@ const services = [
   {
     num: "04",
     t: "機場接機與安頓",
-    img: streetImg,
+    img: airportImg,
     b: "由顧問或合作司機親自接機，協助首日入住與初步生活定向。",
     steps: ["航班追蹤", "專人接機", "入住協助", "城市定向導覽"],
   },
   {
     num: "05",
     t: "醫療保險協助",
-    img: schoolImg,
+    img: medicalImg,
     b: "協助申請 BC 省醫療保險與私人保險，提供完整海外醫療保障。",
     steps: ["BC MSP 申請", "私人保險方案", "就醫陪同協助", "緊急聯絡支援"],
   },
   {
     num: "06",
     t: "生活安頓服務",
-    img: streetImg,
+    img: settlingImg,
     b: "手機、銀行、交通卡與生活用品準備，協助孩子快速融入加拿大日常。",
     steps: ["手機門號開通", "銀行帳戶開戶", "交通卡與路線", "生活用品採買"],
   },
   {
     num: "07",
     t: "家長諮詢服務",
-    img: campusImg,
+    img: consultImg,
     b: "提供家長定期回報與即時溝通，讓您隨時掌握孩子的學習與生活狀況。",
     steps: ["成績與生活回饋", "緊急聯絡窗口", "親子諮詢支援"],
   },
