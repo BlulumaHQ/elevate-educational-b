@@ -33,7 +33,7 @@ const courses = [
     age: "10 – 18 歲",
     duration: "4 週",
     season: "7 – 8 月",
-    location: "Vancouver, BC",
+    location: "大溫哥華區域",
     img: heroImg,
     blurb: "以英語為主軸，融入加拿大文化體驗、戶外探索與校園生活，幫助孩子在輕鬆環境中建立國際視野。",
     highlights: [
@@ -49,7 +49,7 @@ const courses = [
     age: "12 – 18 歲",
     duration: "8 – 24 週",
     season: "全年開課",
-    location: "Vancouver Downtown",
+    location: "大溫哥華區域",
     img: classroomImg,
     blurb: "為計畫長期就讀加拿大公私立中學的孩子設計，銜接學科英語、學術寫作與口語表達。",
     highlights: [
@@ -65,7 +65,7 @@ const courses = [
     age: "10 – 12 歲",
     duration: "1 學年",
     season: "9 月 / 1 月入學",
-    location: "Greater Vancouver",
+    location: "大溫哥華區域",
     img: schoolImg,
     blurb: "為國小高年級孩子規劃 BC 省公立或私立小學銜接，包含申請、課輔、家長定期回報。",
     highlights: [
@@ -81,7 +81,7 @@ const courses = [
     age: "13 – 17 歲",
     duration: "1 – 4 年",
     season: "9 月 / 2 月入學",
-    location: "BC Public & Private",
+    location: "大溫哥華區域",
     img: campusHeritage,
     blurb: "從學校評估、申請、簽證到落地照護的完整方案，協助孩子順利完成加拿大中學學業並銜接大學。",
     highlights: [
@@ -97,7 +97,7 @@ const courses = [
     age: "16 – 18 歲",
     duration: "1 – 2 年",
     season: "Fall / Spring",
-    location: "Vancouver Colleges",
+    location: "大溫哥華區域",
     img: streetImg,
     blurb: "為高中後段或畢業生規劃加拿大社區學院 + 大學轉學雙軌路徑，兼顧成本與名校機會。",
     highlights: [
