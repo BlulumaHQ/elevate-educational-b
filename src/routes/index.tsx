@@ -103,7 +103,7 @@ function HomePage() {
             <img
               src={s.img}
               alt=""
-              className={`absolute inset-0 w-full h-full object-cover object-bottom ${i === active ? "kenburns" : ""}`}
+              className={`absolute inset-0 w-full h-full object-cover object-top ${i === active ? "kenburns" : ""}`}
             />
             <div className="absolute inset-0 hero-overlay" />
           </div>
