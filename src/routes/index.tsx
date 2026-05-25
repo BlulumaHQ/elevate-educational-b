@@ -48,7 +48,7 @@ const slides = [
   {
     img: heroSlide2,
     eyebrow: "Boutique Education Consulting",
-    title: ["不只是留學，", "更是孩子未來的起點"],
+    title: ["不只是留學，更是", "孩子未來的起點"],
     subtitle:
       "從學校申請、寄宿家庭，到加拿大生活支援，提供真正長期陪伴式留學服務。",
     primary: { label: "Explore Services", to: "/services" },
@@ -76,7 +76,7 @@ const floatingIcons = [
   { Icon: Globe, className: "top-[22%] right-[12%]", delay: "1s", size: 48 },
   { Icon: BookOpen, className: "bottom-[28%] left-[14%]", delay: "2s", size: 44 },
   { Icon: MapPin, className: "bottom-[18%] right-[20%]", delay: "1.5s", size: 40 },
-  { Icon: Building2, className: "top-[40%] left-[42%]", delay: "0.5s", size: 52 },
+  { Icon: Building2, className: "bottom-[22%] left-[5%]", delay: "0.5s", size: 52 },
   { Icon: Library, className: "bottom-[10%] left-[38%]", delay: "2.5s", size: 44 },
 ];
 
@@ -103,7 +103,7 @@ function HomePage() {
             <img
               src={s.img}
               alt=""
-              className={`absolute inset-0 w-full h-full object-cover ${i === active ? "kenburns" : ""}`}
+              className={`absolute inset-0 w-full h-full object-cover object-top ${i === active ? "kenburns" : ""}`}
             />
             <div className="absolute inset-0 hero-overlay" />
           </div>
