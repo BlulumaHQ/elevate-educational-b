@@ -1,6 +1,6 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { ArrowUpRight, MapPin, Mail, Phone } from "lucide-react";
-import logoFull from "@/assets/elevate-logo.svg";
+import logoFull from "@/assets/elevate-logo-footer.png";
 
 const navZh = [
   { to: "/", label: "Home" },
