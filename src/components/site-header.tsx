@@ -1,7 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/logo-horizontal-transparent.png";
+import logo from "@/assets/elevate-logo.svg";
 
 const navZh = [
   { to: "/", label: "首頁", en: "Home" },
