@@ -36,7 +36,7 @@ export function SiteFooter() {
             <img
               src={logoFull}
               alt={isEn ? "Elevate International Education" : "頤珈國際教育 Elevate International Education"}
-              className="h-24 md:h-28 w-auto object-contain brightness-0 invert"
+              className="h-24 md:h-28 w-auto object-contain"
             />
             <p className="text-sm text-ivory/65 max-w-sm leading-[1.95]">
               {isEn ? (
