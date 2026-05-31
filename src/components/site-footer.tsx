@@ -1,6 +1,6 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { ArrowUpRight, MapPin, Mail, Phone } from "lucide-react";
-import logoIcon from "@/assets/logo-icon-only.png";
+import logoFull from "@/assets/elevate-logo.svg";
 
 const navZh = [
   { to: "/", label: "Home" },
@@ -33,22 +33,11 @@ export function SiteFooter() {
       <div className="container-wide pt-24 pb-12">
         <div className="grid gap-14 md:grid-cols-12">
           <div className="md:col-span-5 space-y-6">
-            <div className="flex items-center gap-4">
-              <img
-                src={logoIcon}
-                alt=""
-                aria-hidden="true"
-                className="h-20 w-20 md:h-24 md:w-24 object-contain shrink-0"
-              />
-              <div className="leading-tight">
-                <p className="font-serif text-2xl md:text-3xl text-ivory">
-                  {isEn ? "Elevate International Education" : "頤珈國際教育"}
-                </p>
-                <p className="mt-1 text-[11px] tracking-[0.28em] uppercase text-gold">
-                  {isEn ? "Vancouver, BC · Since 1995" : "Elevate International Education"}
-                </p>
-              </div>
-            </div>
+            <img
+              src={logoFull}
+              alt={isEn ? "Elevate International Education" : "頤珈國際教育 Elevate International Education"}
+              className="h-24 md:h-28 w-auto object-contain"
+            />
             <p className="text-sm text-ivory/65 max-w-sm leading-[1.95]">
               {isEn ? (
                 <>
