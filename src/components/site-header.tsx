@@ -75,8 +75,8 @@ export function SiteHeader() {
 
   return (
     <header className="fixed top-0 inset-x-0 z-50 bg-ivory/95 backdrop-blur-md border-b border-navy/10">
-      <div className="container-wide flex items-center justify-between gap-6 py-0">
-        <Link to={isEn ? "/en" : "/"} className="flex items-center shrink-0 text-navy -my-2">
+      <div className="container-wide flex items-center justify-between gap-6 py-3">
+        <Link to={isEn ? "/en" : "/"} className="flex items-center shrink-0 text-navy">
           <img
             src={logo}
             alt="頤珈國際教育 Elevate International Education"
