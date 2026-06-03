@@ -80,7 +80,7 @@ const courses = [
     ],
   },
   {
-    tag: "Secondary School",
+    tag: "中學留學",
     title: "中學長期留學方案",
     age: "13 – 17 歲",
     duration: "1 – 4 年",
