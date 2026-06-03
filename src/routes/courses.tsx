@@ -96,11 +96,11 @@ const courses = [
     ],
   },
   {
-    tag: "University Pathway",
+    tag: "大學銜接",
     title: "大學銜接與升學規劃",
     age: "16 – 18 歲",
     duration: "1 – 2 年",
-    season: "Fall / Spring",
+    season: "秋季 / 春季",
     location: "大溫哥華區域",
     img: streetImg,
     blurb: "為高中後段或畢業生規劃加拿大社區學院 + 大學轉學雙軌路徑，兼顧成本與名校機會。",
