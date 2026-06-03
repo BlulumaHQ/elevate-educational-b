@@ -308,7 +308,7 @@ function HomePage() {
         <div className="container-wide relative">
           <div className="grid lg:grid-cols-12 gap-10 items-end mb-20">
             <div className="lg:col-span-7">
-              <p className="eyebrow mb-6 flex items-center gap-4"><span className="gold-bar" /> What We Do</p>
+              <p className="eyebrow mb-6 flex items-center gap-4"><span className="gold-bar" /> 我們的服務</p>
               <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-navy leading-[1.08] text-balance">
                 從第一封申請信，<br />到孩子畢業的那一天。
               </h2>
