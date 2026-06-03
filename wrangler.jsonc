@@ -1,10 +1,13 @@
-// Cloudflare CI must run `vite build` first, then `wrangler deploy`.
-// The build force-enables Nitro in vite.config.ts and emits the fully bundled
-// Worker here: dist/server/index.mjs. Pointing Wrangler at src/server.ts makes
-// Wrangler's own bundler see unresolved TanStack virtual modules.
+// Cloudflare CI must run the build first, then `npx wrangler deploy`.
+// `npm run build` force-enables Nitro and writes both:
+//   - dist/server/wrangler.json
+//   - .wrangler/deploy/config.json
+// Bare Wrangler then auto-detects the generated config and deploys the built
+// Worker. Pointing Wrangler at src/server.ts makes Wrangler's own bundler see
+// unresolved TanStack virtual modules.
 //
 // Local/CI deploy flow:
-//   npx vite build && npx wrangler deploy
+//   npm run build && npx wrangler deploy
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "elevate-educational-b",
