@@ -2,14 +2,18 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import { ArrowUpRight, MapPin, Mail, Phone } from "lucide-react";
 import logoFull from "@/assets/elevate-logo-footer.png";
 
+const EMAIL = "info@elevateeducation.ca";
+const PHONE_DISPLAY = "778-982-3667";
+const PHONE_TEL = "+17789823667";
+
 const navZh = [
-  { to: "/", label: "Home" },
-  { to: "/about", label: "About" },
-  { to: "/study-in-vancouver", label: "Study in Vancouver" },
-  { to: "/services", label: "Services" },
-  { to: "/courses", label: "Courses" },
-  { to: "/consultation", label: "Consultation" },
-  { to: "/contact", label: "Contact" },
+  { to: "/", label: "首頁" },
+  { to: "/about", label: "關於我們" },
+  { to: "/study-in-vancouver", label: "溫哥華留學" },
+  { to: "/services", label: "服務內容" },
+  { to: "/courses", label: "課程介紹" },
+  { to: "/consultation", label: "預約諮詢" },
+  { to: "/contact", label: "聯絡我們" },
 ] as const;
 
 const navEn = [
@@ -47,9 +51,8 @@ export function SiteFooter() {
                 </>
               ) : (
                 <>
-                  Boutique International Education Consulting,
-                  proudly based in Vancouver, BC. <br />
-                  30 年加拿大在地經驗，陪伴孩子安心成長。
+                  精品國際教育顧問品牌，根植於加拿大 Vancouver。<br />
+                  30 年在地經驗，陪伴國際家庭安心成長。
                 </>
               )}
             </p>
@@ -57,12 +60,12 @@ export function SiteFooter() {
               to={consultPath}
               className="inline-flex items-center gap-3 text-sm tracking-[0.2em] uppercase text-gold border-b border-gold/40 pb-1 hover:border-gold transition-colors"
             >
-              Book a Consultation <ArrowUpRight size={16} />
+              {isEn ? "Book a Consultation" : "預約免費諮詢"} <ArrowUpRight size={16} />
             </Link>
           </div>
 
           <div className="md:col-span-3">
-            <p className="eyebrow mb-6 text-ivory/55">Navigation</p>
+            <p className="eyebrow mb-6 text-ivory/55">{isEn ? "Navigation" : "網站導覽"}</p>
             <ul className="space-y-3 text-sm">
               {nav.map((n) => (
                 <li key={n.to}>
@@ -75,22 +78,23 @@ export function SiteFooter() {
           </div>
 
           <div className="md:col-span-4">
-            <p className="eyebrow mb-6 text-ivory/55">Contact</p>
+            <p className="eyebrow mb-6 text-ivory/55">{isEn ? "Contact" : "聯絡資訊"}</p>
             <ul className="space-y-4 text-sm text-ivory/80">
               <li className="flex items-start gap-3">
                 <Mail size={16} strokeWidth={1.5} className="mt-0.5 text-gold shrink-0" />
-                hello@elevate-edu.ca
+                <a href={`mailto:${EMAIL}`} className="hover:text-gold transition-colors break-all">
+                  {EMAIL}
+                </a>
               </li>
               <li className="flex items-start gap-3">
                 <Phone size={16} strokeWidth={1.5} className="mt-0.5 text-gold shrink-0" />
-                +1 (604) 000-0000
+                <a href={`tel:${PHONE_TEL}`} className="hover:text-gold transition-colors">
+                  {PHONE_DISPLAY}
+                </a>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin size={16} strokeWidth={1.5} className="mt-0.5 text-gold shrink-0" />
-                Vancouver, British Columbia, Canada
-              </li>
-              <li className="pt-3 text-ivory/55 text-xs tracking-[0.22em] uppercase">
-                Line · ElevateEdu &nbsp;·&nbsp; WhatsApp +1 604 000 0000
+                {isEn ? "Vancouver, British Columbia, Canada" : "加拿大 Vancouver, British Columbia"}
               </li>
             </ul>
           </div>
