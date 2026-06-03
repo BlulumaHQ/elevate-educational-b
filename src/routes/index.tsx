@@ -338,7 +338,7 @@ function HomePage() {
                   {s.body}
                 </p>
                 <div className="mt-8 flex items-center gap-3 text-[11px] tracking-[0.28em] uppercase text-navy/50 group-hover:text-gold transition-colors">
-                  Learn More <ArrowRight size={13} />
+                  了解更多 <ArrowRight size={13} />
                 </div>
               </div>
             ))}
