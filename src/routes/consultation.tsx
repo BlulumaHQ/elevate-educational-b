@@ -35,7 +35,7 @@ function ConsultationPage() {
     >
       <div className="container-editorial grid md:grid-cols-12 gap-12 md:gap-20">
         <div className="md:col-span-7">
-          <p className="text-[11px] tracking-[0.3em] text-wood uppercase mb-5">Consultation</p>
+          <p className="text-[11px] tracking-[0.3em] text-wood uppercase mb-5">預約諮詢</p>
           <h1 className="font-serif text-4xl md:text-6xl text-primary leading-[1.1] text-balance">
             預約免費留學諮詢
           </h1>
