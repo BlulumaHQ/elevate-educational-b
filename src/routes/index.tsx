@@ -262,7 +262,7 @@ function HomePage() {
           {/* COPY SIDE */}
           <div className="px-6 md:px-16 lg:px-24 py-20 lg:py-32 flex items-center">
             <div className="max-w-xl">
-              <p className="eyebrow mb-6 flex items-center gap-4"><span className="gold-bar" /> Meet the Founders</p>
+              <p className="eyebrow mb-6 flex items-center gap-4"><span className="gold-bar" /> 認識創辦人</p>
               <h2 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.08] text-balance">
                 30 年的加拿大，<br />一生的教育承諾。
               </h2>
@@ -283,7 +283,7 @@ function HomePage() {
                 {[
                   { y: "1995", t: "移居 Vancouver" },
                   { y: "2005", t: "啟動教育顧問服務" },
-                  { y: "2026", t: "成立頤珈國際教育" },
+                  { y: "2025", t: "服務 200+ 國際家庭" },
                 ].map((m) => (
                   <div key={m.y}>
                     <div className="font-display text-2xl text-gold">{m.y}</div>
@@ -293,7 +293,7 @@ function HomePage() {
               </div>
 
               <Link to="/about" className="mt-12 inline-flex items-center gap-3 text-sm tracking-[0.2em] uppercase text-gold link-underline">
-                More About Us <ArrowRight size={15} />
+                更多關於我們 <ArrowRight size={15} />
               </Link>
             </div>
           </div>
