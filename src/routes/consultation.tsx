@@ -80,7 +80,7 @@ function ConsultationPage() {
             <img src={foundersImg} alt="Founders" className="w-full aspect-[4/5] object-cover" loading="lazy" />
             <div className="border-t border-border pt-6">
               <p className="font-serif text-xl text-primary">Maggie & Katrina</p>
-              <p className="text-xs tracking-[0.2em] text-wood uppercase mt-2">Founders, Vancouver</p>
+              <p className="text-xs tracking-[0.2em] text-wood uppercase mt-2">創辦人 · Vancouver</p>
               <p className="mt-5 text-sm text-muted-foreground leading-relaxed">
                 我們相信每一段留學旅程，都值得被細心對待。30 年在地經驗，讓我們成為您最值得信賴的留學夥伴。
               </p>
