@@ -77,7 +77,7 @@ function StudyPage() {
         style={{ backgroundImage: `url(${waveBg})`, backgroundSize: "cover", backgroundPosition: "center" }}
       >
         <div className="container-editorial">
-          <SectionHeading eyebrow="Overview" title="關於溫哥華留學" />
+          <SectionHeading eyebrow="概覽" title="關於溫哥華留學" />
           <div className="mt-14 grid md:grid-cols-2 gap-x-16 gap-y-10">
             {overview.map((o, i) => (
               <div key={o.t} className="border-t border-border pt-6">
@@ -101,7 +101,7 @@ function StudyPage() {
       <section className="py-24 md:py-32 bg-background">
         <div className="container-editorial grid md:grid-cols-12 gap-12">
           <div className="md:col-span-4">
-            <SectionHeading eyebrow="FAQ" title="家長常見問題" />
+            <SectionHeading eyebrow="常見問題" title="家長常見問題" />
           </div>
           <div className="md:col-span-8">
             {faqs.map((f) => (

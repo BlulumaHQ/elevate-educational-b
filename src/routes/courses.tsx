@@ -32,7 +32,7 @@ export const Route = createFileRoute("/courses")({
 
 const courses = [
   {
-    tag: "Summer Program",
+    tag: "暑期遊學",
     title: "溫哥華暑期遊學營",
     age: "10 – 18 歲",
     duration: "4 週",
@@ -48,7 +48,7 @@ const courses = [
     ],
   },
   {
-    tag: "ESL Intensive",
+    tag: "ESL 強化",
     title: "ESL 英語強化課程",
     age: "12 – 18 歲",
     duration: "8 – 24 週",
@@ -64,7 +64,7 @@ const courses = [
     ],
   },
   {
-    tag: "Junior School",
+    tag: "小學銜接",
     title: "加拿大小學銜接課程",
     age: "10 – 12 歲",
     duration: "1 學年",
@@ -80,7 +80,7 @@ const courses = [
     ],
   },
   {
-    tag: "Secondary School",
+    tag: "中學留學",
     title: "中學長期留學方案",
     age: "13 – 17 歲",
     duration: "1 – 4 年",
@@ -96,11 +96,11 @@ const courses = [
     ],
   },
   {
-    tag: "University Pathway",
+    tag: "大學銜接",
     title: "大學銜接與升學規劃",
     age: "16 – 18 歲",
     duration: "1 – 2 年",
-    season: "Fall / Spring",
+    season: "秋季 / 春季",
     location: "大溫哥華區域",
     img: streetImg,
     blurb: "為高中後段或畢業生規劃加拿大社區學院 + 大學轉學雙軌路徑，兼顧成本與名校機會。",
@@ -184,7 +184,7 @@ function CoursesPage() {
       {/* CTA */}
       <section className="py-24 md:py-32 bg-navy text-ivory">
         <div className="container-editorial text-center">
-          <p className="text-[11px] tracking-[0.3em] text-gold uppercase mb-5">Not Sure Where to Start?</p>
+          <p className="text-[11px] tracking-[0.3em] text-gold uppercase mb-5">還不確定從哪裡開始？</p>
           <h2 className="font-serif text-4xl md:text-5xl leading-tight">
             讓我們一起為孩子
             <br />

@@ -35,7 +35,7 @@ function ConsultationPage() {
     >
       <div className="container-editorial grid md:grid-cols-12 gap-12 md:gap-20">
         <div className="md:col-span-7">
-          <p className="text-[11px] tracking-[0.3em] text-wood uppercase mb-5">Consultation</p>
+          <p className="text-[11px] tracking-[0.3em] text-wood uppercase mb-5">預約諮詢</p>
           <h1 className="font-serif text-4xl md:text-6xl text-primary leading-[1.1] text-balance">
             預約免費留學諮詢
           </h1>
@@ -68,7 +68,7 @@ function ConsultationPage() {
                   type="submit"
                   className="w-full sm:w-auto bg-primary text-primary-foreground px-10 py-4 text-sm tracking-wide hover:bg-navy-deep transition-colors"
                 >
-                  Book Consultation
+                  送出預約
                 </button>
               </div>
             </form>
@@ -80,13 +80,13 @@ function ConsultationPage() {
             <img src={foundersImg} alt="Founders" className="w-full aspect-[4/5] object-cover" loading="lazy" />
             <div className="border-t border-border pt-6">
               <p className="font-serif text-xl text-primary">Maggie & Katrina</p>
-              <p className="text-xs tracking-[0.2em] text-wood uppercase mt-2">Founders, Vancouver</p>
+              <p className="text-xs tracking-[0.2em] text-wood uppercase mt-2">創辦人 · Vancouver</p>
               <p className="mt-5 text-sm text-muted-foreground leading-relaxed">
                 我們相信每一段留學旅程，都值得被細心對待。30 年在地經驗，讓我們成為您最值得信賴的留學夥伴。
               </p>
             </div>
             <div className="bg-secondary/40 border border-border p-6 text-sm leading-relaxed text-foreground/80">
-              <p className="font-serif text-primary text-lg mb-2">Vancouver Local Support</p>
+              <p className="font-serif text-primary text-lg mb-2">溫哥華在地支援</p>
               <p>顧問團隊長居溫哥華，提供台灣與加拿大兩地時段的彈性諮詢時間。</p>
             </div>
           </div>

@@ -52,12 +52,12 @@ const slides = [
   },
   {
     img: heroSlide2,
-    eyebrow: "Boutique Education Consulting",
+    eyebrow: "精品國際教育顧問",
     title: ["不只是留學，更是", "孩子未來的起點"],
     subtitle:
       "從學校申請、寄宿家庭，到加拿大生活支援，提供真正長期陪伴式留學服務。",
-    primary: { label: "Explore Services", to: "/services" },
-    secondary: { label: "Book Consultation", to: "/consultation" },
+    primary: { label: "了解服務", to: "/services" },
+    secondary: { label: "預約諮詢", to: "/consultation" },
   },
 ];
 
@@ -221,9 +221,9 @@ function HomePage() {
 
         <div className="container-wide relative grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
           <div className="lg:col-span-4">
-            <p className="eyebrow mb-6 flex items-center gap-4"><span className="gold-bar" /> Our Philosophy</p>
+            <p className="eyebrow mb-6 flex items-center gap-4"><span className="gold-bar" /> 品牌理念</p>
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-navy leading-[1.1] text-balance">
-              Boutique<br />International<br />Education,<br />Crafted Personally.
+              精品國際教育，<br />為每個家庭，<br />量身打造。
             </h2>
           </div>
           <div className="lg:col-span-7 lg:col-start-6 space-y-7 text-foreground/75 leading-[1.95] text-[15px] md:text-[16px]">
@@ -239,7 +239,7 @@ function HomePage() {
             <div className="pt-4 flex items-center gap-5">
               <span className="hairline w-16" />
               <Link to="/about" className="text-navy text-sm tracking-[0.2em] uppercase link-underline">
-                Read Our Story
+                閱讀完整故事
               </Link>
             </div>
           </div>
@@ -262,7 +262,7 @@ function HomePage() {
           {/* COPY SIDE */}
           <div className="px-6 md:px-16 lg:px-24 py-20 lg:py-32 flex items-center">
             <div className="max-w-xl">
-              <p className="eyebrow mb-6 flex items-center gap-4"><span className="gold-bar" /> Meet the Founders</p>
+              <p className="eyebrow mb-6 flex items-center gap-4"><span className="gold-bar" /> 認識創辦人</p>
               <h2 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.08] text-balance">
                 30 年的加拿大，<br />一生的教育承諾。
               </h2>
@@ -283,7 +283,7 @@ function HomePage() {
                 {[
                   { y: "1995", t: "移居 Vancouver" },
                   { y: "2005", t: "啟動教育顧問服務" },
-                  { y: "2026", t: "成立頤珈國際教育" },
+                  { y: "2025", t: "服務 200+ 國際家庭" },
                 ].map((m) => (
                   <div key={m.y}>
                     <div className="font-display text-2xl text-gold">{m.y}</div>
@@ -293,7 +293,7 @@ function HomePage() {
               </div>
 
               <Link to="/about" className="mt-12 inline-flex items-center gap-3 text-sm tracking-[0.2em] uppercase text-gold link-underline">
-                More About Us <ArrowRight size={15} />
+                更多關於我們 <ArrowRight size={15} />
               </Link>
             </div>
           </div>
@@ -308,7 +308,7 @@ function HomePage() {
         <div className="container-wide relative">
           <div className="grid lg:grid-cols-12 gap-10 items-end mb-20">
             <div className="lg:col-span-7">
-              <p className="eyebrow mb-6 flex items-center gap-4"><span className="gold-bar" /> What We Do</p>
+              <p className="eyebrow mb-6 flex items-center gap-4"><span className="gold-bar" /> 我們的服務</p>
               <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-navy leading-[1.08] text-balance">
                 從第一封申請信，<br />到孩子畢業的那一天。
               </h2>
@@ -338,7 +338,7 @@ function HomePage() {
                   {s.body}
                 </p>
                 <div className="mt-8 flex items-center gap-3 text-[11px] tracking-[0.28em] uppercase text-navy/50 group-hover:text-gold transition-colors">
-                  Learn More <ArrowRight size={13} />
+                  了解更多 <ArrowRight size={13} />
                 </div>
               </div>
             ))}
@@ -370,7 +370,7 @@ function HomePage() {
 
           {/* COPY */}
           <div className="lg:col-span-5">
-            <p className="eyebrow mb-6 flex items-center gap-4"><span className="gold-bar" /> Why Vancouver</p>
+            <p className="eyebrow mb-6 flex items-center gap-4"><span className="gold-bar" /> 為什麼選擇溫哥華</p>
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-navy leading-[1.08] text-balance">
               全球最宜居城市，<br />全球最頂尖教育。
             </h2>
@@ -396,7 +396,7 @@ function HomePage() {
             </ul>
 
             <Link to="/study-in-vancouver" className="mt-10 inline-flex items-center gap-3 text-sm tracking-[0.2em] uppercase text-navy link-underline">
-              Discover Vancouver <ArrowRight size={15} />
+              認識溫哥華 <ArrowRight size={15} />
             </Link>
           </div>
         </div>
@@ -409,7 +409,7 @@ function HomePage() {
       >
         <div className="container-editorial max-w-4xl text-center">
           <p className="eyebrow mb-8 flex items-center justify-center gap-4">
-            <span className="gold-bar" /> Family Voices <span className="gold-bar" />
+            <span className="gold-bar" /> 家庭真實回饋 <span className="gold-bar" />
           </p>
           <blockquote className="font-display text-2xl md:text-3xl lg:text-[2.4rem] text-navy leading-[1.45] italic text-balance">
             “第一次把孩子送出國，最怕的是『不知道』。
@@ -431,7 +431,7 @@ function HomePage() {
 
         <div className="relative container-wide py-24 md:py-36 text-ivory">
           <div className="max-w-3xl">
-            <p className="eyebrow mb-6 flex items-center gap-4"><span className="gold-bar" /> Begin Your Journey</p>
+            <p className="eyebrow mb-6 flex items-center gap-4"><span className="gold-bar" /> 開啟孩子的留學旅程</p>
             <h2 className="font-display text-4xl md:text-6xl lg:text-7xl text-balance leading-[1.05]">
               讓孩子安心踏出<br />國際未來的第一步。
             </h2>
@@ -441,10 +441,10 @@ function HomePage() {
             </p>
             <div className="mt-12 flex flex-wrap gap-4">
               <Link to="/consultation" className="btn-primary !bg-ivory !text-navy !border-ivory hover:!bg-gold hover:!border-gold">
-                Book Consultation <ArrowRight size={15} />
+                預約諮詢 <ArrowRight size={15} />
               </Link>
               <Link to="/contact" className="btn-ghost">
-                Contact Us
+                聯絡我們
               </Link>
             </div>
           </div>
