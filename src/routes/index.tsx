@@ -370,7 +370,7 @@ function HomePage() {
 
           {/* COPY */}
           <div className="lg:col-span-5">
-            <p className="eyebrow mb-6 flex items-center gap-4"><span className="gold-bar" /> Why Vancouver</p>
+            <p className="eyebrow mb-6 flex items-center gap-4"><span className="gold-bar" /> 為什麼選擇溫哥華</p>
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-navy leading-[1.08] text-balance">
               全球最宜居城市，<br />全球最頂尖教育。
             </h2>
