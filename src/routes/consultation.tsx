@@ -86,7 +86,7 @@ function ConsultationPage() {
               </p>
             </div>
             <div className="bg-secondary/40 border border-border p-6 text-sm leading-relaxed text-foreground/80">
-              <p className="font-serif text-primary text-lg mb-2">Vancouver Local Support</p>
+              <p className="font-serif text-primary text-lg mb-2">溫哥華在地支援</p>
               <p>顧問團隊長居溫哥華，提供台灣與加拿大兩地時段的彈性諮詢時間。</p>
             </div>
           </div>
