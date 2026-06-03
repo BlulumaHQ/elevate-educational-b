@@ -68,7 +68,7 @@ function ConsultationPage() {
                   type="submit"
                   className="w-full sm:w-auto bg-primary text-primary-foreground px-10 py-4 text-sm tracking-wide hover:bg-navy-deep transition-colors"
                 >
-                  Book Consultation
+                  送出預約
                 </button>
               </div>
             </form>
