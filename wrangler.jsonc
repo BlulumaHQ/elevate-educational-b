@@ -1,3 +1,19 @@
+// DO NOT run `wrangler deploy` against this root config directly — it points at
+// the TanStack Start *source* entry (src/server.ts), which imports virtual
+// modules (#tanstack-router-entry, tanstack-start-manifest:v, etc.) that only
+// exist inside the Vite + Nitro build pipeline. Wrangler's own bundler cannot
+// resolve them and fails with "Could not resolve #tanstack-router-entry".
+//
+// The correct deploy flow is:
+//   bun run deploy        (== `vite build && wrangler deploy`)
+//
+// `vite build` emits the bundled Worker at `dist/server/index.mjs` and writes
+// `.wrangler/deploy/config.json`, which Wrangler auto-detects and uses instead
+// of this file. The Nitro build log confirms this with:
+//   "Wrangler config main is overridden and will be ignored."
+//
+// This root file is kept only so local tooling (types, `wrangler dev` against
+// source, editor integrations) has a baseline config.
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "tanstack-start-app",
