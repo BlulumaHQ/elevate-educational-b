@@ -409,7 +409,7 @@ function HomePage() {
       >
         <div className="container-editorial max-w-4xl text-center">
           <p className="eyebrow mb-8 flex items-center justify-center gap-4">
-            <span className="gold-bar" /> Family Voices <span className="gold-bar" />
+            <span className="gold-bar" /> 家庭真實回饋 <span className="gold-bar" />
           </p>
           <blockquote className="font-display text-2xl md:text-3xl lg:text-[2.4rem] text-navy leading-[1.45] italic text-balance">
             “第一次把孩子送出國，最怕的是『不知道』。
