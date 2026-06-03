@@ -52,12 +52,12 @@ const slides = [
   },
   {
     img: heroSlide2,
-    eyebrow: "Boutique Education Consulting",
+    eyebrow: "精品國際教育顧問",
     title: ["不只是留學，更是", "孩子未來的起點"],
     subtitle:
       "從學校申請、寄宿家庭，到加拿大生活支援，提供真正長期陪伴式留學服務。",
-    primary: { label: "Explore Services", to: "/services" },
-    secondary: { label: "Book Consultation", to: "/consultation" },
+    primary: { label: "了解服務", to: "/services" },
+    secondary: { label: "預約諮詢", to: "/consultation" },
   },
 ];
 
