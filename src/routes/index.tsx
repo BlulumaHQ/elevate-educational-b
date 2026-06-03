@@ -431,7 +431,7 @@ function HomePage() {
 
         <div className="relative container-wide py-24 md:py-36 text-ivory">
           <div className="max-w-3xl">
-            <p className="eyebrow mb-6 flex items-center gap-4"><span className="gold-bar" /> Begin Your Journey</p>
+            <p className="eyebrow mb-6 flex items-center gap-4"><span className="gold-bar" /> 開啟孩子的留學旅程</p>
             <h2 className="font-display text-4xl md:text-6xl lg:text-7xl text-balance leading-[1.05]">
               讓孩子安心踏出<br />國際未來的第一步。
             </h2>
@@ -441,10 +441,10 @@ function HomePage() {
             </p>
             <div className="mt-12 flex flex-wrap gap-4">
               <Link to="/consultation" className="btn-primary !bg-ivory !text-navy !border-ivory hover:!bg-gold hover:!border-gold">
-                Book Consultation <ArrowRight size={15} />
+                預約諮詢 <ArrowRight size={15} />
               </Link>
               <Link to="/contact" className="btn-ghost">
-                Contact Us
+                聯絡我們
               </Link>
             </div>
           </div>
