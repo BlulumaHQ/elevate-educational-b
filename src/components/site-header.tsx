@@ -93,7 +93,7 @@ export function SiteHeader() {
               activeProps={{ className: "text-navy" }}
               activeOptions={{ exact: item.to === "/" || item.to === "/en" }}
             >
-              {isEn ? (item as { label: string }).label : (item as { en: string }).en}
+              {(item as { label: string }).label}
             </Link>
           ))}
         </nav>
