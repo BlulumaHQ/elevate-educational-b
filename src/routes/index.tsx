@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import {
   ArrowRight, GraduationCap, ShieldCheck, Home, Compass, HeartHandshake, Plane,
-  Globe, BookOpen, MapPin, Building2, School, Briefcase, Library, Award,
+  Globe, BookOpen, MapPin, Building2, School, Library,
 } from "lucide-react";
 import heroSlide1 from "@/assets/hero-students-group.webp";
 import heroSlide2 from "@/assets/hero-students-walking.webp";
