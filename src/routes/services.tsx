@@ -88,7 +88,7 @@ function ServicesPage() {
     <>
       <section className="pt-40 pb-20 md:pt-52 md:pb-28 bg-secondary/40">
         <div className="container-editorial">
-          <p className="text-[11px] tracking-[0.3em] text-wood uppercase mb-5">Services</p>
+          <p className="text-[11px] tracking-[0.3em] text-wood uppercase mb-5">服務內容</p>
           <h1 className="font-serif text-5xl md:text-7xl text-primary leading-[1.1] text-balance max-w-3xl">
             從規劃到落地，全方位的陪伴
           </h1>
@@ -105,7 +105,7 @@ function ServicesPage() {
       >
         <div className="container-editorial">
           <div className="text-center mb-16 md:mb-20">
-            <p className="text-[11px] tracking-[0.3em] text-wood uppercase mb-4">Our Process</p>
+            <p className="text-[11px] tracking-[0.3em] text-wood uppercase mb-4">服務流程</p>
             <h2 className="font-serif text-4xl md:text-5xl text-primary leading-tight">六步驟，安心抵達</h2>
             <p className="mt-5 max-w-xl mx-auto text-muted-foreground">從第一次諮詢到孩子順利落地，我們陪伴每一步。</p>
           </div>

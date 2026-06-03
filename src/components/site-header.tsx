@@ -49,7 +49,7 @@ export function SiteHeader() {
   const isEn = pathname === "/en" || pathname.startsWith("/en/");
   const nav = isEn ? navEn : navZh;
   const consultPath = isEn ? "/en/consultation" : "/consultation";
-  const consultLabel = isEn ? "Book Consultation" : "Book Consultation";
+  const consultLabel = isEn ? "Book Consultation" : "預約諮詢";
 
   const LangSwitcher = ({ className = "" }: { className?: string }) => (
     <div
@@ -93,7 +93,7 @@ export function SiteHeader() {
               activeProps={{ className: "text-navy" }}
               activeOptions={{ exact: item.to === "/" || item.to === "/en" }}
             >
-              {isEn ? (item as { label: string }).label : (item as { en: string }).en}
+              {(item as { label: string }).label}
             </Link>
           ))}
         </nav>

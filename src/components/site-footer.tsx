@@ -90,7 +90,7 @@ export function SiteFooter() {
                 Vancouver, British Columbia, Canada
               </li>
               <li className="pt-3 text-ivory/55 text-xs tracking-[0.22em] uppercase">
-                WeChat · ElevateEdu &nbsp;·&nbsp; WhatsApp +1 604 000 0000
+                Line · ElevateEdu &nbsp;·&nbsp; WhatsApp +1 604 000 0000
               </li>
             </ul>
           </div>

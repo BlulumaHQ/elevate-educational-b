@@ -22,7 +22,7 @@ export const Route = createFileRoute("/contact")({
 const items = [
   { icon: Mail, label: "Email", value: "hello@elevate-edu.ca" },
   { icon: Phone, label: "Phone", value: "+1 (604) 000-0000" },
-  { icon: MessageCircle, label: "WhatsApp / WeChat", value: "+1 (604) 000-0000  /  ElevateEdu" },
+  { icon: MessageCircle, label: "WhatsApp / Line", value: "+1 (604) 000-0000  /  ElevateEdu" },
   { icon: MapPin, label: "Vancouver Office", value: "Vancouver, British Columbia, Canada" },
 ];
 
@@ -34,7 +34,7 @@ function ContactPage() {
         style={{ backgroundImage: `url(${waveBg})`, backgroundSize: "cover", backgroundPosition: "center" }}
       >
         <div className="container-editorial">
-          <p className="text-[11px] tracking-[0.3em] text-wood uppercase mb-5">Contact</p>
+          <p className="text-[11px] tracking-[0.3em] text-wood uppercase mb-5">聯絡我們</p>
           <h1 className="font-serif text-5xl md:text-7xl text-primary leading-[1.1] text-balance max-w-3xl">
             隨時與我們聯繫
           </h1>
@@ -78,8 +78,8 @@ function ContactPage() {
               />
             </div>
             <div className="mt-8 bg-wood-soft/40 p-8 text-sm leading-relaxed text-foreground/80">
-              <p className="font-serif text-primary text-xl mb-3">WeChat QR Code</p>
-              <p>請來信索取 WeChat QR Code，我們會在第一時間提供，方便您隨時與我們聯繫。</p>
+              <p className="font-serif text-primary text-xl mb-3">Line QR Code</p>
+              <p>請來信索取 Line QR Code，我們會在第一時間提供，方便您隨時與我們聯繫。</p>
             </div>
           </div>
         </div>
