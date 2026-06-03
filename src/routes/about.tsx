@@ -28,7 +28,7 @@ function AboutPage() {
     <>
       <section className="pt-40 pb-20 md:pt-52 md:pb-28 bg-secondary/40">
         <div className="container-editorial">
-          <p className="text-[11px] tracking-[0.3em] text-wood uppercase mb-5">About Us</p>
+          <p className="text-[11px] tracking-[0.3em] text-wood uppercase mb-5">關於我們</p>
           <h1 className="font-serif text-5xl md:text-7xl text-primary leading-[1.1] text-balance max-w-3xl">
             以家人之心，陪伴每一位來到加拿大的孩子
           </h1>

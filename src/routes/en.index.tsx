@@ -200,8 +200,6 @@ function HomePage() {
         <div className="container-wide py-8 flex flex-wrap items-center justify-between gap-6 text-navy/70 text-[11px] tracking-[0.32em] uppercase">
           <span>Trusted by families across Taiwan · Hong Kong · Mainland China</span>
           <div className="flex items-center gap-6">
-            <span className="flex items-center gap-2"><Award size={14} strokeWidth={1.5} /> ICEF Accredited</span>
-            <span className="hidden md:flex items-center gap-2"><Briefcase size={14} strokeWidth={1.5} /> Licensed BC Consultants</span>
             <span className="flex items-center gap-2"><MapPin size={14} strokeWidth={1.5} /> Vancouver Office</span>
           </div>
         </div>
@@ -271,8 +269,8 @@ function HomePage() {
               <div className="mt-12 grid grid-cols-3 gap-6 pt-8 border-t border-ivory/15">
                 {[
                   { y: "1995", t: "Moved to Vancouver" },
-                  { y: "2005", t: "Founded the consultancy" },
-                  { y: "2025", t: "200+ families served" },
+                  { y: "2005", t: "Launched education advisory work" },
+                  { y: "2026", t: "Founded Elevate International" },
                 ].map((m) => (
                   <div key={m.y}>
                     <div className="font-display text-2xl text-gold">{m.y}</div>

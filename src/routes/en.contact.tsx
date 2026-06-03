@@ -22,7 +22,7 @@ export const Route = createFileRoute("/en/contact")({
 const items = [
   { icon: Mail, label: "Email", value: "hello@elevate-edu.ca" },
   { icon: Phone, label: "Phone", value: "+1 (604) 000-0000" },
-  { icon: MessageCircle, label: "WhatsApp / WeChat", value: "+1 (604) 000-0000  /  ElevateEdu" },
+  { icon: MessageCircle, label: "WhatsApp / Line", value: "+1 (604) 000-0000  /  ElevateEdu" },
   { icon: MapPin, label: "Vancouver Office", value: "Vancouver, British Columbia, Canada" },
 ];
 
@@ -78,8 +78,8 @@ function ContactPage() {
               />
             </div>
             <div className="mt-8 bg-wood-soft/40 p-8 text-sm leading-relaxed text-foreground/80">
-              <p className="font-serif text-primary text-xl mb-3">WeChat QR Code</p>
-              <p>Send us a message and we'll share our WeChat QR code right away, so you can reach us anytime.</p>
+              <p className="font-serif text-primary text-xl mb-3">Line QR Code</p>
+              <p>Send us a message and we'll share our Line QR code right away, so you can reach us anytime.</p>
             </div>
           </div>
         </div>

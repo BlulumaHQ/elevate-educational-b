@@ -71,9 +71,9 @@ const services = [
 ];
 
 const stats = [
-  { value: "30+", label: "Years", sub: "Vancouver Local Experience" },
-  { value: "200+", label: "Families", sub: "Trusted Across Asia" },
-  { value: "40+", label: "Partner Schools", sub: "Private & Public BC" },
+  { value: "30+", label: "年", sub: "溫哥華在地經驗" },
+  { value: "200+", label: "家庭", sub: "亞洲家庭信賴" },
+  { value: "40+", label: "合作學校", sub: "BC 公立 / 私立" },
 ];
 
 const floatingIcons = [
@@ -207,11 +207,9 @@ function HomePage() {
       {/* ════════════ INTRO MARQUEE / TRUST BAND ════════════ */}
       <section className="relative bg-ivory border-y border-navy/10">
         <div className="container-wide py-8 flex flex-wrap items-center justify-between gap-6 text-navy/70 text-[11px] tracking-[0.32em] uppercase">
-          <span>Trusted by families across Taiwan · Hong Kong · Mainland China</span>
+          <span>深受台灣 · 香港 · 中國家庭信賴</span>
           <div className="flex items-center gap-6">
-            <span className="flex items-center gap-2"><Award size={14} strokeWidth={1.5} /> ICEF Accredited</span>
-            <span className="hidden md:flex items-center gap-2"><Briefcase size={14} strokeWidth={1.5} /> Licensed BC Consultants</span>
-            <span className="flex items-center gap-2"><MapPin size={14} strokeWidth={1.5} /> Vancouver Office</span>
+            <span className="flex items-center gap-2"><MapPin size={14} strokeWidth={1.5} /> 溫哥華辦公室</span>
           </div>
         </div>
       </section>
@@ -284,8 +282,8 @@ function HomePage() {
               <div className="mt-12 grid grid-cols-3 gap-6 pt-8 border-t border-ivory/15">
                 {[
                   { y: "1995", t: "移居 Vancouver" },
-                  { y: "2005", t: "創立教育顧問業務" },
-                  { y: "2025", t: "服務 200+ 國際家庭" },
+                  { y: "2005", t: "啟動教育顧問服務" },
+                  { y: "2026", t: "成立頤珈國際教育" },
                 ].map((m) => (
                   <div key={m.y}>
                     <div className="font-display text-2xl text-gold">{m.y}</div>
@@ -348,7 +346,7 @@ function HomePage() {
 
           <div className="mt-16 text-center">
             <Link to="/services" className="btn-primary !bg-navy">
-              All Services <ArrowRight size={15} />
+              全部服務 <ArrowRight size={15} />
             </Link>
           </div>
         </div>
