@@ -75,7 +75,7 @@ function AboutPage() {
         <div className="container-editorial grid md:grid-cols-2 gap-12 items-center">
           <img src={streetImg} alt="Vancouver residential street" className="w-full aspect-[4/3] object-cover" loading="lazy" />
           <div>
-            <SectionHeading eyebrow="Philosophy" title="教育，不只是申請一所學校" />
+            <SectionHeading eyebrow="教育理念" title="教育，不只是申請一所學校" />
             <p className="mt-6 text-base text-foreground/80 leading-[1.9] max-w-lg">
               我們相信每一位孩子都值得被認識、被理解。從學業規劃到生活適應，我們以家庭般的溫度，協助孩子在異鄉建立自信、獨立與歸屬感。
             </p>
