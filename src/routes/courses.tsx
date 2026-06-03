@@ -32,7 +32,7 @@ export const Route = createFileRoute("/courses")({
 
 const courses = [
   {
-    tag: "Summer Program",
+    tag: "暑期遊學",
     title: "溫哥華暑期遊學營",
     age: "10 – 18 歲",
     duration: "4 週",
