@@ -1,12 +1,16 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Mail, Phone, MessageCircle, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import waveBg from "@/assets/wave-bg.jpg";
+
+const EMAIL = "info@elevateeducation.ca";
+const PHONE_DISPLAY = "778-982-3667";
+const PHONE_TEL = "+17789823667";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "聯絡我們 Contact | 頤珈國際教育" },
-      { name: "description", content: "透過 Email、電話、WhatsApp、WeChat 與頤珈國際教育聯繫，我們位於加拿大溫哥華。" },
+      { name: "description", content: "透過 Email 或電話與頤珈國際教育聯繫，我們位於加拿大溫哥華。" },
       { property: "og:title", content: "聯絡我們 | 頤珈國際教育" },
       { property: "og:url", content: "/contact" },
     ],
@@ -20,10 +24,9 @@ export const Route = createFileRoute("/contact")({
 });
 
 const items = [
-  { icon: Mail, label: "Email", value: "hello@elevate-edu.ca" },
-  { icon: Phone, label: "Phone", value: "+1 (604) 000-0000" },
-  { icon: MessageCircle, label: "WhatsApp / Line", value: "+1 (604) 000-0000  /  ElevateEdu" },
-  { icon: MapPin, label: "Vancouver Office", value: "Vancouver, British Columbia, Canada" },
+  { icon: Mail, label: "Email", value: EMAIL, href: `mailto:${EMAIL}` },
+  { icon: Phone, label: "電話", value: PHONE_DISPLAY, href: `tel:${PHONE_TEL}` },
+  { icon: MapPin, label: "溫哥華辦公室", value: "加拿大 Vancouver, British Columbia" },
 ];
 
 function ContactPage() {
@@ -53,7 +56,16 @@ function ContactPage() {
                   <i.icon size={18} strokeWidth={1.5} />
                   <span className="text-[11px] tracking-[0.25em] uppercase">{i.label}</span>
                 </div>
-                <p className="mt-3 font-serif text-xl md:text-2xl text-primary">{i.value}</p>
+                {i.href ? (
+                  <a
+                    href={i.href}
+                    className="mt-3 block font-serif text-xl md:text-2xl text-primary hover:text-wood transition-colors break-all"
+                  >
+                    {i.value}
+                  </a>
+                ) : (
+                  <p className="mt-3 font-serif text-xl md:text-2xl text-primary">{i.value}</p>
+                )}
               </div>
             ))}
 
@@ -78,8 +90,18 @@ function ContactPage() {
               />
             </div>
             <div className="mt-8 bg-wood-soft/40 p-8 text-sm leading-relaxed text-foreground/80">
-              <p className="font-serif text-primary text-xl mb-3">Line QR Code</p>
-              <p>請來信索取 Line QR Code，我們會在第一時間提供，方便您隨時與我們聯繫。</p>
+              <p className="font-serif text-primary text-xl mb-3">想進一步聊聊？</p>
+              <p>
+                歡迎來信{" "}
+                <a href={`mailto:${EMAIL}`} className="text-primary underline underline-offset-2 hover:text-wood">
+                  {EMAIL}
+                </a>{" "}
+                或致電{" "}
+                <a href={`tel:${PHONE_TEL}`} className="text-primary underline underline-offset-2 hover:text-wood">
+                  {PHONE_DISPLAY}
+                </a>
+                ，我們會在第一時間回覆，協助您安排諮詢時段。
+              </p>
             </div>
           </div>
         </div>
