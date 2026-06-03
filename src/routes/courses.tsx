@@ -48,7 +48,7 @@ const courses = [
     ],
   },
   {
-    tag: "ESL Intensive",
+    tag: "ESL 強化",
     title: "ESL 英語強化課程",
     age: "12 – 18 歲",
     duration: "8 – 24 週",
