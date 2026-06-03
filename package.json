@@ -5,13 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build",
+    "build": "vite build && node scripts/ensure-cloudflare-deploy-config.mjs",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "deploy": "vite build && wrangler deploy",
-    "deploy:dryrun": "vite build && wrangler deploy --dry-run"
+    "deploy": "npm run build && wrangler deploy",
+    "deploy:dryrun": "npm run build && wrangler deploy --dry-run"
   },
   "dependencies": {
     "@cloudflare/vite-plugin": "^1.25.5",
