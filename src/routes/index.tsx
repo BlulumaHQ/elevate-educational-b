@@ -221,9 +221,9 @@ function HomePage() {
 
         <div className="container-wide relative grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
           <div className="lg:col-span-4">
-            <p className="eyebrow mb-6 flex items-center gap-4"><span className="gold-bar" /> Our Philosophy</p>
+            <p className="eyebrow mb-6 flex items-center gap-4"><span className="gold-bar" /> 品牌理念</p>
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-navy leading-[1.1] text-balance">
-              Boutique<br />International<br />Education,<br />Crafted Personally.
+              精品國際教育，<br />為每個家庭，<br />量身打造。
             </h2>
           </div>
           <div className="lg:col-span-7 lg:col-start-6 space-y-7 text-foreground/75 leading-[1.95] text-[15px] md:text-[16px]">
@@ -239,7 +239,7 @@ function HomePage() {
             <div className="pt-4 flex items-center gap-5">
               <span className="hairline w-16" />
               <Link to="/about" className="text-navy text-sm tracking-[0.2em] uppercase link-underline">
-                Read Our Story
+                閱讀完整故事
               </Link>
             </div>
           </div>
