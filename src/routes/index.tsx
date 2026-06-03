@@ -396,7 +396,7 @@ function HomePage() {
             </ul>
 
             <Link to="/study-in-vancouver" className="mt-10 inline-flex items-center gap-3 text-sm tracking-[0.2em] uppercase text-navy link-underline">
-              Discover Vancouver <ArrowRight size={15} />
+              認識溫哥華 <ArrowRight size={15} />
             </Link>
           </div>
         </div>
