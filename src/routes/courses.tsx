@@ -184,7 +184,7 @@ function CoursesPage() {
       {/* CTA */}
       <section className="py-24 md:py-32 bg-navy text-ivory">
         <div className="container-editorial text-center">
-          <p className="text-[11px] tracking-[0.3em] text-gold uppercase mb-5">Not Sure Where to Start?</p>
+          <p className="text-[11px] tracking-[0.3em] text-gold uppercase mb-5">還不確定從哪裡開始？</p>
           <h2 className="font-serif text-4xl md:text-5xl leading-tight">
             讓我們一起為孩子
             <br />
