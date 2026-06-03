@@ -64,7 +64,7 @@ const courses = [
     ],
   },
   {
-    tag: "Junior School",
+    tag: "小學銜接",
     title: "加拿大小學銜接課程",
     age: "10 – 12 歲",
     duration: "1 學年",
