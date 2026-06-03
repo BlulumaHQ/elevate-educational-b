@@ -101,7 +101,7 @@ function StudyPage() {
       <section className="py-24 md:py-32 bg-background">
         <div className="container-editorial grid md:grid-cols-12 gap-12">
           <div className="md:col-span-4">
-            <SectionHeading eyebrow="FAQ" title="家長常見問題" />
+            <SectionHeading eyebrow="常見問題" title="家長常見問題" />
           </div>
           <div className="md:col-span-8">
             {faqs.map((f) => (
