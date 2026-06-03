@@ -44,7 +44,7 @@ function AboutPage() {
             <img src={foundersImg} alt="Maggie & Katrina" className="w-full aspect-[4/5] object-cover" loading="lazy" />
           </div>
           <div className="md:col-span-7 space-y-5 text-[15px] md:text-base leading-[1.9] text-foreground/80 max-w-xl">
-            <SectionHeading eyebrow="Founders" title="Maggie & Katrina" />
+            <SectionHeading eyebrow="創辦人" title="Maggie & Katrina" />
             <p className="mt-6">在加拿大這片土地上，我們已經深耕、生活了超過 30 個年頭。</p>
             <p>我們經歷過獨自一人、背起行囊的「小留學生」時光，也走過在溫哥華成家立業、生兒育女的人生階段。</p>
             <p>因為親自走過，我們比任何人都更熟悉大溫哥華的每一寸土地、當地的文化肌理與豐富的社區資源。</p>
