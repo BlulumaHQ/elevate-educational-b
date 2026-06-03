@@ -77,7 +77,7 @@ function StudyPage() {
         style={{ backgroundImage: `url(${waveBg})`, backgroundSize: "cover", backgroundPosition: "center" }}
       >
         <div className="container-editorial">
-          <SectionHeading eyebrow="Overview" title="關於溫哥華留學" />
+          <SectionHeading eyebrow="概覽" title="關於溫哥華留學" />
           <div className="mt-14 grid md:grid-cols-2 gap-x-16 gap-y-10">
             {overview.map((o, i) => (
               <div key={o.t} className="border-t border-border pt-6">
