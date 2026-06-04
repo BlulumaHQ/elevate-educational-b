@@ -20,12 +20,6 @@ export default defineConfig({
     cloudflare: {
       nodeCompat: true,
       deployConfig: true,
-      wrangler: {
-        // Cloudflare validation can reject Nitro's no-bundle multi-module graph
-        // even when the referenced files exist. Let Wrangler bundle the generated
-        // Worker so imports like ./_libs/unenv.mjs are inlined before upload.
-        no_bundle: false,
-      },
     },
   },
   tanstackStart: {
