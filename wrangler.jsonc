@@ -3,8 +3,9 @@
 //   - dist/server/wrangler.json
 //   - .wrangler/deploy/config.json
 // Bare Wrangler then auto-detects the generated config and deploys the built
-// Worker. Pointing Wrangler at src/server.ts makes Wrangler's own bundler see
-// unresolved TanStack virtual modules.
+// Worker. Wrangler bundling is intentionally enabled so Nitro's generated
+// multi-file module graph is validated as one Worker bundle instead of relying
+// on Cloudflare's no-bundle module upload path.
 //
 // Local/CI deploy flow:
 //   npm run build && npx wrangler deploy
@@ -18,7 +19,7 @@
     "binding": "ASSETS",
     "directory": "dist/client"
   },
-  "no_bundle": true,
+  "no_bundle": false,
   "rules": [
     {
       "type": "ESModule",
