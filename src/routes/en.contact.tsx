@@ -1,12 +1,16 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Mail, Phone, MessageCircle, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import waveBg from "@/assets/wave-bg.jpg";
+
+const EMAIL = "info@elevateeducation.ca";
+const PHONE_DISPLAY = "778-982-3667";
+const PHONE_TEL = "+17789823667";
 
 export const Route = createFileRoute("/en/contact")({
   head: () => ({
     meta: [
       { title: "Contact | Elevate International Education" },
-      { name: "description", content: "Reach Elevate International Education by Email, phone, WhatsApp, or WeChat. Based in Vancouver, Canada." },
+      { name: "description", content: "Reach Elevate International Education by email or phone. Based in Vancouver, Canada." },
       { property: "og:title", content: "Contact | Elevate International Education" },
       { property: "og:url", content: "/en/contact" },
     ],
@@ -20,9 +24,8 @@ export const Route = createFileRoute("/en/contact")({
 });
 
 const items = [
-  { icon: Mail, label: "Email", value: "hello@elevate-edu.ca" },
-  { icon: Phone, label: "Phone", value: "+1 (604) 000-0000" },
-  { icon: MessageCircle, label: "WhatsApp / Line", value: "+1 (604) 000-0000  /  ElevateEdu" },
+  { icon: Mail, label: "Email", value: EMAIL, href: `mailto:${EMAIL}` },
+  { icon: Phone, label: "Phone", value: PHONE_DISPLAY, href: `tel:${PHONE_TEL}` },
   { icon: MapPin, label: "Vancouver Office", value: "Vancouver, British Columbia, Canada" },
 ];
 
@@ -53,7 +56,16 @@ function ContactPage() {
                   <i.icon size={18} strokeWidth={1.5} />
                   <span className="text-[11px] tracking-[0.25em] uppercase">{i.label}</span>
                 </div>
-                <p className="mt-3 font-serif text-xl md:text-2xl text-primary">{i.value}</p>
+                {i.href ? (
+                  <a
+                    href={i.href}
+                    className="mt-3 block font-serif text-xl md:text-2xl text-primary hover:text-wood transition-colors break-all"
+                  >
+                    {i.value}
+                  </a>
+                ) : (
+                  <p className="mt-3 font-serif text-xl md:text-2xl text-primary">{i.value}</p>
+                )}
               </div>
             ))}
 
@@ -78,8 +90,18 @@ function ContactPage() {
               />
             </div>
             <div className="mt-8 bg-wood-soft/40 p-8 text-sm leading-relaxed text-foreground/80">
-              <p className="font-serif text-primary text-xl mb-3">Line QR Code</p>
-              <p>Send us a message and we'll share our Line QR code right away, so you can reach us anytime.</p>
+              <p className="font-serif text-primary text-xl mb-3">Want to chat further?</p>
+              <p>
+                Email us at{" "}
+                <a href={`mailto:${EMAIL}`} className="text-primary underline underline-offset-2 hover:text-wood">
+                  {EMAIL}
+                </a>{" "}
+                or call{" "}
+                <a href={`tel:${PHONE_TEL}`} className="text-primary underline underline-offset-2 hover:text-wood">
+                  {PHONE_DISPLAY}
+                </a>
+                . We'll get back to you right away and help schedule your consultation.
+              </p>
             </div>
           </div>
         </div>
