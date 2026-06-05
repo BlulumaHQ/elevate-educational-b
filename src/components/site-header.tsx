@@ -75,12 +75,12 @@ export function SiteHeader() {
 
   return (
     <header className="fixed top-0 inset-x-0 z-50 bg-ivory/95 backdrop-blur-md border-b border-navy/10">
-      <div className="container-wide flex items-center justify-between gap-6 py-3">
+      <div className="container-wide flex items-center justify-between gap-3 sm:gap-6 py-3">
         <Link to={isEn ? "/en" : "/"} className="flex items-center shrink-0 text-navy">
           <img
             src={logo}
             alt="頤珈國際教育 Elevate International Education"
-            className="h-24 md:h-28 w-auto object-contain"
+            className="h-14 sm:h-20 md:h-24 lg:h-28 w-auto object-contain"
           />
         </Link>
 
@@ -108,12 +108,14 @@ export function SiteHeader() {
           </Link>
         </div>
 
-        <div className="lg:hidden flex items-center gap-3">
+        <div className="lg:hidden flex items-center gap-2 sm:gap-3 shrink-0">
           <LangSwitcher />
+          <span className="h-5 w-px bg-navy/20" aria-hidden />
           <button
             aria-label="Toggle menu"
+            aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
-            className="p-2 text-navy"
+            className="inline-flex items-center justify-center h-10 w-10 rounded-sm text-navy hover:bg-navy/5 transition-colors"
           >
             {open ? <X size={22} /> : <Menu size={22} />}
           </button>
