@@ -21,11 +21,61 @@ export const Route = createFileRoute("/en/consultation")({
 });
 
 function ConsultationPage() {
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
-  const onSubmit = (e: FormEvent) => {
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    // Honeypot check
+    if (formData.get('website')) return;
+
+    // Validation
+    const name = formData.get('name')?.toString().trim();
+    const email = formData.get('email')?.toString().trim();
+    const message = formData.get('message')?.toString().trim();
+
+    if (!name || !email || !message) {
+      setStatus('error');
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setStatus('error');
+      return;
+    }
+
+    setStatus('loading');
+
+    const payload: Record<string, string> = {};
+    formData.forEach((value, key) => {
+      if (key !== 'website' && typeof value === 'string' && value.trim()) {
+        payload[key] = value;
+      }
+    });
+
+    try {
+      const response = await fetch('https://formspree.io/f/xaqznvbz', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        form.reset();
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
   };
 
   return (
@@ -43,35 +93,42 @@ function ConsultationPage() {
             Let's understand your child's needs and design the right Canadian study pathway together.
           </p>
 
-          {submitted ? (
-            <div className="mt-12 border border-border bg-secondary/40 p-10">
-              <p className="font-serif text-2xl text-primary">Thank you for your request ✦</p>
-              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-                We've received your enquiry and will be in touch by Email or phone within 1–2 business days.
-              </p>
+          <form onSubmit={onSubmit} className="mt-12 grid sm:grid-cols-2 gap-x-6 gap-y-6">
+            <Field label="Student Name" name="name" required />
+            <Field label="Parent Name" name="parent" required />
+            <Field label="Email" name="email" type="email" required />
+            <Field label="Phone" name="phone" type="tel" required />
+            <Field label="Student Age" name="age" type="number" />
+            <Field label="Program of Interest" name="program" placeholder="e.g. Secondary / University / Language" />
+            <Select label="Preferred School Type" name="schoolType" options={["Public Secondary", "Private Secondary", "University", "Language School", "Other"]} />
+            <Select label="Estimated Start" name="timeline" options={["Within 3 months", "Within 6 months", "Within 1 year", "Still planning"]} />
+            <div className="sm:col-span-2">
+              <Field label="Additional notes" name="message" textarea required />
             </div>
-          ) : (
-            <form onSubmit={onSubmit} className="mt-12 grid sm:grid-cols-2 gap-x-6 gap-y-6">
-              <Field label="Student Name" name="student" required />
-              <Field label="Parent Name" name="parent" required />
-              <Field label="Email" name="email" type="email" required />
-              <Field label="Phone" name="phone" type="tel" required />
-              <Field label="Student Age" name="age" type="number" />
-              <Field label="Program of Interest" name="program" placeholder="e.g. Secondary / University / Language" />
-              <Select label="Preferred School Type" name="schoolType" options={["Public Secondary", "Private Secondary", "University", "Language School", "Other"]} />
-              <Select label="Estimated Start" name="timeline" options={["Within 3 months", "Within 6 months", "Within 1 year", "Still planning"]} />
-              <div className="sm:col-span-2">
-                <Field label="Additional notes" name="notes" textarea />
-              </div>
-              <div className="sm:col-span-2 mt-2">
-                <button
-                  type="submit"
-                  className="w-full sm:w-auto bg-primary text-primary-foreground px-10 py-4 text-sm tracking-wide hover:bg-navy-deep transition-colors"
-                >
-                  Book Consultation
-                </button>
-              </div>
-            </form>
+            <div className="sm:col-span-2" style={{ display: 'none' }}>
+              <input type="text" name="website" tabIndex={-1} autoComplete="off" />
+            </div>
+            <div className="sm:col-span-2 mt-2">
+              <button
+                type="submit"
+                disabled={status === 'loading'}
+                className="w-full sm:w-auto bg-primary text-primary-foreground px-10 py-4 text-sm tracking-wide hover:bg-navy-deep transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+              >
+                {status === 'loading' ? 'Sending...' : 'Book Consultation'}
+              </button>
+            </div>
+          </form>
+
+          {status === 'success' && (
+            <div className="mt-6 border border-border bg-secondary/40 p-6">
+              <p className="font-serif text-xl text-primary">Thank you for contacting Elevate Education. Our team will get back to you shortly.</p>
+            </div>
+          )}
+
+          {status === 'error' && (
+            <div className="mt-6 border border-destructive/30 bg-destructive/10 p-6">
+              <p className="text-sm text-destructive">Sorry, something went wrong. Please try again later.</p>
+            </div>
           )}
         </div>
 

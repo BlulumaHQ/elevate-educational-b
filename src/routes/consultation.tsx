@@ -21,11 +21,61 @@ export const Route = createFileRoute("/consultation")({
 });
 
 function ConsultationPage() {
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
-  const onSubmit = (e: FormEvent) => {
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    // Honeypot check
+    if (formData.get('website')) return;
+
+    // Validation
+    const name = formData.get('name')?.toString().trim();
+    const email = formData.get('email')?.toString().trim();
+    const message = formData.get('message')?.toString().trim();
+
+    if (!name || !email || !message) {
+      setStatus('error');
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setStatus('error');
+      return;
+    }
+
+    setStatus('loading');
+
+    const payload: Record<string, string> = {};
+    formData.forEach((value, key) => {
+      if (key !== 'website' && typeof value === 'string' && value.trim()) {
+        payload[key] = value;
+      }
+    });
+
+    try {
+      const response = await fetch('https://formspree.io/f/xaqznvbz', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        form.reset();
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
   };
 
   return (
@@ -43,35 +93,42 @@ function ConsultationPage() {
             讓我們了解孩子的需求，一起規劃最適合的加拿大留學方向。
           </p>
 
-          {submitted ? (
-            <div className="mt-12 border border-border bg-secondary/40 p-10">
-              <p className="font-serif text-2xl text-primary">感謝您的預約 ✦</p>
-              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-                我們已收到您的諮詢需求，將於 1–2 個工作天內透過 Email 或電話與您聯繫。
-              </p>
+          <form onSubmit={onSubmit} className="mt-12 grid sm:grid-cols-2 gap-x-6 gap-y-6">
+            <Field label="學生姓名" name="name" required />
+            <Field label="家長姓名" name="parent" required />
+            <Field label="Email" name="email" type="email" required />
+            <Field label="聯絡電話" name="phone" type="tel" required />
+            <Field label="學生年齡" name="age" type="number" />
+            <Field label="有興趣的課程" name="program" placeholder="例：中學 / 大學 / 語言學校" />
+            <Select label="偏好學校類型" name="schoolType" options={["公立中學", "私立中學", "大學", "語言學校", "其他"]} />
+            <Select label="預計出發時間" name="timeline" options={["3 個月內", "半年內", "一年內", "尚在規劃"]} />
+            <div className="sm:col-span-2">
+              <Field label="其他需求 / 備註" name="message" textarea required />
             </div>
-          ) : (
-            <form onSubmit={onSubmit} className="mt-12 grid sm:grid-cols-2 gap-x-6 gap-y-6">
-              <Field label="學生姓名" name="student" required />
-              <Field label="家長姓名" name="parent" required />
-              <Field label="Email" name="email" type="email" required />
-              <Field label="聯絡電話" name="phone" type="tel" required />
-              <Field label="學生年齡" name="age" type="number" />
-              <Field label="有興趣的課程" name="program" placeholder="例：中學 / 大學 / 語言學校" />
-              <Select label="偏好學校類型" name="schoolType" options={["公立中學", "私立中學", "大學", "語言學校", "其他"]} />
-              <Select label="預計出發時間" name="timeline" options={["3 個月內", "半年內", "一年內", "尚在規劃"]} />
-              <div className="sm:col-span-2">
-                <Field label="其他需求 / 備註" name="notes" textarea />
-              </div>
-              <div className="sm:col-span-2 mt-2">
-                <button
-                  type="submit"
-                  className="w-full sm:w-auto bg-primary text-primary-foreground px-10 py-4 text-sm tracking-wide hover:bg-navy-deep transition-colors"
-                >
-                  送出預約
-                </button>
-              </div>
-            </form>
+            <div className="sm:col-span-2" style={{ display: 'none' }}>
+              <input type="text" name="website" tabIndex={-1} autoComplete="off" />
+            </div>
+            <div className="sm:col-span-2 mt-2">
+              <button
+                type="submit"
+                disabled={status === 'loading'}
+                className="w-full sm:w-auto bg-primary text-primary-foreground px-10 py-4 text-sm tracking-wide hover:bg-navy-deep transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+              >
+                {status === 'loading' ? '傳送中...' : '送出預約'}
+              </button>
+            </div>
+          </form>
+
+          {status === 'success' && (
+            <div className="mt-6 border border-border bg-secondary/40 p-6">
+              <p className="font-serif text-xl text-primary">感謝您聯繫頤珈國際教育。我們的團隊將盡快與您聯繫。</p>
+            </div>
+          )}
+
+          {status === 'error' && (
+            <div className="mt-6 border border-destructive/30 bg-destructive/10 p-6">
+              <p className="text-sm text-destructive">抱歉，發生了一些問題。請稍後再試。</p>
+            </div>
           )}
         </div>
 
