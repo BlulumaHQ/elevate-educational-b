@@ -129,7 +129,7 @@ function HomePage() {
         <div className="absolute top-0 inset-x-0 z-10 pt-28 md:pt-32">
           <div className="container-wide flex items-center justify-between text-ivory/70 text-[11px] tracking-[0.32em] uppercase">
             <span className="hidden md:inline">Elevate International Education</span>
-            <span>est. 1995 · Vancouver, BC</span>
+            <span>est. 2026 · Vancouver, BC</span>
           </div>
         </div>
 
