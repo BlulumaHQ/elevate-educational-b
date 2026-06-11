@@ -81,6 +81,39 @@ function ContactPage() {
                 預約免費諮詢 →
               </Link>
             </div>
+
+            <div className="border-t border-border pt-6">
+              <div className="flex items-center gap-3 text-wood">
+                <span className="text-[11px] tracking-[0.25em] uppercase">追蹤我們</span>
+              </div>
+              <div className="mt-4 flex flex-wrap items-center gap-3">
+                <a
+                  href={FB_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className="inline-flex items-center gap-2 border border-border px-4 py-2 text-sm text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+                >
+                  <Facebook size={16} strokeWidth={1.5} /> Facebook
+                </a>
+                <a
+                  href={IG_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="inline-flex items-center gap-2 border border-border px-4 py-2 text-sm text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+                >
+                  <Instagram size={16} strokeWidth={1.5} /> Instagram
+                </a>
+              </div>
+              <div className="mt-6 flex items-center gap-5">
+                <img src={LINE_QR} alt="Line QR Code" className="w-32 h-32 border border-border bg-white p-2" loading="lazy" />
+                <div className="text-sm text-foreground/75 leading-relaxed">
+                  <p className="font-serif text-primary text-lg">加 Line 聊聊</p>
+                  <p className="mt-1">使用 Line 掃描 QR Code，即可加入我們的官方帳號。</p>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="md:col-span-7">
