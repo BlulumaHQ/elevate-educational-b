@@ -7,7 +7,8 @@ import {
 import heroSlide1 from "@/assets/hero-students-group.webp";
 import heroSlide2 from "@/assets/hero-students-walking.webp";
 import skyline from "@/assets/vancouver-skyline.jpg";
-import foundersImg from "@/assets/parent-consultation.webp";
+import foundersAsset from "@/assets/elevate-founders.webp.asset.json";
+const foundersImg = foundersAsset.url;
 import campusHeritage from "@/assets/student-presentation.webp";
 import classroomMentor from "@/assets/teacher-presenting.webp";
 import waveBg from "@/assets/wave-bg.jpg";
@@ -242,7 +243,7 @@ function HomePage() {
         <div aria-hidden className="absolute inset-0 bp-grid opacity-[0.06]" />
         <div className="grid lg:grid-cols-2">
           <div className="relative min-h-[520px] lg:min-h-[760px]">
-            <img src={foundersImg} alt="Elevate founders in Vancouver" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+            <img src={foundersImg} alt="Elevate founders in Vancouver" className="absolute inset-0 w-full h-full object-cover object-[center_35%]" loading="lazy" />
             <div className="absolute inset-0 bg-gradient-to-r from-transparent to-navy/40" />
             <div className="absolute top-10 left-10 w-16 h-16 border-t border-l border-gold/70" />
             <div className="absolute bottom-10 right-10 w-16 h-16 border-b border-r border-gold/70" />

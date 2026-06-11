@@ -1,10 +1,14 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { ArrowUpRight, MapPin, Mail, Phone } from "lucide-react";
+import { ArrowUpRight, MapPin, Mail, Phone, Facebook, Instagram } from "lucide-react";
 import logoFull from "@/assets/elevate-logo-footer.png";
+import lineQrAsset from "@/assets/line-qr.png.asset.json";
 
 const EMAIL = "info@elevateeducation.ca";
 const PHONE_DISPLAY = "778-982-3667";
 const PHONE_TEL = "+17789823667";
+const FB_URL = "https://www.facebook.com/ElevateEducation2026/";
+const IG_URL = "https://www.instagram.com/elevateeducation2026/";
+const LINE_QR = lineQrAsset.url;
 
 const navZh = [
   { to: "/", label: "首頁" },
@@ -97,6 +101,41 @@ export function SiteFooter() {
                 {isEn ? "Vancouver, British Columbia, Canada" : "加拿大 Vancouver, British Columbia"}
               </li>
             </ul>
+
+            <div className="mt-8">
+              <p className="eyebrow mb-4 text-ivory/55">{isEn ? "Follow" : "追蹤我們"}</p>
+              <div className="flex items-center gap-4">
+                <a
+                  href={FB_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className="w-10 h-10 grid place-items-center border border-ivory/15 text-ivory/70 hover:text-gold hover:border-gold/60 transition-colors"
+                >
+                  <Facebook size={16} strokeWidth={1.5} />
+                </a>
+                <a
+                  href={IG_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="w-10 h-10 grid place-items-center border border-ivory/15 text-ivory/70 hover:text-gold hover:border-gold/60 transition-colors"
+                >
+                  <Instagram size={16} strokeWidth={1.5} />
+                </a>
+                <div className="flex items-center gap-3 ml-2">
+                  <img
+                    src={LINE_QR}
+                    alt={isEn ? "Line QR code" : "Line QR Code"}
+                    className="w-16 h-16 bg-ivory p-1"
+                    loading="lazy"
+                  />
+                  <span className="text-[10px] tracking-[0.22em] uppercase text-ivory/55">
+                    {isEn ? "Add us on Line" : "加入 Line 好友"}
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
