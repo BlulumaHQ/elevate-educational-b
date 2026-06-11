@@ -1,10 +1,14 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { ArrowUpRight, MapPin, Mail, Phone } from "lucide-react";
+import { ArrowUpRight, MapPin, Mail, Phone, Facebook, Instagram } from "lucide-react";
 import logoFull from "@/assets/elevate-logo-footer.png";
+import lineQrAsset from "@/assets/line-qr.png.asset.json";
 
 const EMAIL = "info@elevateeducation.ca";
 const PHONE_DISPLAY = "778-982-3667";
 const PHONE_TEL = "+17789823667";
+const FB_URL = "https://www.facebook.com/ElevateEducation2026/";
+const IG_URL = "https://www.instagram.com/elevateeducation2026/";
+const LINE_QR = lineQrAsset.url;
 
 const navZh = [
   { to: "/", label: "首頁" },
