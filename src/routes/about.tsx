@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import foundersImg from "@/assets/parent-consultation.webp";
+import foundersAsset from "@/assets/elevate-founders.webp.asset.json";
+const foundersImg = foundersAsset.url;
 import streetImg from "@/assets/vancouver-street.webp";
 import waveBg from "@/assets/wave-bg.jpg";
 import { SectionHeading } from "@/components/section-heading";
@@ -41,7 +42,7 @@ function AboutPage() {
       <section className="py-24 md:py-32 bg-background">
         <div className="container-editorial grid md:grid-cols-12 gap-12 items-center">
           <div className="md:col-span-5">
-            <img src={foundersImg} alt="Maggie & Katrina" className="w-full aspect-[4/5] object-cover" loading="lazy" />
+            <img src={foundersImg} alt="Maggie & Katrina" className="w-full aspect-[4/5] object-cover object-[center_30%]" loading="lazy" />
           </div>
           <div className="md:col-span-7 space-y-5 text-[15px] md:text-base leading-[1.9] text-foreground/80 max-w-xl">
             <SectionHeading eyebrow="創辦人" title="Maggie & Katrina" />
