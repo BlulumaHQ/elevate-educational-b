@@ -1,14 +1,14 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Mail, Phone, MapPin, Facebook, Instagram } from "lucide-react";
 import waveBg from "@/assets/wave-bg.jpg";
-import lineQrAsset from "@/assets/line-qr.png.asset.json";
+import lineQrImg from "@/assets/line-qr.png";
 
 const EMAIL = "info@elevateeducation.ca";
 const PHONE_DISPLAY = "778-982-3667";
 const PHONE_TEL = "+17789823667";
 const FB_URL = "https://www.facebook.com/ElevateEducation2026/";
 const IG_URL = "https://www.instagram.com/elevateeducation2026/";
-const LINE_QR = lineQrAsset.url;
+const LINE_QR = lineQrImg;
 
 export const Route = createFileRoute("/en/contact")({
   head: () => ({

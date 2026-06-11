@@ -7,8 +7,7 @@ import {
 import heroSlide1 from "@/assets/hero-students-group.webp";
 import heroSlide2 from "@/assets/hero-students-walking.webp";
 import skyline from "@/assets/vancouver-skyline.jpg";
-import foundersAsset from "@/assets/elevate-founders.webp.asset.json";
-const foundersImg = foundersAsset.url;
+import foundersImg from "@/assets/elevate-founders.webp";
 import campusHeritage from "@/assets/student-presentation.webp";
 import classroomMentor from "@/assets/teacher-presenting.webp";
 import waveBg from "@/assets/wave-bg.jpg";
