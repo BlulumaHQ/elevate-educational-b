@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import foundersAsset from "@/assets/elevate-founders.webp.asset.json";
-const foundersImg = foundersAsset.url;
+import foundersImg from "@/assets/elevate-founders.webp";
 import streetImg from "@/assets/vancouver-street.webp";
 import waveBg from "@/assets/wave-bg.jpg";
 import { SectionHeading } from "@/components/section-heading";
