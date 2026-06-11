@@ -81,6 +81,39 @@ function ContactPage() {
                 Book a Free Consultation →
               </Link>
             </div>
+
+            <div className="border-t border-border pt-6">
+              <div className="flex items-center gap-3 text-wood">
+                <span className="text-[11px] tracking-[0.25em] uppercase">Follow Us</span>
+              </div>
+              <div className="mt-4 flex flex-wrap items-center gap-3">
+                <a
+                  href={FB_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className="inline-flex items-center gap-2 border border-border px-4 py-2 text-sm text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+                >
+                  <Facebook size={16} strokeWidth={1.5} /> Facebook
+                </a>
+                <a
+                  href={IG_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="inline-flex items-center gap-2 border border-border px-4 py-2 text-sm text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+                >
+                  <Instagram size={16} strokeWidth={1.5} /> Instagram
+                </a>
+              </div>
+              <div className="mt-6 flex items-center gap-5">
+                <img src={LINE_QR} alt="Line QR Code" className="w-32 h-32 border border-border bg-white p-2" loading="lazy" />
+                <div className="text-sm text-foreground/75 leading-relaxed">
+                  <p className="font-serif text-primary text-lg">Chat on Line</p>
+                  <p className="mt-1">Scan the QR code with the Line app to add our official account.</p>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="md:col-span-7">
