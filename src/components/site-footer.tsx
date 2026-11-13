@@ -144,12 +144,12 @@ export function SiteFooter() {
           <p className="text-[9px] tracking-[0.22em] uppercase text-ivory/30">
             Web Design by{" "}
             <a
-              href="https://bluluma.com"
+              href="https://sonykundesign.com"
               target="_blank"
               rel="noopener noreferrer"
               className="text-ivory/40 hover:text-gold transition-colors"
             >
-              Bluluma
+              Sonykun Design
             </a>
           </p>
         </div>
